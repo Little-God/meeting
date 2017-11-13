@@ -153,232 +153,113 @@
         <div class="book2-content">
             <div class="book2-box">
                 <div class="box1">
-                    <div class="big_titles png_bg"><strong>乘机人信息</strong> <span style="width:630px">— 请仔细阅读填写说明并正确填写乘机人信息，以免在办理登机手续时受阻 </span>
+                    <div class="big_titles png_bg"><strong>会议场地需求</strong> <span style="width:630px"></span>
                     </div>
                     <div class="box clearfix">
                         <div class="order1 clearfix" style="position: static;">
-                            <dl>
-                                <dt>选择常用旅客：</dt>
-                                <dd class="yOverflow">
-                                    <input dindex="01" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">大壮</em>
-                                    <input type="hidden" sel="01"
-                                           value="大壮,00,513022198910156053">
-                                    <input dindex="02" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">潘玲玲</em>
-                                    <input type="hidden" sel="02"
-                                           value="潘玲玲,00,513822199009089052">
-                                    <input dindex="03" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">1314342</em>
-                                    <input type="hidden" sel="03"
-                                           value="1314342,00,650104198407152127">
-                                    <input dindex="04" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">潘玲玲</em>
-                                    <input type="hidden" sel="04"
-                                           value="潘玲玲,00,650104198407152126">
-                                    <input dindex="05" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">王姣</em>
-                                    <input type="hidden" sel="05"
-                                           value="王姣,00,610502199203177426">
-                                    <input dindex="06" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">潘玲玲</em>
-                                    <input type="hidden" sel="06"
-                                           value="潘玲玲,00,130682199110245429">
-                                    <input dindex="07" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">王一钧</em>
-                                    <input type="hidden" sel="07"
-                                           value="王一钧,00,610582199511290529">
-                                    <input dindex="08" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">sadad</em>
-                                    <input type="hidden" sel="08"
-                                           value="sadad,00,1231341">
-                                    <input dindex="09" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">你好</em>
-                                    <input type="hidden" sel="09"
-                                           value="你好,00,513022198910156021">
-                                    <input dindex="010" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">你还</em>
-                                    <input type="hidden" sel="010"
-                                           value="你还,01,132143131">
-                                    <input dindex="011" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">dsa</em>
-                                    <input type="hidden" sel="011"
-                                           value="dsa,01,1312141331">
-                                    <input dindex="012" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">帅的掉渣渣</em>
-                                    <input type="hidden" sel="012"
-                                           value="帅的掉渣渣,00,650104198407151243">
-                                    <input dindex="013" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">2141</em>
-                                    <input type="hidden" sel="013"
-                                           value="2141,00,513022198910152324">
-                                    <input dindex="014" name="passengerCheck" type="checkbox"
-                                           style="margin-top:7px;_margin-top:3px;"><em
-                                        style="width:78px;">小明1号</em>
-                                    <input type="hidden" sel="014"
-                                           value="小明1号,00,51138111893216">
-                                    <div class="clearfix" style="display: none;"></div>
-                                </dd>
-                            </dl>
+                            <dl></dl>
                             <div id="myPasengerDiv" class="myPassengerDiv" name="personPassenger">
                                 <div class="lines"></div>
                                 <dl>
-                                    <dt id="passengerOrderBy">第1位乘机人：</dt>
-                                    <dd>
-                                        <em class="disPassengerName"></em><a id="deletAbut" href="javascript:void(0)"
-                                                                             onclick="flyOrder.delPasenger(&#39;&#39;,this)"
-                                                                             class="del">删除</a>
-                                    </dd>
-                                </dl>
-                                <dl class="passTypeDl">
-                                    <dt><strong>*</strong>乘机人类型：</dt>
-                                    <dd>
-                                        <dl class="selects lit2 selects0" id="placego_ch">
-                                            <dt class="dt_value" style="display: none;"></dt>
-                                            <dt><input id="passengerType" type="text" name="passengerType"
-                                                       style="width:44px" class="showinput1 passType" value="成人"
-                                                       readonly=""></dt>
-                                            <dd id="placego" style="display: none;">
-                                                <ul class="clearfix showuls">
-                                                    <li onclick="changepassengerType(this)">成人</li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <span class="show" style="z-index: 10;">
-								   <span class="yd_help"> 填写说明</span>
-									   <ul>
-										 <li class="showtitle">乘客说明</li>
-											<li>年龄要求：<br>
-											1. 成人票：法定年龄12周岁（含）以上<br>
-											2. 儿童票：法定年龄2周岁（含）至12周岁（不含）</li><li>
-											备注：<br>
-											1. 乘机人年龄以航班起飞当日计算；<br>
-											2. 同一订单儿童票购买数量不得超过成人票数量；<br>
-											3. 儿童乘机须有成人陪伴，无成人陪伴儿童请联系航空公司预订；<br>
-											4. 如因填写有误导致无法登机，由乘机人自行承担责任</li>
-										</ul>
-								 </span>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt><strong>*</strong>乘机人姓名：</dt>
+                                    <dt id="passengerOrderBy">活动城市：</dt>
                                     <dd>
                                         <input type="text" onchange="flyOrder.changePassengerName(this);"
                                                name="passengerName" id="textfield2"
                                                style="width:95px;margin: 0 8px 0 0;float:left"
                                                class="theinput theinput2"
                                                value="">
-
-                                        <span class="show" style="z-index: 1;">
-										   <span class="yd_help"> 填写说明</span>
-										   <ul style="display: none;">
-												<li class="showtitle">乘客说明</li>
-												<li>1. 乘机人姓名必须与登机所出示证件上的姓名一致</li>
-												<li>2. 如使用中文姓名预订机票且持有护照登机，须确保护照上显示中文姓名</li>
-												<li>3. 持护照登机的乘机人，须严格按照护照上显示的姓名顺序填写（包含中文或英文）</li>
-												<li>4. 如持卡人的姓名中出现生僻字无法输入乘机人姓名，请致电88888888预订机票，并提供生僻字的正确拼音</li>
-												<li>5. 同一订单最多填写9位乘机人，超过此人数订票请拆分填写订单</li>
-												<li>6. 机票预订成功后，姓名不允许变更，如因填写有误导致无法登机，由乘机人自行承担责任</li>
-											</ul>
-									   </span>
                                     </dd>
                                 </dl>
-                                <dl>
-                                    <dt><strong>*</strong>证件类型：</dt>
+                                <dl class="passTypeDl">
+                                    <dt><strong>*</strong>会议时长：</dt>
                                     <dd>
-                                        <dl class="selects lit2 selects1">
-                                            <dt style="display: none;"></dt>
-                                            <dt><input type="text" name="certificationType" class="showinput1 idCard"
-                                                       value="身份证" style="width:68px"
-                                                       onchange="flyOrder.certificationTypeSelectChange(this)"></dt>
-                                            <dd style="display: none;">
-                                                <ul>
-                                                    <li>身份证</li>
-                                                    <li>护照</li>
+                                        <dl class="selects lit2 selects0" id="placego_ch">
+                                            <dt class="dt_value" style="display: none;"></dt>
+                                            <dt><input id="passengerType" type="text" name="passengerType"
+                                                       style="width:44px" class="showinput1 passType" value="请选择"
+                                                       readonly=""></dt>
+                                            <dd id="placego" style="display: none;">
+                                                <ul class="clearfix showuls">
+                                                    <li>请选择</li>
+                                                    <li>一晚</li>
+                                                    <li>半天</li>
+                                                    <li>一天</li>
+                                                    <li>两天</li>
+                                                    <li>3-4天</li>
+                                                    <li>5-7天</li>
+                                                    <li>7-14天</li>
+                                                    <li>14天以上</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="passTypeDl">
+                                    <dt><strong>*</strong>会议类型：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects0" id="placego_ch">
+                                            <dt class="dt_value" style="display: none;"></dt>
+                                            <dt><input id="passengerType" type="text" name="passengerType"
+                                                       style="width:44px" class="showinput1 passType" value="请选择"
+                                                       readonly=""></dt>
+                                            <dd id="placego" style="display: none;">
+                                                <ul class="clearfix showuls">
+                                                    <li>请选择</li>
+                                                    <li>培训/讲座</li>
+                                                    <li>工作会/总结会</li>
+                                                    <li>发布会/颁奖/典礼</li>
+                                                    <li>公司年会</li>
+                                                    <li>团建/拓展</li>
+                                                    <li>同学会/好友聚会</li>
                                                     <li>其他</li>
                                                 </ul>
                                             </dd>
                                         </dl>
-                                        <input style="float:left;margin: 0 8px 0 0;" type="text"
-                                               name="certificationNumber"
-                                               id="textfield2" class="theinput idNum" value=""
-                                               onblur="flyOrder.checkcertificationNumber(this)">
-                                        <span class="show" style="z-index: 1;"> <span class="yd_help"> 证件说明</span>
-										<ul style="width: 428px; height: 309px; display: none;">
-										  <li class="showtitle">证件说明</li>
-										  <li class="tableUl">
-											<ul>
-											  <li style="text-align:center;line-height:40px;font-weight:bold">乘机人类型</li>
-											  <li style="font-weight:bold">填写证件类型</li>
-											  <li style="width:120px;font-weight:bold">填写证件号码</li>
-											  <li style="width:120px;font-weight:bold">登机所持证件</li>
-											  <li style="height:189px; line-height: 189px; text-align: center;">成人</li>
-											  <li>身份证</li>
-											  <li style="width:120px;line-height:20px">18位身份证号码，字母大写</li>
-											  <li style="width:120px;">身份证</li>
-											  <li>护照</li>
-											  <li style="width:120px;line-height:20px">与护照号码一致，字母大写</li>
-											  <li style="width:120px;">护照</li>
-											  <li style="height:95px;">其他</li>
-											  <li style="width:120px;height:95px;line-height:20px">与所持证件号码一致，如证件号码中包含中文，仅填写英文与数字部分即可</li>
-											  <li style="width:120px;height:95px;line-height:20px">回乡证、台胞证、居留证、户口本、军官证、港澳通行证、旅行证等航空公司认可的有效证件</li>
-											  <li style="text-align:center; line-height:40px; border-bottom:none">儿童</li>
-											  <li style="border-bottom:none">身份证</li>
-											  <li style="width:120px;line-height:20px;border-bottom:none">8位出生年月日，格式为yyyymmdd</li>
-											  <li style="width:120px;border-bottom:none">户口本</li>
-											</ul>
-										  </li>
-										</ul>
-										</span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><strong>*</strong>参加人数：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects1">
+                                            <dt style="display: none;"></dt>
+                                            <dt><input type="text" name="certificationType" class="showinput1 idCard"
+                                                       value="请选择" style="width:68px"
+                                                       onchange="flyOrder.certificationTypeSelectChange(this)"></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li>10-30</li>
+                                                    <li>30-60</li>
+                                                    <li>60-100</li>
+                                                    <li>100-200</li>
+                                                    <li>200-300</li>
+                                                    <li>300-500</li>
+                                                    <li>500-1000</li>
+                                                    <li>1000+</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
                                     </dd>
 
                                 </dl>
                                 <dl>
-                                    <dt>购买保险：</dt>
-
+                                    <dt>预算：</dt>
                                     <dd>
                                         <dl class="selects lit2 selects2">
                                             <dt><input type="text" name="insurance" min="personInsurance"
                                                        class="showinput"
-                                                       value="1份" style="width:68px" readonly=""></dt>
+                                                       value="请选择" style="width:68px" readonly=""></dt>
                                             <dd style="display: none;">
                                                 <ul>
-                                                    <li onclick="flyOrder.insuranceSelectChange(this);">1份</li>
+                                                    <li>请选择</li>
+                                                    <li>3千以下</li>
+                                                    <li>3千-5千</li>
+                                                    <li>6千-1万</li>
+                                                    <li>1万-2万</li>
+                                                    <li>2万-5万</li>
+                                                    <li>5万-10万</li>
                                                 </ul>
                                             </dd>
-
                                         </dl>
-                                        <span class="show" style="z-index: 1;"> <span class="yd_help"> 保险说明</span>
-										<ul style="display: none;">
-										  <li class="showtitle">保险说明</li>
-										  <li>【投保公司】： <br>
-											平安养老保险股份有限公司 </li>
-										  <li>【保险期间】： <br>
-											保险期间自被保险人持本合同约定航班班机的有效机票到达机场通过安全检查时始，至被保险人抵达目的港走出所乘航班班机的舱门时止 </li>
-										  <li>【保险金额】： <br>
-											1、投保：20元人民币/份<br>
-											2、赔付：60万/份（未成年子女赔付总额不得超过国务院保险监督管理机构规定的限额） </li>
-										  <li>【保险有效期】： <br>
-											如当次航班没有乘坐，保险的有效期是航班起飞之后的1年，过期作废无法退保 </li>
-										  <li>【投保验证途径】： <br>
-											1、中航信的网站验真：登录WWW.TRAVELSKY.COM自助验真<br>
-											2、航联保险经纪有限公司的全国客户服务电话400 810 2688验真<br>
-											3、平安保险公司的全国客服电话95511-1-9验真</li>
-										</ul>
-									</span>
                                     </dd>
                                 </dl>
                                 <dl>
@@ -399,13 +280,39 @@
                                         </dl>
                                     </dd>
                                 </dl>
+                                <dl>
+                                    <dt><strong>*</strong>会议需求：</dt>
+                                    <dd class="yOverflow">
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">开会</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">用餐</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">住宿</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">娱乐</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">茶歌</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">搭建</em>
+                                        <div class="clearfix" style="display: none;"></div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt id="passengerOrderBy">活动城市：</dt>
+                                    <dd>
+                                        <textarea onchange="flyOrder.changePassengerName(this);"
+                                               name="passengerName"
+                                               style="width:400px;height:80px;margin: 0 8px 0 0;float:left;border: 1px solid #ccc;"></textarea>
+                                    </dd>
+                                </dl>
                             </div>
-                            <dl id="addPasengerDl">
-                                <dt>&nbsp;</dt>
-                                <dd><input name="" onclick="flyOrder.addPasengerDiv();" id="addPasengerButton"
-                                           type="button"
-                                           value=" " class="add"></dd>
-                            </dl>
                         </div>
                     </div>
                 </div>
