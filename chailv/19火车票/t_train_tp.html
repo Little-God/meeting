@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>退票失败</title>
+<style>
+html{
+	background:#fff;
+	overflow:auto;
+	zoom:1;
+}
+*{
+	padding:0;
+	margin:0;
+	outline:none;
+}
+ol,li,ul,dl,dt,dd{
+	list-style:none;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration:none;
+	color:inherit;
+}
+i{
+	font-style:normal;
+}
+h1, h2, h3, h4, h5, h6 { 
+	font-size:inherit;
+	font-weight:lighter;
+}
+button,submit {
+	cursor:pointer;
+}
+body{
+	font-size:14px;
+	font-family:"΢���ź�",Microsoft YaHei;
+}
+.t_train_tp{
+	width:300px;
+	height:auto;
+	float:left;
+	border:1px solid #dfdfff;
+	font-size:14px;
+}
+.t_train_tp_t{
+	width:100%;
+	background: #f4f4fd;
+    height: 31px;
+	float:left;
+	text-indent:1em;
+    line-height: 31px;
+    border-bottom: #dfdfff 1px solid;
+}
+.t_train_tp_c{
+	width:calc(100% - 20px);
+	height:45px;
+	float:left;
+	margin:10px;
+}
+.t_train_tp_c span{
+	float:left;
+	margin-right:10px;
+	line-height:45px;
+}
+.t_train_tp_c_input{
+	width:200px;
+	height:25px;
+	float:left;
+	margin-top:10px;
+}
+.t_train_tp_f{
+	width:100%;
+	height:40px;
+	float:left;
+}
+.t_train_tp_f .t_train_tp_xsa{
+	width:60px;
+	height:25px;
+	float:left;
+	margin-left:55px;
+	cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="t_train_tp">
+	<div class="t_train_tp_t">退票失败原因填写</div>
+	<div class="t_train_tp_c"><span>失败原因</span>
+		<select name="select" class="t_train_tp_c_input">
+			<option>已取票</option>
+			<option>已过时间</option>
+			<option>来电取消</option>
+		</select>
+	</div>
+	<div class="t_train_tp_f">
+		<input type="button" class="t_train_tp_xsa" value="确定">
+		<input type="button" class="t_train_tp_xsa" value="取消">
+	</div>
+</div>
+</body>
+</html>

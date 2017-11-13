@@ -1,0 +1,352 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票详情</title>
+<link rel="stylesheet" type="text/css" href="css/train.css" />
+<link href="css/ticket_dd.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/chack.css" rel="stylesheet" type="text/css" />
+<link href="css/select.css" rel="stylesheet" type="text/css" />
+<link href="css/date.css" rel="stylesheet" type="text/css" />
+<link href="css/members.css" rel="stylesheet" type="text/css" />
+<link href="css/date-1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/chack.js"></script>
+<script type="text/javascript" src="js/select.js"></script>
+<script type="text/javascript" src="js/dateinput.js"></script>
+
+   <style type="text/css">
+*{margin:0px; padding:0px;}
+body{ background:#f4f4f4; font:14px/20px 微软雅黑, \5FAE\8F6F\96C5\9ED1;}
+ul, li { list-style:none; } 
+a img{border:0;}
+a{color:#333333}
+a, a:hover { text-decoration:none; } 
+img { display:block; border:0; }
+
+.nav_new{height:78px; border-bottom:#e0e0e0 1px solid; width:100%; background:#FFF; margin:0 auto;}
+
+.w1200_new { width:1200px; margin:0 auto; }
+
+.fl_new { float:left; }
+.fr_new { float:right; }
+.m20_new{height:20px; clear:both; width:100%; margin:0 auto;}
+.c14_new{color:#9e9e9e; font-size:14px; line-height:32px;}
+.c14_new a{color:#9e9e9e;}
+.c14_new a:hover{color:#ffa400;}
+.c_none{clear:both;}
+
+.s_font_new{margin-left:20px;}
+.s_font_new li{font-size:20px; height:36px; padding-top:40px; margin:0px 5px; float:left; list-style:none } 
+
+.s_font_new a{ float:left; display: block; padding:0 18px; color:#000; width:80px; height:30px; background:url(img/pic_03.jpg) no-repeat right;}
+
+.s_font_new a:hover{color:#ffa400; }
+
+.s_fontLI_new a{width:50px;}
+
+.s_fontLI2_new{ color:#CCC;}
+
+.r_divNew{ width:380px; padding-top:30px; }
+.r_divNew li{float:left; list-style:none}
+
+
+.r_bg_new{ background:url(/trip/hot/img/pic_02.jpg) no-repeat center; width:100px; height:32px; font-size:18px; display:block; color:#9e9e9e; line-height:32px; text-align:center; } 
+
+.r_font_yuan{width:auto;max-width:90px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:right; }
+.r_font_new{font-size:18px;  line-height:32px;  width:auto; max-width:120px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:right; margin-left:20px; }
+.r_font_new a{ color:#ffa400;}
+.r_font_new a:hover{ color:#ffa400; }
+
+
+.train_1200{
+	width:970px;
+}
+.step .progress_line{
+	width:140px;
+}
+.train_ydfc {
+    margin-left: 700px;
+}
+.box1, .box2, .box3{
+	border-top:1px solid #ddd;
+}
+.big_titles{
+	margin-left:30px !important;
+	padding:10px 0;
+}
+.big_titles strong{
+	color:#212f5e;
+}
+.train_xq_l1e {
+	width:150px;
+}
+.clearfix tr td span{
+	float:none !important;
+	display:inline !important;
+}
+</style>
+
+
+</head>
+
+<body>
+    <!--导航开始-->
+  		<!--#include file="include/top.html" -->
+    <!--导航结束-->
+	
+	
+	<div class="location">
+		<a href="/trip/index/index.jhtml" title="首页" class="homelink">首页</a>
+		<a href="/trip/myflyorderlist/list.jhtml" title="个人中心">个人中心</a>
+		<a href="/trip/myflyorderlist/list.jhtml" title="我的订单">我的订单</a>
+		<a href="javascript:void(0);" title="火车票订单">火车票订单</a>
+	</div>
+<div class="main">
+			<div class="left">
+				<dl class="title">
+					<dt>个人中心</dt>
+					<dd></dd>
+				</dl>
+				<span id="percenter">
+					<strong>张三，您好！</strong>
+					您上次登录： 
+				</span>
+				<dl class="item">
+					<dt><a href="/trip/myflyorderlist/list.jhtml">我的订单</a></dt>
+					<dd>
+						<ul>
+							<li><a name="机票订单" href="/trip/myflyorderlist/list.jhtml">机票订单</a></li>
+							<li><a name="酒店订单" href="/trip/hotelorderinfo/list.jhtml">酒店订单</a></li>
+							<li><a name="火车票订单" href="/trip/hotelorderinfo/list.jhtml">火车票订单</a></li>
+						</ul>
+					</dd>
+					
+					<dt><a href="/trip/commontripperinfo/commonTripperInfo.jhtml">我的积分信息</a></dt>
+					<dd>
+						<ul>
+							<li><a name="常用旅客管理" href="/trip/commontripperinfo/commonTripperInfo.jhtml">常用旅客管理</a></li>
+							<li><a name="常用联系人管理" href="/trip/contactinfo/contactInfo.jhtml">常用联系人管理</a></li>
+							<li><a name="常用地址管理" href="/trip/mailaddressinfo/mailAddressInfo.jhtml">常用地址管理</a></li>
+						</ul>
+					</dd>
+				</dl>
+				
+			</div>
+			<script>
+			$(function(){
+				$("[name='火车票订单']").parent().attr("class","here");
+				$("[name='火车票订单']").parent().parent().parent().prev().attr("class","here");})
+			</script>
+				<script>
+				$(function(){
+					jQuery.ajax({
+						type:"POST",
+						url:"/trip/personcenter/percenter/percenter.jhtml",
+						success:function(data){
+						if(data.name==undefined){
+						if(data.length>2){
+							data = eval("(" + data + ")");
+							$("#percenter").html("<strong>"+data.name+"，您好！</strong></br>您上次登录："+data.lasttime)}
+						}else{
+							$("#percenter").html("<strong>"+data.name+"，您好！</strong></br>您上次登录："+data.lasttime)}
+						}
+					});
+				});
+			</script>    
+			<script type="text/javascript">
+	function changestatus(obj){
+	var bool = window.confirm("订单取消后无法恢复，是否确认取消订单?");
+	if(bool){
+		jQuery.ajax({
+		type:"post",
+		url:"/trip/fly/myflyorderlist/cancelWaitPayOrder.jhtml",
+		data:{"orderId":obj},
+		
+		success:function(data){
+		data = eval("("+data+")");
+			if(data.result=="1"){
+				alert("取消订单成功");
+				location.reload(true);
+			}else{
+				alert("取消订单失败");
+			}
+		}
+		});
+		}
+	}
+	
+</script>
+<script type="text/javascript">
+function confirmPay(obj){
+		jQuery.ajax({
+		type:"post",
+		url:"/trip/fly/myflyorderinfo/queryConfirmPay.jhtml",
+		data:{"orderId":obj},
+		dataType:'json',
+		success:function(data){
+		//data = eval("("+data+")");
+			if(data.result=="1"){
+				alert("对不起，您的订单正在支付，暂时不能再次支付，请稍后查证后再支付！");
+			}else{
+				windows.location.href="/trip/orderyuding/orderPayment.jhtml?orderId="+obj;
+			}
+		}
+		});
+	}
+</script>
+<div class="right" id="content">
+<div id="orderList clearfix">
+        <div class="title clearfix" style="border-bottom:0;"><strong>火车票订单列表</strong></div>
+        <div class="clearfix" style="_height:1px;_overflow: hidden;"></div>
+</div>
+<div class="train_1200">
+			<div class="box3">
+				<div class="big_titles png_bg" style="width:calc(100% - 30px);float:left;margin-left:0;">
+					<strong>订单详情</strong>
+					<span class="xgcc">出票中/已付款</span>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="step finished" style="margin-left:40px;">
+						<div class="progress_line"></div><i></i>
+						<h4>占座成功</h4>
+					</div>
+					<div class="step finished">
+						<div class="progress_line"></div><i></i>
+						<h4>已付款</h4>
+					</div>
+					<div class="step finished">
+						<div class="progress_line"></div><i></i>
+						<h4>出票中</h4>
+					</div>
+					<div class="step">
+						<div class="progress_line"></div><i></i>
+						<h4>出票成功</h4>
+					</div>
+				</div>
+				<div class="train_zzcg">
+					
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles png_bg" style="width:calc(100% - 30px);float:left;margin-left:0;">
+					<strong>车次信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;margin-bottom:10px;">
+					<div class="train_xq_l1e">G101次</div>
+					<div class="train_xq_l2e">
+						<ul>
+							<li>06:50</li>
+							<li>北京南站</li><span>始</span>
+							<li style="color:#999;">09月05日</li>
+							<li style="color:#999;">星期二</li>
+						</ul>
+					</div>	
+					<div class="train_xq_l3e">
+						<span>5小时54分钟</span>
+					</div>
+					<div class="train_xq_l4e">
+						<ul>
+							<li>06:50</li>
+							<li>北京南站</li><span>终</span>
+							<li style="color:#999;">09月05日</li>
+							<li style="color:#999;">星期二</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:calc(100% - 30px);height:auto;">
+					<strong>乘客信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="order1 clearfix" style="float:left;width:100%;height:auto;padding-top:0;">
+					 <table border="0" class="train_table">
+					  <tr>
+						<td>乘客</td>
+						<td>票种</td>
+						<td>证件类型</td>
+						<td>证件号码</td>
+						<td>座位</td>
+						<td>保险</td>
+						<td>保单号</td>
+						<td>成本中心</td>
+						<td>项目</td>
+						<td>&nbsp;</td>
+					  </tr>
+					  <tr>
+						<td>侯锐</td>
+						<td>成人票</td>
+						<td>因私护照</td>
+						<td>E********4</td>
+						<td>二等座</td>
+						<td>火车意外伤...</td>
+						<td>&nbsp;</td>
+						<td>财务中心</td>
+						<td>A项目</td>
+						<td>出票中</td>
+					  </tr>
+					</table>
+
+					</div>
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:calc(100% - 30px);height:auto;">
+					<strong>订单信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:calc(100% - 30px);height:auto;">
+					<div class="order1 clearfix" style="float:left;width:100%;height:auto;padding-top:0;">
+					 <table border="0" class="train_table">
+					  <tr>
+						<td>订单</td>
+						<td>下单时间</td>
+						<td>车票总价</td>
+						<td>保险</td>
+						<td>服务费</td>
+						<td>配送费</td>
+						<td>订单总价</td>
+						<td>支付总额</td>
+						<td>退还金额</td>
+					  </tr>
+					  <tr>
+						<td>T23002939239</td>
+						<td>2017-9-11 14:23:21</td>
+						<td>￥522</td>
+						<td>1 x ￥30</td>
+						<td>1 x ￥30</td>
+						<td>￥0</td>
+						<td><span>￥604</span></td>
+						<td><span>￥604</span></td>
+						<td><span>-</span></td>
+					  </tr>
+					</table>
+
+					</div>
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:calc(100% - 30px);height:auto;">
+					<strong>联系人电话：</strong>12345678912
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:calc(100% - 30px);height:auto;">
+					<strong>联系客服：</strong>400电话
+				</div>
+			</div>
+			
+    </div>
+        
+</div>
+
+
+
+    <!--foot开始-->
+		<!--#include file="include/bottom.html" -->
+    <!--foot结束-->
+</body>
+</html>

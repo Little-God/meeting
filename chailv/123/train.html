@@ -1,0 +1,834 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票首页</title>
+<link rel="stylesheet" type="text/css" href="css/train.css" />
+<link href="css/date.css" rel="stylesheet" type="text/css" />
+<link href="css/date-1.css" rel="stylesheet" type="text/css" />
+<link href="css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/int.js"></script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/select.js"></script>
+<script type="text/javascript" src="js/dateinput.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#btnSubmit").click(function(){
+		var val = $("input[name='spr']:checked").val();
+		if(val != ""){
+			$("#train_tan").show();
+			$("#train_jx").click(function(){
+			  $("#train_tan").hide();
+			  $("#train_rig").hide();
+			  $("#train_ri").show();
+			});	
+			$("#train_fh").click(function(){
+			  $("#train_tan").hide();
+			  $("#train_rig").show();
+			  $("#train_ri").hide();
+			});	
+		}
+	});
+});
+</script>
+<script type="text/javascript">
+function fff(a){
+     var date2=new Date();        
+     var date=a.value;  
+     
+      var date_1=date.split("-"); 
+    
+   var t= Number(date_1[1])-1;
+   var d= Number(date_1[2])+1;  
+    date2.setFullYear(date_1[0],t,d);     
+      var year=date2.getFullYear();
+       var moth=date2.getMonth()+1;     
+      var dat=date2.getDate();
+      moth<10?"0"+moth:moth;
+      dat<10?"0"+dat:dat;       
+       var s=year+"-"+moth+"-"+dat;
+      $("#endDateText").val(s);  
+}
+	function reTryMouseOver(obj){
+		$("#"+obj).css("text-decoration","underline");
+	}
+	
+	function reRoomTry(obj,hotelId){
+		if($("#"+obj).html().replace(/(^\s+)|(\s+$)/g,"")!="重试"){
+			return;
+		}
+		$("#"+obj).html("<img src='img/ui-anim_basic_16x16.gif'/>");
+		$("#"+obj).css("cursor","default");
+		var param = {"isDetail":"true","rateplanStarttime":"2017-08-01","rateplanEndtime":"2017-08-02","hotelId":hotelId,"cityId":"0101"};
+		$("#hotelDetail").load("/trip/hotel/hotelsearch/selectRoom.jhtml",param);
+	}
+	
+	function reTryMouseOut(obj){
+		$("#"+obj).css("text-decoration","underline");
+	}
+	
+</script>
+<script type="text/javascript"> 
+function subOnClick(){
+    var cityName=document.getElementById("cityName").value;
+    var arriveCityName=document.getElementById("arriveCityName").value;
+    //开始互换 
+    document.getElementById("cityName").value=arriveCityName; 
+    document.getElementById("arriveCityName").value=cityName; 
+}
+$(document).ready(function(){
+	 $(".checkbox").click(function(){
+        var ischeck=$(this).attr("checked");
+        if(ischeck==true){
+          $(".train_form_radio").css("background-color","#ff7800");
+		  $(".train_form_radio .checked").css("float","right");
+        }else{
+           $(".train_form_radio").css("background-color","#999");
+		  $(".train_form_radio .checked").css("float","");
+        }
+	});
+});
+</script>
+	<style>
+.train_form_radio {
+    background: none repeat scroll 0 0 #999;
+    border-radius: 34px;
+    height: 20px;
+    padding: 2px;
+    width: 60px;
+	float:right;
+}
+.train_form_radio_item {
+    color: #FFF;
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    width: 30px;
+    z-index:2;
+    border-radius: 34px 34px 34px 34px;
+}
+.checkbox{
+	display:none;
+}
+.train_form_radio .checked {
+    background-color: #FFF;
+}
+</style>
+</head>
+
+<body>
+<div id="train">
+	<!-- 图片切换 代码 开始 -->
+		<div class="slide-main" id="touchMain">
+			<div class="slide-box" id="slideContent">
+				<div class="slide" id="bgstyle1">
+					<div class="obj" style="background:url(images/ban04.jpg) no-repeat center -200px;"></div>
+				</div>
+				<div class="slide" id="bgstyle2">
+					<div class="obj" style="background:url(images/ban04.jpg) no-repeat center -200px;"></div>
+				</div>
+				<div class="slide" id="bgstyle3">
+					<div class="obj" style="background:url(images/ban04.jpg) no-repeat center -200px;"></div>
+				</div>            	
+			</div>
+		</div>
+	<!-- 图片切换 代码 结束 -->
+	
+	<div class="train_1200">
+		<!--搜索-->
+		<div class="train_train">
+			 <div class="train_class">
+			 	<div class="train_c_left">
+					<div class="train_l_t">国内火车票</div>
+					<ul class="train_l_f">
+						<li class="train01"><span>出发地</span>
+						<dl class="selects lit1 place" id="placego_ch" style="margin-top:-4px;">
+							<dt  style="background:none;float:left;width:165px;height:25px;z-index:20;"><input id="cityName" type="text"  onkeyup="queryCitys()" class="showinput" value="北京" onkeydown="document.getElementById('placego').style.display='none';" onfocus="clearInfo(this);" style="width:165px;height:100%;"/>
+						   <div id="indexCitys" class="arealayer"></div></dt>
+							<dd id="placego"><span><em class="shows" onclick="showsfoun('placego',0)">热门</em><em onclick="showsfoun('placego',1)">ABCDE</em><em onclick="showsfoun('placego',2)">FGHIJ</em><em onclick="showsfoun('placego',3)">KLMNO</em><em onclick="showsfoun('placego',4)">PQRST</em><em onclick="showsfoun('placego',5)">UVWXYZ</em></span>
+							   <ul class="clearfix showuls">
+								<li>北京</li>
+								<li>上海</li>
+								<li>重庆</li>
+								<li>深圳</li>
+								<li>广州</li>
+								<li>杭州</li>
+								<li>南京</li>
+								<li>苏州</li>
+								<li>天津</li> 
+								<li>成都</li>
+								<li>南昌</li>
+								<li>三亚</li>
+								<li>青岛</li>
+								<li>西安</li>
+								<li>厦门</li>
+								<li>长沙</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>阿里</li>
+								<li>阿尔山</li>
+								<li>阿克苏</li>
+								<li>阿勒泰</li>
+								<li>安康</li>
+								<li>安庆</li>
+								<li>鞍山</li>
+								<li>安顺</li>
+								<li>安阳</li>
+								<li>阿拉善盟左旗</li>
+								<li>阿拉善盟额济纳旗</li>
+								<li>阿拉善盟右旗</li>
+								<li>博乐</li>
+								<li>巴彦淖尔</li>
+								<li>保山</li>
+								<li>包头</li>
+								<li>北海</li>
+								<li>北京</li>
+								<li>蚌埠</li>
+								<li>毕节</li>
+								<li>百色</li>
+								<li>长春</li>
+								<li>常德</li>
+								<li>长海</li>
+								<li>长沙</li>
+								<li>长治</li>
+								<li>常州</li>
+								<li>朝阳</li>
+								<li>昌都</li>
+								<li>成都</li>
+								<li>赤峰</li>
+								<li>重庆</li>
+								<li>潮州</li>
+								<li>长白山</li>
+								<li>大理</li>
+								<li>大连</li>
+								<li>丹东</li>
+								<li>大同</li>
+								<li>达州</li>
+								<li>迪庆</li>
+								<li>东营</li>
+								<li>敦煌</li>
+								<li>德宏</li>
+								<li>稻城</li>
+								<li>大庆</li>
+								<li>二连浩特</li>
+								<li>鄂尔多斯</li>
+								<li>恩施</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>佛山</li>
+								<li>富蕴</li>
+								<li>福州</li>
+								<li>阜阳</li>
+								<li>固原</li>
+								<li>赣州</li>
+								<li>格尔木</li>
+								<li>广汉</li>
+								<li>广州</li>
+								<li>桂林</li>
+								<li>贵阳</li>
+								<li>甘南</li>
+								<li>广元</li>
+								<li>淮安</li>
+								<li>海口</li>
+								<li>海拉尔</li>
+								<li>哈密</li>
+								<li>杭州</li>
+								<li>汉中</li>
+								<li>哈尔滨</li>
+								<li>合肥</li>
+								<li>黑河</li>
+								<li>衡阳</li>
+								<li>和田</li>
+								<li>呼和浩特</li>
+								<li>黄山</li>
+								<li>徽州</li>
+								<li>黄岩</li>
+								<li>怀化</li>
+								<li>邯郸</li>
+								<li>鸡西</li>
+								<li>金昌</li>
+								<li>加格达奇</li>
+								<li>佳木斯</li>
+								<li>嘉峪关</li>
+								<li>吉林</li>
+								<li>济南</li>
+								<li>景德镇</li>
+								<li>井冈山</li>
+								<li>济宁</li>
+								<li>锦州</li>
+								<li>九江</li>
+								<li>酒泉</li>
+								<li>九寨沟</li>
+								<li>吉安</li>
+								<li>晋江</li>
+								<li>九华山</li>
+								<li>揭阳</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>克拉玛依</li>
+								<li>喀什</li>
+								<li>库尔勒</li>
+								<li>库车</li>
+								<li>昆明</li>
+								<li>凯里</li>
+								<li>喀纳斯</li>
+								<li>康定</li>
+								<li>兰州</li>
+								<li>拉萨</li>
+								<li>连城</li>
+								<li>梁平</li>
+								<li>连云港</li>
+								<li>丽江</li>
+								<li>临沧</li>
+								<li>临沂</li>
+								<li>柳州</li>
+								<li>洛阳</li>
+								<li>泸州</li>
+								<li>吕梁</li>
+								<li>林芝</li>
+								<li>黎平</li>
+								<li>荔波</li>
+								<li>芒市</li>
+								<li>满洲里</li>
+								<li>梅县</li>
+								<li>绵阳</li>
+								<li>牡丹江</li>
+								<li>漠河</li>
+								<li>那拉提</li>
+								<li>南昌</li>
+								<li>南充</li>
+								<li>南京</li>
+								<li>南宁</li>
+								<li>南通</li>
+								<li>南阳</li>
+								<li>宁波</li>
+								<li>南平</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>攀枝花</li>
+								<li>普洱</li>
+								<li>黔江</li>
+								<li>泉州</li>
+								<li>且末</li>
+								<li>青岛</li>
+								<li>庆阳</li>
+								<li>秦皇岛</li>
+								<li>齐齐哈尔</li>
+								<li>衢州</li>
+								<li>日喀则</li>
+								<li>三亚</li>
+								<li>上海</li>
+								<li>鄯善</li>
+								<li>汕头</li>
+								<li>韶关</li>
+								<li>沙市</li>
+								<li>沈阳</li>
+								<li>深圳</li>
+								<li>石家庄</li>
+								<li>思茅</li>
+								<li>苏州</li>
+								<li>唐山</li>
+								<li>台州</li>
+								<li>吐鲁番</li>
+								<li>塔城</li>
+								<li>太原</li>
+								<li>天津</li>
+								<li>通化</li>
+								<li>通辽</li>
+								<li>铜仁</li>
+								<li>天水</li>
+								<li>腾冲</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>文山</li>
+								<li>乌鲁木齐</li>
+								<li>乌兰浩特</li>
+								<li>万州</li>
+								<li>潍坊</li>
+								<li>威海</li>
+								<li>温州</li>
+								<li>武汉</li>
+								<li>乌海</li>
+								<li>芜湖</li>
+								<li>无锡</li>
+								<li>武夷山</li>
+								<li>梧州</li>
+								<li>香格里拉</li>
+								<li>厦门</li>
+								<li>襄阳</li>
+								<li>西昌</li>
+								<li>锡林浩特</li>
+								<li>兴城</li>
+								<li>兴宁</li>
+								<li>邢台</li>
+								<li>西宁</li>
+								<li>西双版纳</li>
+								<li>徐州</li>
+								<li>兴义</li>
+								<li>扬州</li>
+								<li>宜春</li>
+								<li>延安</li>
+								<li>盐城</li>
+								<li>延吉</li>
+								<li>烟台</li>
+								<li>宜宾</li>
+								<li>宜昌</li>
+								<li>银川</li>
+								<li>伊宁</li>
+								<li>义乌</li>
+								<li>永州</li>
+								<li>元谋</li>
+								<li>榆林</li>
+								<li>运城</li>
+								<li>玉树</li>
+								<li>伊春</li>
+								<li>中卫</li>
+								<li>张掖</li>
+								<li>张家口</li>
+								<li>张家界</li>
+								<li>湛江</li>
+								<li>昭通</li>
+								<li>郑州</li>
+								<li>舟山</li>
+								<li>珠海</li>
+								<li>遵义</li>
+							  </ul>
+							</dd>
+						   
+						  </dl>
+						</li>
+						<li class="train02"><span>目的地</span>
+						<dl class="selects lit1 place" id="placesback_ch">
+							 <dt style="background:none;float:left;width:165px;height:25px;z-index:10;"><input id="arriveCityName" name="arriveCityName"  onkeydown="document.getElementById('placesback').style.display='none';" type="text" onkeyup="queryArriveCitys()" class="showinput" value="上海" onfocus="clearInfo(this);" style="width:165px;height:100%;"/>
+						   <div id="arriveCitys" class="arealayer"></div></dt>
+							 <dd id="placesback"><span><em class="shows" onclick="showsfoun('placesback',0)">热门</em><em onclick="showsfoun('placesback',1)">ABCDE</em><em onclick="showsfoun('placesback',2)">FGHIJ</em><em onclick="showsfoun('placesback',3)">KLMNO</em><em onclick="showsfoun('placesback',4)">PQRST</em><em onclick="showsfoun('placesback',5)">UVWXYZ</em></span>
+							   <ul class="clearfix showuls">
+								<li>北京</li>
+								<li>上海</li>
+								<li>重庆</li>
+								<li>深圳</li>
+								<li>广州</li>
+								<li>杭州</li>
+								<li>南京</li>
+								<li>苏州</li>
+								<li>天津</li> 
+								<li>成都</li>
+								<li>南昌</li>
+								<li>三亚</li>
+								<li>青岛</li>
+								<li>西安</li>
+								<li>厦门</li>
+								<li>长沙</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>阿里</li>
+								<li>阿尔山</li>
+								<li>阿克苏</li>
+								<li>阿勒泰</li>
+								<li>安康</li>
+								<li>安庆</li>
+								<li>鞍山</li>
+								<li>安顺</li>
+								<li>安阳</li>
+								<li>阿拉善盟左旗</li>
+								<li>阿拉善盟额济纳旗</li>
+								<li>阿拉善盟右旗</li>
+								<li>博乐</li>
+								<li>巴彦淖尔</li>
+								<li>保山</li>
+								<li>包头</li>
+								<li>北海</li>
+								<li>北京</li>
+								<li>蚌埠</li>
+								<li>毕节</li>
+								<li>百色</li>
+								<li>长春</li>
+								<li>常德</li>
+								<li>长海</li>
+								<li>长沙</li>
+								<li>长治</li>
+								<li>常州</li>
+								<li>朝阳</li>
+								<li>昌都</li>
+								<li>成都</li>
+								<li>赤峰</li>
+								<li>重庆</li>
+								<li>潮州</li>
+								<li>长白山</li>
+								<li>大理</li>
+								<li>大连</li>
+								<li>丹东</li>
+								<li>大同</li>
+								<li>达州</li>
+								<li>迪庆</li>
+								<li>东营</li>
+								<li>敦煌</li>
+								<li>德宏</li>
+								<li>稻城</li>
+								<li>大庆</li>
+								<li>二连浩特</li>
+								<li>鄂尔多斯</li>
+								<li>恩施</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>佛山</li>
+								<li>富蕴</li>
+								<li>福州</li>
+								<li>阜阳</li>
+								<li>固原</li>
+								<li>赣州</li>
+								<li>格尔木</li>
+								<li>广汉</li>
+								<li>广州</li>
+								<li>桂林</li>
+								<li>贵阳</li>
+								<li>甘南</li>
+								<li>广元</li>
+								<li>淮安</li>
+								<li>海口</li>
+								<li>海拉尔</li>
+								<li>哈密</li>
+								<li>杭州</li>
+								<li>汉中</li>
+								<li>哈尔滨</li>
+								<li>合肥</li>
+								<li>黑河</li>
+								<li>衡阳</li>
+								<li>和田</li>
+								<li>呼和浩特</li>
+								<li>黄山</li>
+								<li>徽州</li>
+								<li>黄岩</li>
+								<li>怀化</li>
+								<li>邯郸</li>
+								<li>鸡西</li>
+								<li>金昌</li>
+								<li>加格达奇</li>
+								<li>佳木斯</li>
+								<li>嘉峪关</li>
+								<li>吉林</li>
+								<li>济南</li>
+								<li>景德镇</li>
+								<li>井冈山</li>
+								<li>济宁</li>
+								<li>锦州</li>
+								<li>九江</li>
+								<li>酒泉</li>
+								<li>九寨沟</li>
+								<li>吉安</li>
+								<li>晋江</li>
+								<li>九华山</li>
+								<li>揭阳</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>克拉玛依</li>
+								<li>喀什</li>
+								<li>库尔勒</li>
+								<li>库车</li>
+								<li>昆明</li>
+								<li>凯里</li>
+								<li>喀纳斯</li>
+								<li>康定</li>
+								<li>兰州</li>
+								<li>拉萨</li>
+								<li>连城</li>
+								<li>梁平</li>
+								<li>连云港</li>
+								<li>丽江</li>
+								<li>临沧</li>
+								<li>临沂</li>
+								<li>柳州</li>
+								<li>洛阳</li>
+								<li>泸州</li>
+								<li>吕梁</li>
+								<li>林芝</li>
+								<li>黎平</li>
+								<li>荔波</li>
+								<li>芒市</li>
+								<li>满洲里</li>
+								<li>梅县</li>
+								<li>绵阳</li>
+								<li>牡丹江</li>
+								<li>漠河</li>
+								<li>那拉提</li>
+								<li>南昌</li>
+								<li>南充</li>
+								<li>南京</li>
+								<li>南宁</li>
+								<li>南通</li>
+								<li>南阳</li>
+								<li>宁波</li>
+								<li>南平</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>攀枝花</li>
+								<li>普洱</li>
+								<li>黔江</li>
+								<li>泉州</li>
+								<li>且末</li>
+								<li>青岛</li>
+								<li>庆阳</li>
+								<li>秦皇岛</li>
+								<li>齐齐哈尔</li>
+								<li>衢州</li>
+								<li>日喀则</li>
+								<li>三亚</li>
+								<li>上海</li>
+								<li>鄯善</li>
+								<li>汕头</li>
+								<li>韶关</li>
+								<li>沙市</li>
+								<li>沈阳</li>
+								<li>深圳</li>
+								<li>石家庄</li>
+								<li>思茅</li>
+								<li>苏州</li>
+								<li>唐山</li>
+								<li>台州</li>
+								<li>吐鲁番</li>
+								<li>塔城</li>
+								<li>太原</li>
+								<li>天津</li>
+								<li>通化</li>
+								<li>通辽</li>
+								<li>铜仁</li>
+								<li>天水</li>
+								<li>腾冲</li>
+							  </ul>
+							  <ul class="clearfix">
+								<li>文山</li>
+								<li>乌鲁木齐</li>
+								<li>乌兰浩特</li>
+								<li>万州</li>
+								<li>潍坊</li>
+								<li>威海</li>
+								<li>温州</li>
+								<li>武汉</li>
+								<li>乌海</li>
+								<li>芜湖</li>
+								<li>无锡</li>
+								<li>武夷山</li>
+								<li>梧州</li>
+								<li>香格里拉</li>
+								<li>厦门</li>
+								<li>襄阳</li>
+								<li>西昌</li>
+								<li>锡林浩特</li>
+								<li>兴城</li>
+								<li>兴宁</li>
+								<li>邢台</li>
+								<li>西宁</li>
+								<li>西双版纳</li>
+								<li>徐州</li>
+								<li>兴义</li>
+								<li>扬州</li>
+								<li>宜春</li>
+								<li>延安</li>
+								<li>盐城</li>
+								<li>延吉</li>
+								<li>烟台</li>
+								<li>宜宾</li>
+								<li>宜昌</li>
+								<li>银川</li>
+								<li>伊宁</li>
+								<li>义乌</li>
+								<li>永州</li>
+								<li>元谋</li>
+								<li>榆林</li>
+								<li>运城</li>
+								<li>玉树</li>
+								<li>伊春</li>
+								<li>中卫</li>
+								<li>张掖</li>
+								<li>张家口</li>
+								<li>张家界</li>
+								<li>湛江</li>
+								<li>昭通</li>
+								<li>郑州</li>
+								<li>舟山</li>
+								<li>珠海</li>
+								<li>遵义</li>
+							  </ul>
+							</dd>
+						</dl>
+						</li>
+						<li class="train03">
+							<input type="text" required="true" name="" min="" id="startDateTexta" class="date1 date input_d fl input06" value="2017-9-11" onChange="fff(this)" autocomplete="off" spellcheck="true" dir="ltr" draggable="true" style="width:210px;">
+							<input type="hidden" name="rateplanEndtime" id="endDateText" />
+						</li>
+						<li class="train04"><label class="label"><span style="float:left">仅搜索高铁或动车</span>
+							<div class="train_form_radio">
+								<div id="J_OnlyGDBtn_Off" class="train_form_radio_item checked"></div>
+								<input name="checkbox" type="checkbox" value="1" class="checkbox"/>
+							</div>
+							</label>
+						</li>
+						<li class="train05"><input type="submit" value="搜索列车" id="sslc"></li>
+						<div class="tr-exchange" onclick="subOnClick()">
+						   <b>换</b>
+					    </div>
+					</ul>
+				</div>
+			
+				<div class="train_c_right">
+					<div id="train_rig">
+						<div class="train_r_t">待出行审批单</div>
+						<ul class="train_r_f">
+							<table width="200" border="1" id="btnSubmit">
+							  <tr style="background-color:#f4f4f4">
+								<td width="20" height="25">&nbsp;</td>
+								<td>审批单号</td>
+								<td>出行日期</td>
+								<td>到达城市</td>
+								<td>出行人</td>
+							  </tr>
+							  <tr>
+								<td height="25"><input name="spr" type="radio" value="1" /></td>
+								<td>234565432</td>
+								<td>2017-8-23</td>
+								<td>上海</td>
+								<td>薛之谦、侯锐</td>
+							  </tr>
+							  <tr>
+								<td height="25"><input name="spr" type="radio" value="2" /></td>
+								<td>234565432</td>
+								<td>2017-8-23</td>
+								<td>上海</td>
+								<td>薛之谦、侯锐</td>
+							  </tr>
+							</table>
+							<!--弹出框-->
+							<div id="train_tan">
+								<div class="train_top">提示</div>
+								<div class="train_cent">未选择审批单<br/>只能查看,不能预订</div>
+								<div class="train_bot"><input type="submit" value="继续" style="margin:0 20px 0 25px;"><input id="train_jx" type="submit" value="选择审批单"></div>
+							</div>
+							<!--弹出框end-->
+						</ul>
+					</div>
+					<!--隐藏域-->
+					<div id="train_ri" style="display:none">
+						<div class="train_r_t"><span id="train_fh">< 返回列表</span>审批单详情</div>
+						<ul class="train_r_f">
+							<li style="background-color:#f4f4f4"><span>出发-到达城市</span><span>出行人</span></li>
+							<li><span>北京-上海</span><span>薛之谦、侯锐</span></li>
+							<li><input type="submit" value="选择"></li>
+							<li style="margin-bottom:0;">审批单号：234567778</li>
+							<li>时间段：2017-08-23至2017-09-23</li>
+						</ul>
+					</div>
+					<!--隐藏域end-->
+				</div>
+				
+			 </div>
+		</div>
+		<!--搜索end-->
+		
+		<!--<div class="train_zd">
+			<ul>
+				<li class="train_zd1"><span>全天服务</span></li>
+				<li class="train_zd2"><span>及时出票</span></li>
+				<li class="train_zd3"><span>安全支付</span></li>
+				<li class="train_zd4"><span>售后无忧</span></li>
+			</ul>
+		</div>-->
+		<div class="train_remen">
+			<div class="train_remen_top"><img src="img/huo.png" /><span>热门线路</span></div>
+			<h2>
+				<a href="javascript:;" class="tabs current" rel="list1">全部</a>
+				<a href="javascript:;" class="tabs" rel="list2">成都</a>
+				<a href="javascript:;" class="tabs" rel="list3">广州</a>
+				<a href="javascript:;" class="tabs" rel="list4">北京</a>
+				<a href="javascript:;" class="tabs" rel="list5">上海</a>
+				<a href="javascript:;" class="tabs" rel="list6">深圳</a>
+			</h2>
+			<div class="train_remen_cent" id="list1">
+				<ul>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+				</ul>
+			</div>
+			<div class="train_remen_cent" id="list2">
+				<ul>
+					<li><a href="">
+						<span class="span1"><i>西安</i><img src="img/yjt.png" /><i>成都</i></span>
+						<span class="span2">￥<i>123</i>起</span>
+					</a></li>
+				</ul>
+			</div>
+			<div class="train_remen_cent" id="list3">
+				<ul>
+					
+				</ul>
+			</div>
+			<div class="train_remen_cent" id="list4">
+				<ul>
+					
+				</ul>
+			</div>
+			<div class="train_remen_cent" id="list5">
+				<ul>
+					
+				</ul>
+			</div>
+			<div class="train_remen_cent" id="list6">
+				<ul>
+					
+				</ul>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+</div>
+<script type="text/javascript">
+    $(".date1").dateinput();
+</script> 
+</body>
+</html>

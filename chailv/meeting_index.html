@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>会讲首页</title>
+<link href="css/hotel_wj.css" rel="stylesheet" type="text/css" />
+
+<link href="css/drawer.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+
+<style>
+	.right_columnzk li {
+		float: none;
+		height: 40px;
+		line-height: 40px;
+	}
+	.meettingneed input{
+		width: 13px!important;
+		height: 13px!important;
+		margin-right: 3px;
+	}
+	.right_columnzk textarea {
+		width: 400px;
+		height: auto;
+		float: none!important;
+		min-height: 80px;
+		border: 1px solid #333!important;
+		margin-left: 10px;
+		vertical-align: top
+	}
+	.company{
+		padding-left: 40px;
+	}
+	.company div{
+		display: inline-block;
+		margin:0 15px 0 0;
+	}
+	.public{
+		margin:0 60px 0 110px;
+	}
+	.sub{
+		width: 100px !important;
+		margin-left: 160px !important;
+	}
+	.right_borA{
+		width:600px;
+	}
+	.advert{
+		width:500px;
+		height:500px;
+		float: left;
+		margin-top:-32px;
+		margin-left:30px;
+	}
+	.right_add{
+		width:1200px;
+		margin:0 auto;
+	}
+</style>
+</head>
+
+<body>	
+<div class="right_add">
+  <div class="right_borA">
+		<div class="right_columnLi" style="width:98%;margin-left:1%;">&nbsp;&nbsp;&nbsp;&nbsp;会议场地需求</div>
+		<form class="right_columnzk right_ul" style="width:98%;margin-left:1%;border:1px solid #efefef;">
+			<ul>
+				<li>活动城市<input name="hdcs" type="text" value="北京" required="required" style="margin-left: 14px"/></li>
+				<li>
+					会议时常
+					<select style="width:120px;margin-left:10px;" id="select1">
+						<option value ="无" selected>请选择</option>
+						<option value ="一晚">一晚</option>
+						<option value ="现金">半天</option>
+						<option value ="半天">一天</option>
+						<option value ="两天">两天</option>
+						<option value ="3-4天">3-4天</option>
+						<option value ="5-7天">5-7天</option>
+						<option value ="7-14天">7-14天</option>
+						<option value ="14天以上">14天以上</option>
+					</select>
+					<input type="text" name="rateplanStarttime" class="dates2" placeholder="开始时间" onClick="WdatePicker()" readonly="readonly" required="required"/>
+				</li>
+				<li>
+					会议类型
+					<select style="width:120px;margin-left:10px;" id="select2" required="required">
+						<option value ="无">请选择</option>
+						<option value ="培训/讲座">培训/讲座</option>
+						<option value ="工作会/总结会">工作会/总结会</option>
+						<option value ="发布会/颁奖/典礼">发布会/颁奖/典礼</option>
+						<option value ="公司年会">公司年会</option>
+						<option value ="团建/拓展">团建/拓展</option>
+						<option value ="同学会/好友聚会">同学会/好友聚会</option>
+						<option value ="其他">其他</option>
+					</select>
+				</li>
+				<li>
+					参加人数
+					<select style="width:120px;margin-left:10px;" id="select1">
+						<option value ="无" selected>请选择</option>
+						<option value ="10-30">10-30</option>
+						<option value ="30-60">30-60</option>
+						<option value ="60-100">60-100</option>
+						<option value ="100-200">100-200</option>
+						<option value ="200-300">200-300</option>
+						<option value ="300-500">300-500</option>
+						<option value ="500-1000">500-1000</option>
+						<option value ="1000+">1000+</option>
+					</select>
+				</li>
+				<li style="padding-left: 28px;">
+					预算
+					<select style="width:120px;margin-left:10px;" id="select1">
+						<option value ="无" selected>请选择</option>
+						<option value ="3千以下">3千以下</option>
+						<option value ="3千-5千">3千-5千</option>
+						<option value ="6千-1万">6千-1万</option>
+						<option value ="1万-2万">1万-2万</option>
+						<option value ="2万-5万">2万-5万</option>
+						<option value ="5万-10万">5万-10万</option>
+					</select>
+				</li>
+				<li class="meettingneed">
+					会议需求
+					<label>
+			          <input type="checkbox">开会
+			        </label>
+			        <label>
+			          <input type="checkbox">用餐
+			        </label>
+			        <label>
+			          <input type="checkbox">住宿
+			        </label>
+			        <label>
+			          <input type="checkbox">娱乐
+			        </label>
+			        <label>
+			          <input type="checkbox">茶歌
+			        </label>
+			        <label>
+			          <input type="checkbox">搭建
+			        </label>
+				</li>
+				<li style="height: auto;margin-bottom: 10px;">
+					其他需求
+					<textarea name="textarea" cols="60" rows="5" maxLength="500" required="required"></textarea>
+				</li>
+				<li>
+					联系人姓名<input name="user" type="text" value="张三" style="margin-right: 30px;" required="required"/>
+					联系人手机<input name="phone" type="text" value="13888888888" required="required"/>
+				</li>
+				<li class="company">
+					<div>公司</div><div style="margin-right: 30px">A公司</div>
+					项目
+					<select style="width:100px;margin-right: 20px" id="select1">
+						<option value ="无" selected>请选择</option>
+						<option value ="项目1">项目1</option>
+						<option value ="项目2">项目2</option>
+					</select>
+					成本中心
+					<select style="width:100px;" id="select1">
+						<option value ="无" selected>请选择</option>
+						<option value ="成本1">成本1</option>
+						<option value ="成本2">成本2</option>
+					</select>
+				</li>
+				<li class="meettingneed">
+					<label class="public">
+						<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1"> 因私
+					</label>
+					<label>
+						<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2" checked> 因公
+					</label>
+				</li>
+				<li>
+					<input type="submit" class="sub" value="确 认">
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div class="advert"><img src="img/advter.png" alt=""></div>
+</div>
+<script>
+$(function(){
+    
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票详情</title>
+<link rel="stylesheet" type="text/css" href="css/train.css" />
+<link rel="stylesheet" type="text/css" href="css/ticket_dd.css"/>
+<link href="css/select.css" rel="stylesheet" type="text/css">
+<link href="css/process.css" rel="stylesheet" type="text/css">
+<link href="css/process_fly.css" rel="stylesheet" type="text/css">
+<link href="css/city.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+.big_titles{
+	margin-left:0;
+	padding-left:0;
+}
+.big_titles strong{
+	text-indent:2em;
+}
+</style>
+</head>
+
+<body>
+	<div id="train">
+		 <!-- start 预订主要内容 -->
+        <div class="train_1200">
+			<div class="box3">
+				<div class="big_titles png_bg" style="width:100%;float:left;margin-left:0;">
+					<strong>订单详情</strong>
+					<span class="xgcc">已取消/未付款</span>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="step finished" style="margin-left:40px;">
+						<div class="progress_line"></div><i></i>
+						<h4>占座成功</h4>
+					</div>
+					<div class="step finished">
+						<div class="progress_line"></div><i></i>
+						<h4>取消中</h4>
+					</div>
+					<div class="step finished">
+						<div class="progress_line"></div><i></i>
+						<h4>已取消</h4>
+					</div>
+				</div>
+				<div class="train_zzcg">
+					<div class="train_zz_left"></div>
+					<div class="train_zz_cent"></div>
+					<div class="train_zz_right"><input type="submit" value="再次购票" class="train_fk"/></div>
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles png_bg" style="width:100%;float:left;margin-left:0;">
+					<strong>车次信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;margin-bottom:10px;">
+					<div class="train_xq_l1e">G101次</div>
+					<div class="train_xq_l2e">
+						<ul>
+							<li>06:50</li>
+							<li>北京南站</li><span>始</span>
+							<li style="color:#999;">09月05日</li>
+							<li style="color:#999;">星期二</li>
+						</ul>
+					</div>	
+					<div class="train_xq_l3e">
+						<span>5小时54分钟</span>
+					</div>
+					<div class="train_xq_l4e">
+						<ul>
+							<li>06:50</li>
+							<li>北京南站</li><span>终</span>
+							<li style="color:#999;">09月05日</li>
+							<li style="color:#999;">星期二</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!--<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:100%;height:auto;">
+					<strong>乘客信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="order1 clearfix" style="float:left;width:100%;height:auto;padding-top:0;">
+					 <table border="0" class="train_table">
+					  <tr>
+						<td>乘客</td>
+						<td>票种</td>
+						<td>证件类型</td>
+						<td>证件号码</td>
+						<td>座位</td>
+						<td>保险</td>
+						<td>保单号</td>
+						<td>成本中心</td>
+						<td>项目</td>
+					  </tr>
+					  <tr>
+						<td>侯锐</td>
+						<td>成人票</td>
+						<td>因私护照</td>
+						<td>E********4</td>
+						<td>二等座</td>
+						<td>火车意外伤...</td>
+						<td>&nbsp;</td>
+						<td>财务中心</td>
+						<td>A项目</td>
+					  </tr>
+					</table>
+
+					</div>
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:100%;height:auto;">
+					<strong>订单信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="order1 clearfix" style="float:left;width:100%;height:auto;padding-top:0;">
+					 <table border="0" class="train_table">
+					  <tr>
+						<td>订单</td>
+						<td>下单时间</td>
+						<td>车票总价</td>
+						<td>保险</td>
+						<td>服务费</td>
+						<td>配送费</td>
+						<td>订单总价</td>
+						<td>支付总额</td>
+						<td>退还金额</td>
+					  </tr>
+					  <tr>
+						<td>T23002939239</td>
+						<td>2017-9-11 14:23:21</td>
+						<td>￥522</td>
+						<td>1 x ￥30</td>
+						<td>1 x ￥30</td>
+						<td>￥0</td>
+						<td><span>￥604</span></td>
+						<td><span>￥604</span></td>
+						<td><span>-</span></td>
+					  </tr>
+					</table>
+
+					</div>
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:100%;height:auto;">
+					<strong>联系人电话：</strong>12345678912
+				</div>
+			</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:100%;height:auto;">
+					<strong>联系客服：</strong>400电话
+				</div>
+			</div>-->
+			
+    </div>
+    
+	</div>
+</body>
+</html>

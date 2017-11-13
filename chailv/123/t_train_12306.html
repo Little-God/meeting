@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提示</title>
+<style>
+*{
+	padding:0;
+	margin:0;
+	outline:none;
+}
+ol,li,ul,dl,dt,dd{
+	list-style:none;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration:none;
+	color:inherit;
+}
+i,em{
+	font-style:normal;
+}
+body{
+	font-size:14px;
+	font-family:"微软雅黑",Microsoft YaHei;
+}
+
+.t_train_tpxx{
+	width:340px;
+	height:auto;
+	float:left;
+	border:1px solid #ddd;
+	background-color:#fbfbfb;
+}
+.t_train_tpxx .t_tpxx_top{
+	height:30px;
+	float:left;
+	width:100%;
+	line-height:30px;
+	text-indent:1em;
+	border-bottom:1px solid #f0f0f0;
+}
+.t_train_tpxx .t_tpxx_top img{
+	width:20px;
+	height:20px;
+	float:right;
+	margin-right:10px;
+	margin-top:5px;
+	cursor:pointer;
+}
+.t_train_tpxx .t_tpxx_cent{
+	width:100%;
+	height:auto;
+	float:left;
+	background-color:#fff;
+	font-size:14px;
+}
+.t_tpxx_cent2{
+	width:100%;
+	height:100px;
+	float:left;	
+	line-height:25px;
+	border-bottom:1px solid #f0f0f0;
+	margin-top:10px;
+}
+.t_tpxx_cent2 input{
+	width:280px;
+	height:25px;
+	float:left;
+	margin-left:5%;
+	margin-top:10px;
+	padding:0 5px;
+}
+.t_tpxx_cent3{
+	width:100%;
+	height:50px;
+	float:left;
+}
+.t_tpxx_cent3 input{
+	width:120px;
+	height:30px;
+	float:left;
+	margin-top:10px;
+	border:1px solid #ddd;
+	color:#fff;
+	font-size:14px;
+	border-radius:5px;
+	cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="t_train_tpxx">
+	<div class="t_tpxx_top"><strong>绑定</strong><img src="img/close.png" /></div>
+	<div class="t_tpxx_cent">
+		<div class="t_tpxx_cent2">
+			<input type="text" name="user" placeholder="请输入12306帐号"/>
+			<input type="text" name="password" placeholder="请输入12306密码"/>
+		</div>
+		<div class="t_tpxx_cent3">
+			<input type="submit" value="绑定" style="background-color:#ff7800;margin-left:100px;">
+		</div>
+	</div>
+</div>
+</body>
+</html>

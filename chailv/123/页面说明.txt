@@ -1,0 +1,28 @@
+train.html    --    火车票首页
+train_list.html   -- 火车票列表
+train_xq.html   --  火车票预订页
+train_zz.html   --  占座中
+train_zzsb.html   --  占座中
+train_dfk.html  --  待付款
+train_qxdd.html  --   订单取消
+train_cpsb.html  --   出票失败
+train_cpcg.html  --   出票成功
+train_cgxq.html   --  订单详情页
+train_zf.html   --  支付
+train_zfcg.html   --  支付成功
+
+
+订单列表
+c_train_dlist.html  --  订单列表
+c_train_gpcg2.html  --   购票成功
+c_train_cpz2.html   --   出票中
+c_train_zzsb2.html  --   出票失败，退款
+c_train_tp2.html    --  已退票
+
+
+弹窗
+t_train_12306.html  --   12306帐号绑定
+t_train_tpqr.html   --   退票确认
+t_train_tpxx.html   --   退票信息
+t_train_ts.html     --   提示
+t_train_list_tc.html  --   火车票列表重选审批单弹出

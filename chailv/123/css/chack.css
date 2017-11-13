@@ -1,0 +1,31 @@
+.checkbox, .radio {
+	margin:5px 0 0 0;
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(../images/checkbox.png) no-repeat;
+	display: block;
+	float: left;
+}
+.radio {
+	background: url(../images/radio.png) no-repeat;
+}
+
+input.styled { display: none; } 
+.disabled { opacity: 0.5; filter: alpha(opacity=50); }
+
+.chacks{ margin:0; width:72px; text-align:center; height:27px; line-height:27px; float:left;}
+.chacks li{ float:left; width:36px; height:27px; cursor:pointer; background:url(../images/flight/radio2.png) no-repeat 0 -27px;}
+.chacks li.chacks1.here{ background-position:0 0;color:#fff;}
+.chacks li.chacks2{ background-position:-36px 0;}
+.chacks li.chacks2.here{ background-position:-36px -27px;color:#fff;}
+/*new update*/
+.order1 div{
+/*display:none;*/
+}
+.MoreLess{
+color:#0066CC;
+font-size:11px;
+cursor:pointer;
+float:left;
+}

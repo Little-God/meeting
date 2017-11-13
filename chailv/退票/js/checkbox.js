@@ -1,0 +1,20 @@
+$(document).ready(function(){
+	$("#operAll").click( 
+		function(){ 
+			if(this.checked){ 
+				$("input[name='checkbox2']").each(function(){this.checked=true;}); 
+			}else{ 
+				$("input[name='checkbox2']").each(function(){this.checked=false;}); 
+			} 
+		}
+	);
+	$("#operAllt").click( 
+		function(){ 
+			if(this.checked){ 
+				$("input[name='checkbox3']").each(function(){this.checked=true;}); 
+			}else{ 
+				$("input[name='checkbox3']").each(function(){this.checked=false;}); 
+			} 
+		}
+	);
+});

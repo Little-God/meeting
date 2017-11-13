@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/train.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+.train_c_right{
+	width:410px;
+	height:280px;
+	float:left;
+	border:1px solid #426da5;
+}
+</style>
+</head>
+
+<body>
+<!--弹出层-->
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#btnSubmit").click(function(){
+		var val = $("input[name='spr']:checked").val();
+		if(val != ""){
+			$("#train_tan").show();
+			$("#train_jx").click(function(){
+			  $("#train_tan").hide();
+			  $("#train_rig").hide();
+			  $("#train_ri").show();
+			});	
+			$("#train_fh").click(function(){
+			  $("#train_tan").hide();
+			  $("#train_rig").show();
+			  $("#train_ri").hide();
+			});	
+		}
+	});
+});
+</script>
+<div class="train_c_right">
+	<div id="train_rig">
+		<div class="train_r_t">待出行审批单</div>
+		<ul class="train_r_f">
+			<table width="200" border="1" id="btnSubmit">
+			  <tr style="background-color:#f4f4f4">
+				<td width="20" height="30">&nbsp;</td>
+				<td>审批单号</td>
+				<td>出行日期</td>
+				<td>到达城市</td>
+				<td>出行人</td>
+			  </tr>
+			  <tr>
+				<td height="30"><input name="spr" type="radio" value="1" /></td>
+				<td>234565432</td>
+				<td>2017-8-23</td>
+				<td>上海</td>
+				<td>薛之谦、侯锐</td>
+			  </tr>
+			  <tr>
+				<td height="30"><input name="spr" type="radio" value="2" /></td>
+				<td>234565432</td>
+				<td>2017-8-23</td>
+				<td>上海</td>
+				<td>薛之谦、侯锐</td>
+			  </tr>
+			</table>
+			<!--弹出框-->
+			<div id="train_tan">
+				<div class="train_top">提示</div>
+				<div class="train_cent">未选择审批单<br/>只能查看,不能预订</div>
+				<div class="train_bot"><input type="submit" value="继续" style="margin:0 20px 0 25px;"><input id="train_jx" type="submit" value="选择审批单"></div>
+			</div>
+			<!--弹出框end-->
+		</ul>
+	</div>
+	<!--隐藏域-->
+	<div id="train_ri" style="display:none">
+		<div class="train_r_t"><span id="train_fh">< 返回列表</span>审批单详情</div>
+		<ul class="train_r_f">
+			<li style="background-color:#f4f4f4"><span>出发-到达城市</span><span>出行人</span></li>
+			<li><span>北京-上海</span><span>薛之谦、侯锐</span></li>
+			<li><input type="submit" value="选择"></li>
+			<li style="margin-bottom:0;">审批单号：234567778</li>
+			<li>时间段：2017-08-23至2017-09-23</li>
+		</ul>
+	</div>
+	<!--隐藏域end-->
+</div>
+<!--弹出层end-->
+</body>
+</html>

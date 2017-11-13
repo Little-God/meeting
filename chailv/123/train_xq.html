@@ -1,0 +1,368 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票详情</title>
+<link rel="stylesheet" type="text/css" href="css/train.css" />
+<link rel="stylesheet" type="text/css" href="css/ticket_dd.css"/>
+<link href="css/select.css" rel="stylesheet" type="text/css">
+<link href="css/process.css" rel="stylesheet" type="text/css">
+<link href="css/process_fly.css" rel="stylesheet" type="text/css">
+<link href="css/city.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/select.js"></script>
+<script type="text/javascript" src="js/hotels_search.js"></script>
+<script type="text/javascript" src="js/hcindexActivity.js"></script>
+<script type="text/javascript" src="js/process.js"></script>
+<script type="text/javascript" src="js/city.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".train_wen").mouseover(function(){
+		$(".train_span").show();
+	});
+	$(".train_wen").mouseout(function(){
+        $(".train_span").hide();
+    });
+
+	$("#yerflow").click(function(){
+		var input = $(this).find("input");
+		if($(input).prop("checked") == true) {
+			$(".oflow").show();
+		}else{
+			$(".oflow").hide();
+		}
+		
+	});
+});
+</script>
+<style>
+.big_titles{
+	margin-left:0;
+	padding-left:0;
+}
+.big_titles strong{
+	text-indent:2em;
+}
+.oflow{
+	display:none;
+}
+</style>
+
+</head>
+
+<body>
+	<div id="train">
+		 <!-- start 预订主要内容 -->
+        <div class="train_1200">
+			<div class="box3">
+				<div class="big_titles png_bg" style="width:100%;float:left;margin-left:0;">
+					<strong>车次信息</strong>
+					<span class="xgcc"><a href="">修改车次>></a></span>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="train_xq_l1e">G101次</div>
+					<div class="train_xq_l2e">
+						<ul>
+							<li>06:50</li>
+							<li>北京南站</li><span>始</span>
+							<li style="color:#999;">09月05日</li>
+							<li style="color:#999;">星期二</li>
+						</ul>
+					</div>	
+					<div class="train_xq_l3e">
+						<span>5小时54分钟</span>
+					</div>
+					<div class="train_xq_l4e">
+						<ul>
+							<li>06:50</li>
+							<li>北京南站</li><span>终</span>
+							<li style="color:#999;">09月05日</li>
+							<li style="color:#999;">星期二</li>
+						</ul>
+					</div>
+					<div class="train_xq_l5e">
+						<ul>
+							<li>二等座</li>
+							<li style="font-size:16px;color:#ff7800;">￥550</li>
+							<li style="color:#212f5e;">退改签说明</li>
+						</ul>
+					</div>
+				</div>
+				<div class="shuoming">卧铺上/中/下随机分配，暂收下铺价格，差价7个工作日左右退回您的支付账户</div>
+			</div>
+			<div class="train_bdjj">绑定12306账号，出票更快速！<a href="">马上绑定</a></div>
+				<div class="box1" style="position:relative;">
+					<div class="big_titles png_bg" style="float:left;width:100%;height:auto;">
+						<strong>乘车人信息</strong>
+					</div>
+					<div class="box clearfix">
+						<div class="order1 clearfix" style="position: static;">
+							  <dl>
+								  <dt>选择常用旅客：</dt>
+									<dd class="yOverflow">
+										<input dindex="01" name="passengerCheck" type="checkbox" style="margin-top:7px;_margin-top:3px;"><em style="width:78px;">王淞</em>
+										<input type="hidden" sel="01" value="王淞,00,411024199512057055">
+										<input dindex="02" name="passengerCheck" type="checkbox" style="margin-top:7px;_margin-top:3px;"><em style="width:78px;">王淞</em>
+										<input type="hidden" sel="02" value="王淞,00,411024199512057055">
+										<div class="clearfix" style="display: none;"></div>
+									</dd>
+							  </dl>
+<dl class="boxs" style="display:none">
+  <dt class="clearfix"><strong id="sumPrice"></strong>
+	<div class="peop"><strong id="sumPerson"></strong></div><br>
+  </dt>
+  <dd class="clearfix" name="personTicket" style="display:&#39;&#39;">
+	<ul>
+	  <li><span id="personCount"></span></li>
+	  <li class="linebg"><span><em id="selectFlyPrice"></em></span></li>
+	  <li><span><em id="selectAirPortFee"></em></span></li>
+	  <li class="linebg"><span><em id="selectfuelFee"></em></span></li>
+	  <li class="linebg1"><span><font id="selectInsuranceCount"></font><br>
+		<em id="selectInsurance"></em></span></li>
+	</ul>
+  </dd>
+  <dd class="clearfix" name="childrenTicket" style="display:none;">
+	<ul>
+	  <li><span id="childrenCount"></span><strong></strong></li>
+	  <li class="linebg"><span><em id="childrenFlyPrice"></em></span></li>
+	  <li><span><em></em></span></li>
+	  <li class="linebg"><span><em></em></span></li>
+	  <li class="linebg1"><span><font id="childrenInsuranceCount"></font><br>
+		<em></em></span></li>
+	</ul>
+  </dd>
+</dl>
+							  <div id="myPasengerDiv" class="myPassengerDiv" name="personPassenger">
+							  <div class="lines"></div>
+							  <dl>
+								  <dt id="passengerOrderBy">第1位乘车人：</dt>
+								  <dd>
+									  <em class="disPassengerName"></em><a id="deletAbut" href="javascript:void(0)" onClick="flyOrder.delPasenger(&#39;&#39;,this)" class="del">删除</a>
+								  </dd>
+							  </dl>
+							  <dl>
+								  <dt><strong>*</strong>乘车人姓名：</dt>
+								  <dd>
+								  <input type="text" onChange="flyOrder.changePassengerName(this);" name="passengerName" id="textfield2" style="width:95px;margin: 0 8px 0 0;float:left" class="theinput theinput2" value="">
+								  
+								  <span class="show" style="z-index: 1;">
+										   <span class="yd_help" style="border-bottom:0;padding:0;"><img src="img/1352.png"></span>
+										   <ul style="display: none;">
+												<li class="showtitle">乘客说明</li>
+												<li>1. 乘车人姓名必须与出示证件上的姓名一致</li>
+											</ul>
+									   </span>
+								   </dd>
+							  </dl>
+							  <dl>
+								  <dt><strong>*</strong>证件类型：</dt>
+									<dd>
+									  <dl class="selects lit2 selects1">
+									  <dt style="display: none;"></dt>
+									  <dt><input type="text" name="certificationType" class="showinput1 idCard" value="身份证" style="width:68px" onChange="flyOrder.certificationTypeSelectChange(this)"></dt>
+									  <dd style="display: none;">
+										<ul>
+										  <li>身份证</li>
+										  <li>护照</li>
+										  <li>其他</li>
+										</ul>
+									   </dd>
+									</dl> 
+										<input style="float:left;margin: 0 8px 0 0;" type="text" name="certificationNumber" id="textfield2" class="theinput idNum" value="" onBlur="flyOrder.checkcertificationNumber(this)">
+									   <span class="show" style="z-index: 1;">
+									   	<span class="yd_help" style="border-bottom:0;padding:0;"><img src="img/1352.png"></span>
+										<ul style="width: 428px; height: 309px; display: none;">
+										  <li class="showtitle">证件说明</li>
+										  <li class="tableUl">
+											<ul>
+											  <li style="text-align:center;line-height:40px;font-weight:bold">乘机人类型</li>
+											  <li style="font-weight:bold">填写证件类型</li>
+											  <li style="width:120px;font-weight:bold">填写证件号码</li>
+											  <li style="width:120px;font-weight:bold">登机所持证件</li>
+											  <li style="height:189px; line-height: 189px; text-align: center;">成人</li>
+											  <li>身份证</li>
+											  <li style="width:120px;line-height:20px">18位身份证号码，字母大写</li>
+											  <li style="width:120px;">身份证</li>
+											  <li>护照</li>
+											  <li style="width:120px;line-height:20px">与护照号码一致，字母大写</li>
+											  <li style="width:120px;">护照</li>
+											  <li style="height:95px;">其他</li>
+											  <li style="width:120px;height:95px;line-height:20px">与所持证件号码一致，如证件号码中包含中文，仅填写英文与数字部分即可</li>
+											  <li style="width:120px;height:95px;line-height:20px">回乡证、台胞证、居留证、户口本、军官证、港澳通行证、旅行证等航空公司认可的有效证件</li>
+											  <li style="text-align:center; line-height:40px; border-bottom:none">儿童</li>
+											  <li style="border-bottom:none">身份证</li>
+											  <li style="width:120px;line-height:20px;border-bottom:none">8位出生年月日，格式为yyyymmdd</li>
+											  <li style="width:120px;border-bottom:none">户口本</li>
+											</ul>
+										  </li>
+										</ul>
+										</span>
+									   </dd>
+								  
+							  </dl>
+							  <dl>
+								<dt>出生日期：</dt>
+								<dd><select style="width:95px;margin: 0 8px 0 0;float:left" class="theinput theinput2">
+								  <option value ="1990">1990</option>
+								  <option value ="1991">1991</option>
+								  <option value="1992">1992</option>
+								  <option value="1993">1993</option>
+								</select><span style="float:left;margin-right:5px;">年</span>
+								<select style="width:95px;margin: 0 8px 0 0;float:left" class="theinput theinput2">
+								  <option value ="1">1</option>
+								  <option value ="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								</select><span style="float:left;margin-right:5px;">月</span>
+								<select style="width:95px;margin: 0 8px 0 0;float:left" class="theinput theinput2">
+								  <option value ="1">1</option>
+								  <option value ="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								</select><span style="float:left;">日</span></dd>
+							  </dl>
+							  <dl>
+							  	<dt>成本中心：</dt>
+								<dd>
+								<select style="width:95px;margin: 0 8px 0 0;float:left" class="theinput theinput2">
+								  <option value ="财务中心">财务中心</option>
+								  <option value ="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								</select>
+								<span style="float:left;margin-left:10px;">项目：</span>
+								<select style="width:95px;margin: 0 8px 0 0;float:left" class="theinput theinput2">
+								  <option value ="A项目">A项目</option>
+								  <option value ="B项目">B项目</option>
+								  <option value="C项目">C项目</option>
+								  <option value="D项目">D项目</option>
+								</select></dd>
+							  </dl>
+							  </div>
+							  <dl id="addPasengerDl">
+								  <dt>&nbsp;</dt>
+								  <dd><input name="" onClick="flyOrder.addPasengerDiv();" id="addPasengerButton" type="button" value="添加乘车人" class="train_add"></dd>
+							  </dl>
+						  </div>
+						  						 
+					  </div>
+					   <div class="train_bx">
+							<div class="train_rspan"><img src="img/wen.png" class="train_wen">
+								<select class="train_select_bx">
+								  <option value ="意外险">意外险</option>
+								  <option value ="不购买保险">不购买保险</option>
+								</select>
+								<div class="train_span">
+									<p>1、本保险产品要求被保险人年龄为0-90周岁，请在购买前确认保险人的实际年龄；</p>
+									<p>2、未满18周岁投保的最高赔付不超过10万人名币；</p>
+									<p>3、若你购买了保险，在代理商为您完成出票后，投保成功的短信会发送至您的手机，请注意查收。</p>
+								</div>
+							</div>
+							<select class="train_select">
+								  <option value ="1">80万出行保障，VIP优先出票 20元/份</option>
+								  <option value ="1">150万出行保障，VIP优先出票 20元/份</option>
+							</select>
+							
+					   </div>
+				</div>
+			<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:100%;height:auto;">
+					<strong>自取票</strong><span style="color:#999;font-size:16px;">（人工窗口或自助取票机）</span>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+						<div class="order1 clearfix" style="position: static;padding-top:0;">
+					 <dl>
+						  <dt>手机号码：</dt>
+							<dd class="yOverflow">
+								<input style="float:left;margin: 0 8px 0 0;" type="text" name="telphone" class="theinput idNum" value="">
+							</dd>
+					  </dl>
+					  </div>
+				</div>
+			</div>
+			<div class="box2">
+				<div class="big_titles png_bg" style="float:left;width:100%;height:auto;">
+					<strong>保险发票信息</strong>
+				</div>
+				<div class="box">
+				  <div class="order1">
+					  <dl>
+						  <dt style="width:135px">&nbsp;</dt>
+						  <dd class="yOverflow" id="yerflow">
+							   <input name="yjfp" style="margin-top:7px;_margin-top:3px;" type="checkbox" >邮寄发票
+						 </dd>
+					  </dl>
+
+					  <dl class="oflow">
+					  		<dt><strong>*</strong>收件人：</dt>
+							<dd> <input type="text" name="linkerName"  class="theinput theinput2" value="" style="width:150px;margin: 0 8px 0 0;float:left"></dd>
+					  </dl>
+					  <dl class="infolist oflow">
+					  		<dt><strong>*</strong>省份城市：</dt>
+							<dd class="liststyle">
+								<span id="Province">
+                                    <i>请选择省份</i>
+                                    <ul>
+                                        <li><a href="javascript:void(0)" alt="请选择省份">请选择省份</a></li>
+                                    </ul>
+                                    <input type="hidden" name="cho_Province" value="请选择省份">
+                                </span>
+                                <span id="City">
+                                    <i>请选择城市</i>
+                                    <ul>
+                                        <li><a href="javascript:void(0)" alt="请选择城市">请选择城市</a></li>
+                                    </ul>
+                                    <input type="hidden" name="cho_City" value="请选择城市">
+                                </span>
+                                <span id="Area">
+                                    <i>请选择地区</i>
+                                    <ul>
+                                        <li><a href="javascript:void(0)" alt="请选择地区">请选择地区</a></li>
+                                    </ul>
+                                    <input type="hidden" name="cho_Area" value="请选择地区">
+                                </span>
+							</dd>
+					  </dl>
+					  <dl class="oflow">
+					  		<dt><strong>*</strong>街道地址：</dt>
+							<dd> <input type="text" name="linkerName"  class="theinput theinput2" value="" style="width:300px;margin: 0 8px 0 0;float:left"></dd>
+					  </dl>
+					  <dl class="oflow">
+					  		<dt><strong>*</strong>邮编：</dt>
+							<dd> <input type="text" name="linkerName"  class="theinput theinput2" value="" style="width:150px;margin: 0 8px 0 0;float:left"></dd>
+					  </dl>
+					  <dl class="oflow">
+					  		<dt><strong>*</strong>手机号码：</dt>
+							<dd> <input type="text" name="linkerName"  class="theinput theinput2" value="" style="width:150px;margin: 0 8px 0 0;float:left"></dd>
+					  </dl>
+				  </div>
+			</div>
+		</div>
+		
+		<div class="box3">
+				<div class="big_titles addHeight png_bg" style="float:left;width:100%;height:auto;">
+					<strong>结算信息</strong>
+				</div>
+				<div class="box clearfix" style="float:left;width:100%;height:auto;">
+					<div class="order1 clearfix" style="position: static;padding-top:0;">
+						 <dl class="jsxx">
+							  <dd>车&nbsp;&nbsp;&nbsp;&nbsp;票<span>￥222 x 1</span></dd>
+							  <dd>保&nbsp;&nbsp;&nbsp;&nbsp;险<span>￥222 x 1</span></dd>
+							  <dd>配送费<span>￥222 x 1</span></dd>
+							  <dd>服务费<span>￥222 x 1</span></dd><div class="train_zj">订单总价<span>￥222</span></div>
+						 </dl>
+					 </div>
+				</div>
+			</div>
+        
+		 <div class="buttonss" style="margin-bottom:20px;width:100%;float:left;height:auto;padding:0;">
+				<input type="checkbox" name="jj" class="train_tiaokuan"><span>我已完成阅读《火车票平台用户协议》并接受所有条款</span>
+				<input id="writeOrderSubmit" name="" type="submit" class="next" value="同意条款，提交订单">
+		  </div>
+    </div>
+    
+	</div>
+</body>
+</html>

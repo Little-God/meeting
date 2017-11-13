@@ -1,0 +1,492 @@
+
+.checkbox, .radio{ margin-top:2px;}
+.clear{zoom:1;}
+.clear:after{ content:"";display:block;clear:both;}
+
+
+.big_titles{ padding:5px 0 15px 15px;height:22px; line-height:22px;  color:#333;}
+.addHeight{
+	height:33px;
+}
+div.addHeight{color:#000;
+}
+.big_titles strong{ float:left; font-size:18px; line-height:22px;padding:0 10px 0 0; color:#000; font-weight:normal;}
+.big_titles span{font-size:12px; padding:5px 0 0 5px;float:left;margin-top:-3px}
+
+.order1{ width:728px; line-height:27px; padding:15px 0 15px 0;}
+.order1 strong{ color:#C00; font-weight:normal;}
+/*.order1 .lines{ height:20px; width:100%; padding:0;background:url(../images/point.gif) repeat-x 0 10px;border:none;}*/
+.order1 em{ float:left; padding:0 0px 0 0; display:block; font-style:normal;}
+
+.order1 dl{ padding:6px 0 6px 0; margin:0;}
+.myPassengerDiv dl{height:27px;}
+.myPassengerDiv .yd_help{ float:left;}
+.stage {
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+}
+.order1 dl.arriveAddress{
+	padding-left:30px;
+}
+.order1 dl.arriveAddress span {
+    float: left;
+    font-weight:bold;
+}
+.innerSheetTip {
+    font-size: 11px;
+    color: rgb(106, 155, 224);
+}
+.order1 dl:after{clear:both; height:0; overflow:hidden; display:block; visibility:hidden; content:"."; }
+.order1 dt{ width:200px; height:27px; float:left; text-align:right;}
+.order1 dd{  float:left;width:500px;}
+.order1 dd.yOverflow{ position: relative;height: 27px; width: 400px; overflow-y: auto;float:left}
+.order1 dd input{ float:left;}
+.order1 dd li input{ float:none;margin-left:3px;}
+.order1 dd .del{ color:#09C; float:left; display:block; height:27px; padding: 0 15px 0 3px; background:url(../img/sign.png) no-repeat right -33px; cursor: pointer;}
+
+.show{ display:block; color:#03C; position:relative;/* background:url(../images/public/icon_Triangle.png) no-repeat right -470px;*/ cursor: pointer;/*border-bottom:1px dashed #03C*/}
+span.show ul{ display:none; width:345px;background:#fff; border:solid 1px #078AD3; position: absolute;
+left:36px; top:21px; z-index:1000; padding:0 0 10px 0; }
+span.show ul li{ padding:8px 10px 0 20px; background:url(../img/icon.png) no-repeat 10px -283px; line-height:20px;color:#666; font-size:11px;text-align:left }
+span.show ul li.noListStyle{background:none;}
+span.show ul li.showtitle{ font-size:14px;background:#078AD3/*;url(../images/public/bgs.png) repeat-x 0 -1px*/; height:29px; line-height:29px; padding:0 0 0 10px;color:#fff; text-align:left}
+.order1 dd input.add{ width:91px; height:22px; margin-top:3px; background:url(../img/buttons.png) no-repeat 0 0;  cursor: pointer;}
+.order1 dd input{  margin:0 3px 0 0;}
+.selects dt{ text-align:left; padding-top:0; margin:0;} 
+dl.selects{ padding:0; margin:0 10px 0 0;} 
+
+.order2 dd{ float:left; width:auto; padding:0 25px 0 0;}
+.order2{ padding:0;}
+
+.order3{ width:998px;}
+.order3 dt{ width:335px;}
+.order3 dd{ width:630px;}
+
+.box_red,
+.box_yellow,
+.box_orange,
+.box_blue{ display:block;}
+.box_red,.box_blue{
+ float:left;
+}
+.left .box_red,
+.left .box_yellow,
+.left .box_orange,
+.left .box_blue{line-height:25px; padding:0 10px 0 10px;}
+.margLeft{
+	margin-left:5px;}
+.left .box_red strong,
+.left .box_yellow strong,
+.left .box_orange strong,
+.left .box_blue strong{ color:#F90;}
+.left .box_m{ margin:10px;}
+
+.terms_bottom{overflow: hidden; padding:5px 15px 5px 15px; line-height:27px; text-align:right}
+
+
+
+.ticket-details .boxs{ border:solid 1px #cbcbcb; border-top:0; line-height:25px;}
+.ticket-details .boxs dt{ padding:5px 10px 5px 10px;height:50px;width:296px;float:left;border:2px solid #ddd;margin-left:-2px;border-top:0;}
+.ticket-details .boxs dt strong{ font-size:14px; color:#F60;}
+.ticket-details .boxs dt .peop{
+	float:right;
+}
+.ticket-details .boxs dt span{ display:block; height:18px; background:#f6f6f6;border:solid 1px #cbcbcb; float:left; padding:0 5px 0 5px; line-height:18px; margin-top:5px; color:#999;}
+.ticket-details .boxs dd{width:316px;height:auto;float:left;border:2px solid #ddd;border-top:0;margin-left:-2px;}
+.ticket-details .boxs dd ul{ padding:0;}
+.ticket-details .boxs dd ul.r_ul{float:right;padding-right:20px;}
+
+.ticket-details .boxs dd li{ padding:0 0 0 10px;}
+.ticket-details .boxs dd li span{ display:block; float:right; width:85px;}
+.ticket-details .boxs dd li span em{ color:#F60; font-style:normal;}
+.ticket-details .boxs dd li.linebg{ background:none repeat scroll 0 0 #F6F6F6;}
+.ticket-details.boxs dd li.linebg1{background: url("../img/point.gif") repeat-x scroll center top;margin-top: 4px}
+
+.ticket-details a.reselect{ padding:8px 20px 12px 0; line-height:20px; height:20px; color: #09C; display:block; text-align:right; background:url(../img/icon.png) no-repeat right -240px;}
+
+.tips{ background:url(../img/buttons.png) no-repeat 0 -22px; width:75px; height:17px; line-height:17px; text-align: center; color:#fff; float:left; margin:3px 5px 0 0;}
+
+.buttonss{ /*height:45px;*/ padding:0 15px; text-align:right; }
+.buttonss input{ height:37px;font-size:13px; background:url(../img/buttons.png) no-repeat; cursor:pointer; padding:0; margin:0;}
+.buttonss input.up{ background-position: -333px 1px; padding: 0 0 0 37px; width:151px; text-align:left; float:left;}
+.buttonss input.next{ background-position: -615px 0; padding: 0 56px 0 0; width:230px; color:#fff; font-size:16px;text-align:right; float:right;}
+.buttonss input.nextGrey{padding: 0 56px 0 0; width:230px; color:#fff; font-size:16px;text-align:right; float:right;
+background-position:-615px -39px;
+}
+.buttonss input.notice{ background-position:-484px 0; width:131px; text-align:center; height:35px; float:right; margin-right:10px;}
+.buttonss input.else{ background-position:-212px -35px; width:121px; text-align:center; text-align:center; color:#fff}
+
+.pay{ height:110px; overflow:hidden; padding:0; margin-top:10px; line-height:20px; width:100%;}
+.pay dt{ float:left; padding:15px;}
+.pay dt td strong{ font-size:16px; color: #F00;}
+.pay dd{ float:right; padding:15px; height:80px; border-left: solid 1px #9ec0cc; width:180px;}
+.pay dd td{ color:#999;}
+.pay dd th{ color:#000; font-weight:normal;} 
+.pay dd th strong{ color:#F60; font-size:14px;}
+
+/*new update*/
+.noAdd{ width:91px; height:22px; margin-top:3px; background:url(../imgc/buttons.png) no-repeat 0 -39px;  cursor: pointer;}
+
+.box .order1 input.usedAddressInput{
+width:570px;
+height:26px;
+text-indent:6px;
+border:1px solid #e2e0de;
+}
+
+.box .order1 input.usedAddressInput{
+display:block;
+background:url(../img/inputPieces.png) 0 0 repeat-x;
+float:left;
+}
+.commonAddress{
+height:60px;
+}
+.commonAddress,.selfTravelSheet{
+display:none
+}
+.innerSheetTip{
+font-size:11px;
+color:#6A9BE0;
+padding-left:30px;
+display:none;
+}
+.redTip{
+padding-left:30px;
+height:20px;
+display:block;
+margin:-3px 0 0 35px;
+color:#FF0000;
+font-size:12px;
+background:url(../images/flight/redTip.png) 0 0 no-repeat;
+}
+.addressInfor{
+display:none;
+}
+.stage{
+font-size:12px;
+color:#333333;
+}
+.show-1{display:inline-block;border-bottom:1px dashed #03C}
+.show-1 .tab{position: absolute;width:400px;border:1px solid #bbb;background:#fff;z-index:9999;}
+.show-1 .tab th{height:20px;line-height:20px;text-align:center;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+.show-1 .tab td{height:20px;line-height:20px;text-align:center;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+.box .show{
+display:inline;
+float:left;
+}
+.terms_bottom em{
+border:1px solid #135eaf;
+padding:1px 2px;
+cursor:pointer;
+font-style:normal
+}
+
+.yes{
+background:#135eaf;
+color:#fff;
+}
+/*机票预订-订单填写*/
+span.show ul li.tableUl{
+background:none;
+padding:0;
+}
+span.show ul li.tableUl ul{
+display:block;
+width:428px;
+padding:0px;
+position:static;
+border:none
+}
+span.show ul li.tableUl li{
+width:80px;
+height:40px;
+line-height:40px;
+padding:3px;
+background:none;
+float:left;
+border-right:1px dashed #ccc;
+border-bottom:1px dashed #ccc;
+}
+.box .order1 div.contactPersonMore{
+display:block;
+float:left;
+margin-left:15px;
+cursor:pointer;
+}
+.box .order1 div.contactPersonMore strong{
+color:#000000;
+font-weight:bold;
+}
+.box .order1 div.contactPersonMore div{
+line-height:27px;
+float:right;
+margin-left:25px;
+}
+.box .order1 div.contactPersonMore div input{
+margin-top:6px;
+}
+/*前台支付页面*/
+.order3 dl.payCoin dt{
+width:200px;
+text-align:left;
+text-indent:20px;
+}
+.order3 dl.payCoin dd.payNum input{
+width:180px;
+margin-right:10px;
+}
+.order3 dl.payCoin dd{
+color: #AAAAAA;
+float: right;
+width: auto;
+}
+.order3 dl.payCoin dd.payNum{
+text-align:right;
+width:150px;
+}
+.payZhiLvBi{
+display:none;
+}
+#zhilv{
+margin-right:6px;
+}
+
+.addressBase dd.defaultAddress {
+    background: url("../img/sendIcon.png") no-repeat scroll 10px center rgb(214, 225, 246);
+    line-height: 40px;
+    font-size: 15px;
+    padding: 5px 0px 0px 34px;
+    border: 1px dashed rgb(3, 131, 205);
+    width: 630px;
+}
+.addressBase dd {
+    line-height: 25px;
+    padding-left: 80px;
+    width: 580px;
+}
+.addressBase dd.defaultAddress em {
+    color: rgb(3, 131, 205);
+    padding: 0px;
+}
+.addressBase dd input {
+    float: none;
+    margin: 3px 5px 0px;
+}
+.addressBase dd strong {
+    color: rgb(153, 153, 153);
+    font-weight: 100;
+    float: right;
+    margin-right: 15px;
+    font-size: 12px;
+}
+dl.useNewAddress{
+	display:none;
+}
+/*前台支付页面新版本*/
+.order3 dl.payCoin {
+    clear: both;
+    float: right;
+    padding: 0;
+    width: 500px;
+}
+.order3 dl.payCoin dd, .order3 dl.payCoin dd input {
+    width: auto;
+}
+
+.order3 dl.payCoin dd em.bigFont {
+    color: #FF6600;
+    font-size: 20px;
+    font-weight: bold;
+}
+.order3 dl.payCoin dd em {
+    color: #FF6600;
+    display: inline;
+    float: none;
+    padding: 0 5px;
+}
+.order3 dl.payCoin dd input.useIcon {
+    float: none;
+}
+.order3 dl.payCoin dd input.zhilv {
+    margin: 6px 6px 0 0;
+}
+
+div.payButton {
+    float: right;
+    margin-top: 5px;
+}
+
+.buttonss input, .buttonss a.next {
+    background: url("../img/buttons.png") no-repeat scroll 0 0;
+    cursor: pointer;
+    font-size: 13px;
+    height: 37px;
+    margin: 0;
+    padding: 0;
+}
+.paysucessnext{
+	line-height: 37px;
+	width: 230px;
+    color: #FFFFFF;
+    float: right;
+    font-size: 16px;
+    padding: 0 56px 0 0;
+    text-align: right;
+    background: url("../img/buttons.png") no-repeat scroll -615px 0;
+    cursor: pointer;
+    height: 37px;
+    margin: 0;
+    text-decoration: none;
+}
+.buttonss input.next, .buttonss a.next {
+    background-position: -615px 0;
+    color: #FFFFFF;
+    float: right;
+    font-size: 16px;
+    padding: 0 56px 0 0;
+    text-align: right;
+    width: 230px;
+}
+.buttonss a.next {
+    line-height: 37px;
+    width: 175px;
+}
+
+table.tablele{
+	width:90% !important;
+	height:auto;
+	margin-left:5%;
+	float:left;
+	margin-bottom:10px;
+}
+table.tablele tr{
+	width:100%;
+	height:30px;
+	float:left;
+	line-height:30px;
+}
+
+
+
+
+
+
+
+
+.apha-bg{display:none;width:100%;top:0px;left:0;position:absolute;z-index:10;background: url(../img/aph.png)}
+#div_1{position:fixed;_position:absolute;left:50%; margin-left:-300px;top:20%;z-index:100;/* _position:absolute; margin-left:-300px;left:50%;z-index:100;*/}
+
+.noti2{ width:600px; background:#fff;}
+.notification {
+    border: solid 1px #ccc;
+    background: #f6f6f6;
+}
+.notification dt {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px 0 10px;
+    background: url(../img/notification.png) repeat-x 0 0;
+}
+
+.notification dt span{ cursor:pointer; display:block; float:right; background:url(../img/notification.png) no-repeat 0 -30px; width:17px; height:30px;}
+.notification strong{ color:#F60; font-weight:normal;}
+.notification dd{ padding:20px;}
+.notification dd.notice{ padding:0; width:560px; margin:20px auto 20px auto; height:410px; background:url(../img/noti2_bg.png) no-repeat 0 0;}
+.notification dd.notice div{width:520px;height:370px; overflow:scroll; padding:20px;line-height:24px;}
+.notification dd.notice div h3{text-align:center;}
+
+.notification table{ margin:0 auto;}
+
+input.go {
+    cursor: pointer;
+    font-size: 15px;
+    background: /*url(../images/public/button.png) no-repeat -91px 0;*/#FF952E;
+    /* width: 120px; */
+    padding: 5px 10px;
+    color: #fff;
+    /* height: 35px; */
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 20px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+div.payOnlineGreen {
+    border: none;
+    border-top: solid 2px #a3d189;
+    background: #f3fded;
+}
+.prompt_l {
+    padding: 0 0 0 0px;
+    height: 33px;
+    background: url(../img/icons.png) no-repeat;
+	margin: 0 auto 5px auto;
+}
+.prompt_l2 {
+    background-position: 410px -800px;
+    width: 100%;
+	float:left;
+    text-align: center;
+    color: #a3d189;
+	margin-top:30px;
+	line-height:33px;
+	font-size:16px;
+}
+.book2-wrap .box {
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.box_yellow span{
+	width:100%;
+	height:auto;
+	display:block;
+	line-height:30px;
+	color:#666;	
+	padding-bottom:20px;
+}
+
+
+
+.blue {
+	width:1180px;
+	height:30px;
+	float:left;
+	margin-top:10px;
+	line-height:30px;
+}
+.blue a:link,
+.blue a:visited {color:#0a259b;}
+.blue a:hover,
+.blue a:active {color: rgb(10, 37, 155);}
+
+.box_blue a:link,
+.box_blue a:visited {color:#0a259b;}
+.box_blue a:hover,
+.box_blue a:active {color: rgb(10, 37, 155);}
+.continueOrderInput1 {
+ 	width: 130px;
+    text-align: center;
+    height: 29px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 29px;
+    cursor: pointer;
+    background: url(../img/button.png) no-repeat scroll 0px 0px transparent;
+}
+.continueOrderInput2 {
+    width: 130px;
+    text-align: center;
+    height: 29px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 29px;
+    cursor: pointer;
+    background: url(../img/buttonr.png) no-repeat scroll 0px 0px transparent;
+}
+
+

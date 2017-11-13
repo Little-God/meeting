@@ -1,0 +1,1415 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" >
+    <title>华美逸达商旅</title>
+    <link href="css/style_currency.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ticket_dd.css"/>
+    <link href="css/select.css" rel="stylesheet" type="text/css">
+    <link href="css/process.css" rel="stylesheet" type="text/css">
+    <link href="css/process_fly.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        var centerJson = [{'name':'成本中心导入1','id':1688},{'name':'所有的成本','id':1669},{'name':'测试02','id':3}];
+    </script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+
+    <script type="text/javascript" src="js/select.js"></script>
+    <script type="text/javascript" src="js/hotels_search.js"></script>
+    <script type="text/javascript" src="js/flyindexActivity.js"></script>
+    <script type="text/javascript" src="js/process.js"></script>
+</head>
+<style type="text/css">
+    input.styled {
+        display: none;
+    }
+
+    select.styled {
+        position: relative;
+        width: 190px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        z-index: 5;
+    }
+
+    .disabled {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }</style>
+
+<style type="text/css">
+    input.styled {
+        display: none;
+    }
+
+    select.styled {
+        position: relative;
+        width: 190px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        z-index: 5;
+    }
+
+    .disabled {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }</style>
+<body>
+<!--导航开始-->
+<style type="text/css">
+    *{margin:0px; padding:0px;}
+    body{ background:#f4f4f4; font:14px/20px 微软雅黑, \5FAE\8F6F\96C5\9ED1;}
+    ul, li { list-style:none; }
+    a img{border:0;}
+    a{color:#333333}
+    a, a:hover { text-decoration:none; }
+    img { display:block; border:0; }
+
+    .nav_new{height:78px; border-bottom:#e0e0e0 1px solid; width:100%; background:#FFF; margin:0 auto;}
+
+    .w1200_new { width:1200px; margin:0 auto; }
+
+    .fl_new { float:left; }
+    .fr_new { float:right; }
+    .m20_new{height:20px; clear:both; width:100%; margin:0 auto;}
+    .c14_new{color:#9e9e9e; font-size:14px; line-height:32px;}
+    .c14_new a{color:#9e9e9e;}
+    .c14_new a:hover{color:#ffa400;}
+    .c_none{clear:both;}
+
+    .s_font_new{margin-left:20px;}
+    .s_font_new li{font-size:20px; height:36px; padding-top:40px; margin:0px 5px; float:left; list-style:none }
+
+    .s_font_new a{ float:left; display: block; padding:0 18px; color:#000; width:80px; height:30px; background:url(img/pic_03.jpg) no-repeat right;}
+
+    .s_font_new a:hover{color:#ffa400; }
+
+    .s_fontLI_new a{width:50px;}
+
+    .s_fontLI2_new{ color:#CCC;}
+
+    .r_divNew{ width:380px; padding-top:30px; }
+    .r_divNew li{float:left; list-style:none}
+
+
+    .r_bg_new{ background:url(img/pic_02.jpg) no-repeat center; width:100px; height:32px; font-size:18px; display:block; color:#9e9e9e; line-height:32px; text-align:center; }
+
+    .r_font_yuan{width:auto;max-width:90px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:right; }
+    .r_font_new{font-size:18px;  line-height:32px;  width:auto; max-width:120px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:right; margin-left:20px; }
+    .r_font_new a{ color:#ffa400;}
+    .r_font_new a:hover{ color:#ffa400; }
+
+</style>
+
+<!--nav-->
+<div class="nav_new ">
+    <div class="w1200_new">
+        <div class="fl_new"><a href="#"><img src="img/pic_01.jpg" width="202" height="78" /></a></div>
+        <div id="all_menu_div" style="display: none;" class="fl_new s_font_new ">
+            <ul>
+                <li><a href="/trip/index/indexfly.jhtml">国内机票</a></li>
+                <li class="s_fontLI2_new">｜</li>
+                <li><a href="/trip/hotelindex/showHotel.jhtml">国内酒店</a></li>
+                <li class="s_fontLI2_new">｜</li>
+                <li ><a href="/trip/index/indextrain.jhtml" >火车票</a></li>
+                <li class="s_fontLI2_new">｜</li>
+                <li style="display: none;" id="oa_li" class="s_fontLI2_new"><a href="/trip/oa/index.jhtml">OA管理</a></li>
+            </ul>
+        </div>
+
+        <!--隐藏的右边内容-->
+        <div class="fr_new r_divNew">
+            <ul class="fr_new">
+                <li><a href="/trip/myflyorderlist/list.jhtml?param=1" class=" r_bg_new" > 我的账户</a></li>
+                <li><a href="javascript:void(0);" class=" r_font_new" style="color:#ffa400;">测试者</a>&nbsp;</li>
+                <li class="c14_new r_font_yuan">测试</li>
+                <li class="c14_new">&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:loginOut();" >退出</a></li>
+            </ul>
+        </div>
+        <!-- 隐藏的右边内容-->
+    </div>
+</div>
+
+<script type="text/javascript" src="/trip/js/fly/top.js"></script>
+<script type="text/javascript">
+    function getDomain(){return '/trip';}
+</script>
+
+<!--导航结束-->
+
+<form id="form-validation" action="/trip/orderyudingactivity/ordercheck.jhtml" method="post"
+      onsubmit="return checkOrder();">
+
+
+    <!-- 主体页面 start-->
+    <div class="book2-wrap" style="width: 1200px; margin:auto;">
+
+        <!-- start 预订主要内容 -->
+        <div class="book2-content">
+            <div class="book2-box">
+                <div class="box1">
+                    <div class="big_titles png_bg"><strong>乘机人信息</strong> <span style="width:630px">— 请仔细阅读填写说明并正确填写乘机人信息，以免在办理登机手续时受阻 </span>
+                    </div>
+                    <div class="box clearfix">
+                        <div class="order1 clearfix" style="position: static;">
+                            <dl>
+                                <dt>选择常用旅客：</dt>
+                                <dd class="yOverflow">
+                                    <input dindex="01" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">大壮</em>
+                                    <input type="hidden" sel="01"
+                                           value="大壮,00,513022198910156053">
+                                    <input dindex="02" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">潘玲玲</em>
+                                    <input type="hidden" sel="02"
+                                           value="潘玲玲,00,513822199009089052">
+                                    <input dindex="03" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">1314342</em>
+                                    <input type="hidden" sel="03"
+                                           value="1314342,00,650104198407152127">
+                                    <input dindex="04" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">潘玲玲</em>
+                                    <input type="hidden" sel="04"
+                                           value="潘玲玲,00,650104198407152126">
+                                    <input dindex="05" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">王姣</em>
+                                    <input type="hidden" sel="05"
+                                           value="王姣,00,610502199203177426">
+                                    <input dindex="06" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">潘玲玲</em>
+                                    <input type="hidden" sel="06"
+                                           value="潘玲玲,00,130682199110245429">
+                                    <input dindex="07" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">王一钧</em>
+                                    <input type="hidden" sel="07"
+                                           value="王一钧,00,610582199511290529">
+                                    <input dindex="08" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">sadad</em>
+                                    <input type="hidden" sel="08"
+                                           value="sadad,00,1231341">
+                                    <input dindex="09" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">你好</em>
+                                    <input type="hidden" sel="09"
+                                           value="你好,00,513022198910156021">
+                                    <input dindex="010" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">你还</em>
+                                    <input type="hidden" sel="010"
+                                           value="你还,01,132143131">
+                                    <input dindex="011" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">dsa</em>
+                                    <input type="hidden" sel="011"
+                                           value="dsa,01,1312141331">
+                                    <input dindex="012" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">帅的掉渣渣</em>
+                                    <input type="hidden" sel="012"
+                                           value="帅的掉渣渣,00,650104198407151243">
+                                    <input dindex="013" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">2141</em>
+                                    <input type="hidden" sel="013"
+                                           value="2141,00,513022198910152324">
+                                    <input dindex="014" name="passengerCheck" type="checkbox"
+                                           style="margin-top:7px;_margin-top:3px;"><em
+                                        style="width:78px;">小明1号</em>
+                                    <input type="hidden" sel="014"
+                                           value="小明1号,00,51138111893216">
+                                    <div class="clearfix" style="display: none;"></div>
+                                </dd>
+                            </dl>
+                            <div id="myPasengerDiv" class="myPassengerDiv" name="personPassenger">
+                                <div class="lines"></div>
+                                <dl>
+                                    <dt id="passengerOrderBy">第1位乘机人：</dt>
+                                    <dd>
+                                        <em class="disPassengerName"></em><a id="deletAbut" href="javascript:void(0)"
+                                                                             onclick="flyOrder.delPasenger(&#39;&#39;,this)"
+                                                                             class="del">删除</a>
+                                    </dd>
+                                </dl>
+                                <dl class="passTypeDl">
+                                    <dt><strong>*</strong>乘机人类型：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects0" id="placego_ch">
+                                            <dt class="dt_value" style="display: none;"></dt>
+                                            <dt><input id="passengerType" type="text" name="passengerType"
+                                                       style="width:44px" class="showinput1 passType" value="成人"
+                                                       readonly=""></dt>
+                                            <dd id="placego" style="display: none;">
+                                                <ul class="clearfix showuls">
+                                                    <li onclick="changepassengerType(this)">成人</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                        <span class="show" style="z-index: 10;">
+								   <span class="yd_help"> 填写说明</span>
+									   <ul>
+										 <li class="showtitle">乘客说明</li>
+											<li>年龄要求：<br>
+											1. 成人票：法定年龄12周岁（含）以上<br>
+											2. 儿童票：法定年龄2周岁（含）至12周岁（不含）</li><li>
+											备注：<br>
+											1. 乘机人年龄以航班起飞当日计算；<br>
+											2. 同一订单儿童票购买数量不得超过成人票数量；<br>
+											3. 儿童乘机须有成人陪伴，无成人陪伴儿童请联系航空公司预订；<br>
+											4. 如因填写有误导致无法登机，由乘机人自行承担责任</li>
+										</ul>
+								 </span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><strong>*</strong>乘机人姓名：</dt>
+                                    <dd>
+                                        <input type="text" onchange="flyOrder.changePassengerName(this);"
+                                               name="passengerName" id="textfield2"
+                                               style="width:95px;margin: 0 8px 0 0;float:left"
+                                               class="theinput theinput2"
+                                               value="">
+
+                                        <span class="show" style="z-index: 1;">
+										   <span class="yd_help"> 填写说明</span>
+										   <ul style="display: none;">
+												<li class="showtitle">乘客说明</li>
+												<li>1. 乘机人姓名必须与登机所出示证件上的姓名一致</li>
+												<li>2. 如使用中文姓名预订机票且持有护照登机，须确保护照上显示中文姓名</li>
+												<li>3. 持护照登机的乘机人，须严格按照护照上显示的姓名顺序填写（包含中文或英文）</li>
+												<li>4. 如持卡人的姓名中出现生僻字无法输入乘机人姓名，请致电88888888预订机票，并提供生僻字的正确拼音</li>
+												<li>5. 同一订单最多填写9位乘机人，超过此人数订票请拆分填写订单</li>
+												<li>6. 机票预订成功后，姓名不允许变更，如因填写有误导致无法登机，由乘机人自行承担责任</li>
+											</ul>
+									   </span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><strong>*</strong>证件类型：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects1">
+                                            <dt style="display: none;"></dt>
+                                            <dt><input type="text" name="certificationType" class="showinput1 idCard"
+                                                       value="身份证" style="width:68px"
+                                                       onchange="flyOrder.certificationTypeSelectChange(this)"></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li>身份证</li>
+                                                    <li>护照</li>
+                                                    <li>其他</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                        <input style="float:left;margin: 0 8px 0 0;" type="text"
+                                               name="certificationNumber"
+                                               id="textfield2" class="theinput idNum" value=""
+                                               onblur="flyOrder.checkcertificationNumber(this)">
+                                        <span class="show" style="z-index: 1;"> <span class="yd_help"> 证件说明</span>
+										<ul style="width: 428px; height: 309px; display: none;">
+										  <li class="showtitle">证件说明</li>
+										  <li class="tableUl">
+											<ul>
+											  <li style="text-align:center;line-height:40px;font-weight:bold">乘机人类型</li>
+											  <li style="font-weight:bold">填写证件类型</li>
+											  <li style="width:120px;font-weight:bold">填写证件号码</li>
+											  <li style="width:120px;font-weight:bold">登机所持证件</li>
+											  <li style="height:189px; line-height: 189px; text-align: center;">成人</li>
+											  <li>身份证</li>
+											  <li style="width:120px;line-height:20px">18位身份证号码，字母大写</li>
+											  <li style="width:120px;">身份证</li>
+											  <li>护照</li>
+											  <li style="width:120px;line-height:20px">与护照号码一致，字母大写</li>
+											  <li style="width:120px;">护照</li>
+											  <li style="height:95px;">其他</li>
+											  <li style="width:120px;height:95px;line-height:20px">与所持证件号码一致，如证件号码中包含中文，仅填写英文与数字部分即可</li>
+											  <li style="width:120px;height:95px;line-height:20px">回乡证、台胞证、居留证、户口本、军官证、港澳通行证、旅行证等航空公司认可的有效证件</li>
+											  <li style="text-align:center; line-height:40px; border-bottom:none">儿童</li>
+											  <li style="border-bottom:none">身份证</li>
+											  <li style="width:120px;line-height:20px;border-bottom:none">8位出生年月日，格式为yyyymmdd</li>
+											  <li style="width:120px;border-bottom:none">户口本</li>
+											</ul>
+										  </li>
+										</ul>
+										</span>
+                                    </dd>
+
+                                </dl>
+                                <dl>
+                                    <dt>购买保险：</dt>
+
+                                    <dd>
+                                        <dl class="selects lit2 selects2">
+                                            <dt><input type="text" name="insurance" min="personInsurance"
+                                                       class="showinput"
+                                                       value="1份" style="width:68px" readonly=""></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li onclick="flyOrder.insuranceSelectChange(this);">1份</li>
+                                                </ul>
+                                            </dd>
+
+                                        </dl>
+                                        <span class="show" style="z-index: 1;"> <span class="yd_help"> 保险说明</span>
+										<ul style="display: none;">
+										  <li class="showtitle">保险说明</li>
+										  <li>【投保公司】： <br>
+											平安养老保险股份有限公司 </li>
+										  <li>【保险期间】： <br>
+											保险期间自被保险人持本合同约定航班班机的有效机票到达机场通过安全检查时始，至被保险人抵达目的港走出所乘航班班机的舱门时止 </li>
+										  <li>【保险金额】： <br>
+											1、投保：20元人民币/份<br>
+											2、赔付：60万/份（未成年子女赔付总额不得超过国务院保险监督管理机构规定的限额） </li>
+										  <li>【保险有效期】： <br>
+											如当次航班没有乘坐，保险的有效期是航班起飞之后的1年，过期作废无法退保 </li>
+										  <li>【投保验证途径】： <br>
+											1、中航信的网站验真：登录WWW.TRAVELSKY.COM自助验真<br>
+											2、航联保险经纪有限公司的全国客户服务电话400 810 2688验真<br>
+											3、平安保险公司的全国客服电话95511-1-9验真</li>
+										</ul>
+									</span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><strong>*</strong>成本中心：</dt>
+                                    <dd>
+                                        <dl class="selects lit2" id="placego_ch">
+                                            <dt class="dt_value" style="display: none;"></dt>
+                                            <dt>
+                                                <input id="costCenterName" type="text" name="costCenterName" style="width:80px" class="showinput1 passType" value="所有的成本" readonly=""></dt>
+                                            <dd id="placego" style="display: none;">
+                                                <ul class="clearfix showuls">
+                                                    <input type="hidden" name="costCenterId" value="1669"/>
+                                                    <li onclick="changerCneter(this)" rel="cbzx" value="1688">成本中心导入1</li>
+                                                    <li onclick="changerCneter(this)" rel="cbzx" value="1669">所有的成本</li>
+                                                    <li onclick="changerCneter(this)" rel="cbzx" value="3">测试02</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <dl id="addPasengerDl">
+                                <dt>&nbsp;</dt>
+                                <dd><input name="" onclick="flyOrder.addPasengerDiv();" id="addPasengerButton"
+                                           type="button"
+                                           value=" " class="add"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="big_titles png_bg">
+                        <strong>联系人信息</strong>
+                        <span style="width:630px;">— 订单联系人为持卡人指定订单处理授权人，授权范围包含退票/改期/接收及处理行程单等，建议预留本人信息</span>
+                    </div>
+                    <div class="box">
+                        <div class="order1">
+                            <dl>
+                                <dt><strong>*</strong>选择常用联系人：</dt>
+                                <dd class="yOverflow">
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L1" type="radio"/><em
+                                        style="width:70px;*width:70px;">测试者</em>
+                                    <input type="hidden" linkIndex="L1"
+                                           value="测试者,15882216368"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L2" type="radio"/><em
+                                        style="width:70px;*width:70px;">张奎</em>
+                                    <input type="hidden" linkIndex="L2"
+                                           value="张奎,15882276352"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L3" type="radio"/><em
+                                        style="width:70px;*width:70px;">test3</em>
+                                    <input type="hidden" linkIndex="L3"
+                                           value="test3,18208990084"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L4" type="radio"/><em
+                                        style="width:70px;*width:70px;">张梓侨</em>
+                                    <input type="hidden" linkIndex="L4"
+                                           value="张梓侨,13833334444"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L5" type="radio"/><em
+                                        style="width:70px;*width:70px;">赵美琪</em>
+                                    <input type="hidden" linkIndex="L5"
+                                           value="赵美琪,13823234545"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L6" type="radio"/><em
+                                        style="width:70px;*width:70px;">test4</em>
+                                    <input type="hidden" linkIndex="L6"
+                                           value="test4,13134534244"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L7" type="radio"/><em
+                                        style="width:70px;*width:70px;">test2</em>
+                                    <input type="hidden" linkIndex="L7"
+                                           value="test2,13131313132"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L8" type="radio"/><em
+                                        style="width:70px;*width:70px;">test5</em>
+                                    <input type="hidden" linkIndex="L8"
+                                           value="test5,18934253424"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L9" type="radio"/><em
+                                        style="width:70px;*width:70px;">dasds</em>
+                                    <input type="hidden" linkIndex="L9"
+                                           value="dasds,13189753497"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L10" type="radio"/><em
+                                        style="width:70px;*width:70px;">你是</em>
+                                    <input type="hidden" linkIndex="L10"
+                                           value="你是,18213212233"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L11" type="radio"/><em
+                                        style="width:70px;*width:70px;">测试常用联系人添加</em>
+                                    <input type="hidden" linkIndex="L11"
+                                           value="测试常用联系人添加,18123432343"/>
+                                    <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                           selLinkIndex="L12" type="radio"/><em
+                                        style="width:70px;*width:70px;">刘三</em>
+                                    <input type="hidden" linkIndex="L12"
+                                           value="刘三,13910733521"/>
+                                    <div class="clearfix" style="display: none;"></div>
+                                </dd>
+                            </dl>
+                            <div class="lines"></div>
+                            <dl>
+                                <dt>
+                                    <strong>*</strong>姓名：
+                                </dt>
+                                <dd><input type="text" name="linkerName" id="linkerName" onchange="deletePrompt(this);"
+                                           class="theinput theinput2" value=""></dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>*</strong>手机号码：</dt>
+                                <dd>
+                                    <input type="text" name="linkerPhone" id="linkerPhone" class="theinput theinput1"
+                                           value="" onblur="flyOrder.checklinkerPhone()">
+                                    <span class="box_blue"><h6 class="prompt_s prompt_s2 png_bg">温馨提示：请正确填写有效联系电话，用于接收订单短信以及航班变动紧急通知</h6></span>
+                                </dd>
+                            </dl>
+                            <!-- <dl>
+                                 <dt><strong>*</strong>联系电话：</dt><dd> <input type="text" name="linkerPhone" id="linkerPhone" class="theinput theinput1" value=""/></dd>
+                             </dl>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="box3">
+                    <div class="big_titles addHeight png_bg">
+                        <strong>行程单信息</strong>
+                        <span id="jichang" class="selfTravelSheet"
+                              style="display: block;">— 报销凭证（行程单）最晚在航班起飞后7日内自取，过期无法打印</span>
+                        <span id="youji" class="commonAddress" style="display:none">— 行程单于乘机人乘机后7日内通过挂号信方式邮寄，行程单不可重复提供，建议选择机场自取方式。</span>
+                        <span id="kuaidi" class="kuaidiAddress" style="display:none">— 行程单于乘机人乘机后7日内通过快递方式邮寄，默认圆通快递，行程单不可重复提供，请详细填写收件地址。</span>
+                    </div>
+                    <div class="box clearfix">
+                        <div class="order1" style="position: static;">
+                            <dl style="height:27px;">
+                                <dt style="width:200px;"><strong>*</strong>获取方式：</dt>
+                                <dd style="width:120px" id="travelSheet">
+                                    <dl class="selects selects3">
+                                        <dt><input type="text" class="showinput1" style="width:130px" value="我不需要行程单">
+                                            <input type="hidden" name="dispatchType" value="机场自取行程单">
+                                        </dt>
+                                        <dd style="display: none;">
+                                            <ul>
+                                                <li onclick="checkaddress(this);" iv="3">我不需要行程单</li>
+                                                <li onclick="checkaddress(this);" iv="2" id="selfTravelSheet">机场自取行程单
+                                                </li>
+                                                <li onclick="checkaddress(this);" iv="1" id="commonAddress">挂号信免费邮寄行程单
+                                                </li>
+                                                <li onclick="checkaddress(this);" iv="4" id="kdAddress">免费快递邮寄行程单</li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </dd>
+                            </dl>
+                            <dl style="width:152px;text-align:right;float:left;display:none" id="xy"><input type="radio"
+                                                                                                            style="position:relative;top:3.5px">信用卡支付7元快递费
+                            </dl>
+                            <div style="clear:both"></div>
+                            <dt id="xyk" style="width:450px;float:left;height:39px;line-height:37px;display:none">
+                                温馨提示：订单内所有客票在航班起飞前均退票方可按原支付方式退还快递费
+                            </dt>
+                            <div style="clear:both"></div>
+                            <hr id="tripLines"
+                                style="border-top:1px solid #cbcbcb;width:757px;position:relative;display:block;left:-15px;display:none">
+
+                            <dl class="addressBase commonAddress kdAddress kuaidiAddress"
+                                style="height: auto; display: none;">
+                                <dt><input type="hidden" value="736" name="addressId"></dt>
+                                <dd><input class="writeOrderAddress"  checked=="checked"                                                type="radio" name="radioAddress" id="10430"
+                                           value="天津市,天津市,,212121"/>天津市&nbsp;&nbsp;邮编：212121
+                                </dd>
+                                <dd><input class="writeOrderAddress"                                                type="radio" name="radioAddress" id="10435"
+                                           value="天津市,天津市,1111111,"/>天津市1111111&nbsp;&nbsp;邮编：
+                                </dd>
+                                <dd><input class="writeOrderAddress"                                                type="radio" name="radioAddress" id="10500"
+                                           value="北京市,北京市,a叽叽叽叽接近,"/>北京市a叽叽叽叽接近&nbsp;&nbsp;邮编：
+                                </dd>
+                                <dd style="color:rgb(14, 91, 148)"><input id="isChecked" type="radio"
+                                                                          name="radioAddress"
+                                                                          class="useNewAddress">使用新地址
+                                </dd>
+                            </dl>
+
+                            <div class="selfTravelSheet innerSheetTip" style="display: none;">
+                                <div class="stage"><span
+                                        style="background:rgb(19, 94, 175);padding:4px 5px;color:#fff;margin-left:-4px;">获取地址</span>
+                                    <dl class="arriveAddress" style="padding-left:0px;">
+                                        <dt style="text-align:left"><span style="width:100px;">到达城市  :&nbsp; </span>
+                                        </dt>
+                                        <dd>上海虹桥机场T2航站楼6号门正对面329号柜台;&nbsp;营业时间：05:30-21:00</br></dd>
+                                    </dl>
+                                    <dl class="arriveAddress" style="padding-left:0px;">
+                                        <dt><span>出发城市  :&nbsp; </span></dt>
+                                        <dd>北京首都国际机场T3航站楼4楼出发大厅（安检通道旁边哈根达斯对面的航空保险圆岛柜台）信天游机场服务柜台;&nbsp;营业时间：6:00-19:00</br></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div id="add" style="display:none">
+                                <dl class="useNewAddress" style="display: none;">
+                                    <dt><strong>*</strong>常用地址：</dt>
+                                    <dd>
+                                        <dl class="selects selectPlace selects4">
+                                            <dt class="dt_value" width="100"></dt>
+                                            <dt><input type="text" class="showinput1" style="width:120px"
+                                                       id="provinceName"
+                                                       name="provinceName" value="请选择省"></dt>
+                                            <dd style="width: 205px">
+                                                <ul class="clearfix" style="height: 187px; overflow-y: scroll;">
+                                                    <li onclick="queryCity('1')">北京市</li>
+                                                    <li onclick="queryCity('2')">天津市</li>
+                                                    <li onclick="queryCity('3')">河北省</li>
+                                                    <li onclick="queryCity('4')">山西省</li>
+                                                    <li onclick="queryCity('5')">内蒙古自治区</li>
+                                                    <li onclick="queryCity('6')">辽宁省</li>
+                                                    <li onclick="queryCity('7')">吉林省</li>
+                                                    <li onclick="queryCity('8')">黑龙江省</li>
+                                                    <li onclick="queryCity('9')">上海市</li>
+                                                    <li onclick="queryCity('10')">江苏省</li>
+                                                    <li onclick="queryCity('11')">浙江省</li>
+                                                    <li onclick="queryCity('12')">安徽省</li>
+                                                    <li onclick="queryCity('13')">福建省</li>
+                                                    <li onclick="queryCity('14')">江西省</li>
+                                                    <li onclick="queryCity('15')">山东省</li>
+                                                    <li onclick="queryCity('16')">河南省</li>
+                                                    <li onclick="queryCity('17')">湖北省</li>
+                                                    <li onclick="queryCity('18')">湖南省</li>
+                                                    <li onclick="queryCity('19')">广东省</li>
+                                                    <li onclick="queryCity('20')">海南省</li>
+                                                    <li onclick="queryCity('21')">广西壮族自治区</li>
+                                                    <li onclick="queryCity('22')">甘肃省</li>
+                                                    <li onclick="queryCity('23')">陕西省</li>
+                                                    <li onclick="queryCity('24')">新 疆维吾尔自治区</li>
+                                                    <li onclick="queryCity('25')">青海省</li>
+                                                    <li onclick="queryCity('26')">宁夏回族自治区</li>
+                                                    <li onclick="queryCity('27')">重庆市</li>
+                                                    <li onclick="queryCity('28')">四川省</li>
+                                                    <li onclick="queryCity('29')">贵州省</li>
+                                                    <li onclick="queryCity('30')">云南省</li>
+                                                    <li onclick="queryCity('31')">西藏自治区</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+
+                                        <dl id="city" class="selects selectPlace selects5">
+                                            <dt>请选择市</dt>
+                                            <dt><input type="hidden" id="cityCode" name="cityCode" value=""></dt>
+                                            <dd style="width:186px">
+                                                <dl class="selects lit2 selects6" style="width:186px;">
+                                                    <dt><input style="width:186px" type="text" class="showinput"
+                                                               id="cityName" name="cityName" value=""></dt>
+                                                    <dd class="slideDown">
+                                                        <ul>
+
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                            </dd>
+                                        </dl>
+                                        <br>
+                                        <input type="text" id="address" name="address" class="usedAddressInput"
+                                               style="width:382px;">
+                                        <input type="hidden" id="provinceCode" name="provinceCode" value="">
+                                        <dl style="float:left;margin-top:-5px">
+                                            <dt style="width:50px">邮编：</dt>
+                                            <dt><input type="text" id="postCode" name="postCode"
+                                                       class="usedAddressInput"
+                                                       style="display: inline;width:100px; height:25px;"></dt>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonss">
+                    <input type="button" onclick="history.back();" class="up" value="重新选择航班">
+                    <input id="writeOrderSubmit" name="" type="submit" class="next" value="下一步,核对订单"
+                           onclick="submitorder()">
+                </div>
+            </div>
+</form>
+
+<!-- start 金额显示区域 -->
+<div class="book2-sider">
+    <div class="scrollFixed" style="position: static; top: 0px; width: 320px;">
+
+        <div class="book2-flightdetails">
+            <div class="airline" style="border: none;">
+                <div class="section-hd">
+                    <h2><span>11-13</span>\<span>北京
+                            -上海</span>\<span class="cabin">经济舱</span></h2>
+                </div>
+                <div class="section-bd clearfix">
+                    <div class="flight-from">
+                        <span class="time">19:00</span>
+                        <span class="airport">首都国际机场</span>
+                    </div>
+                    <div class="flight-info">
+                        <span class="airline-name">南方航空CZ9257</span>
+                        <span class="airline-line"><i class="line_arrow"></i></span>
+                    </div>
+                    <div class="flight-to">
+                        <span class="time">21:15</span>
+                        <span class="airport">虹桥国际机场</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ticket-details">
+            <dl class="boxs" style="border-bottom:none">
+                <dt class="clearfix"> 订单总价：<strong id="sumPrice">￥</strong>
+                    <div class="peop">人数：<strong id="sumPerson">1</strong>人</div>
+                    <br>
+                    <span>机票明细</span>
+                </dt>
+                <dd class="clearfix" name="personTicket" style="display:&#39;&#39;">
+                    <ul>
+                        <li><span id="personCount">1人</span><strong>成人</strong></li>
+                        <li class="linebg"><span><em id="selectFlyPrice">￥620/人</em></span>票面价</li>
+                        <li><span><em id="selectAirPortFee">￥50/人</em></span>机建费</li>
+                        <li class="linebg"><span><em id="selectfuelFee">￥0/人</em></span>燃油税</li>
+                        <li class="linebg1"><span><font id="selectInsuranceCount">1份</font><br>
+							<em id="selectInsurance">￥20/份</em></span>航空意外险
+                        </li>
+                    </ul>
+                </dd>
+                <dd class="clearfix" name="childrenTicket" style="display:none;">
+                    <ul>
+                        <li><span id="childrenCount">0人</span><strong>儿童</strong></li>
+                        <li class="linebg"><span><em id="childrenFlyPrice">￥620/人</em></span>票面价
+                        </li>
+                        <li><span><em>￥0/人</em></span>机建费（免）</li>
+                        <li class="linebg"><span><em>￥0/人</em></span>燃油税（减半）</li>
+                        <li class="linebg1"><span><font id="childrenInsuranceCount">0份</font><br>
+							<em>￥20/份</em></span>航空意外险
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+    <!-- end 金额显示区域 -->
+</div>
+</div>
+</div>
+<div class="foot_w" style="margin-top:20px;width:100%;float:left;height:60px;line-height:60px;">
+    <div class="c14" style="text-align:center;">Copyright&nbsp;&nbsp; ©2017&nbsp;&nbsp; 华美逸达商旅&nbsp;&nbsp; 京公网安备110108901530京ICP备05021087号&nbsp;&nbsp;客服电话：400 - 650 - 8121</div>
+</div></body>
+<script>
+    $(function () {
+        jQuery.post('/trip/hotelorderlist/qryUUidQry.jhtml',{'uuid':$('#uuid').val()},function(data){
+            var list = data.list;
+            if(list.length>0){
+                if(data.listSize>1){
+                    $('#myPasengerDiv').remove();
+                    for(var i=1;i<50;i++){
+                        $('#myPasengerDiv'+i).remove();
+                    }
+                    $('input[name="passengerCheck"]:checked').each(function(){
+                        changeObject(this,list);
+                    });
+                }
+            }
+        });
+    });
+    $(function () {
+        $("input.writeOrderAddress").each(function () {
+            va = $(this).attr("checked");
+            if (va == "checked")
+                $("input[name=addressId]").val($(this).attr("id"));
+
+        });
+        $("input.writeOrderAddress").click(function () {
+            va = $(this).attr("id");
+            $("input[name=addressId]").val(va);
+        })
+        $("dl.addressBase dd").eq(0).addClass("defaultAddress");
+        $("dl.addressBase dd").eq(0).prepend("<em>寄送至</em>");
+        $("dl.addressBase dd").eq(0).children("input").attr("checked", "checked");
+
+        /**** start 前端 为ie7 单写(14-1-21 13:58) 使用新地址 的显示隐藏 ***/
+        $('#isChecked').click(function () {
+            va = $(this).attr("checked");
+            if (va == "checked") {
+                $('#add').show();
+            }
+        });
+        /**** end 前端 为ie7 单写(14-1-21 13:58) 使用新地址 的显示隐藏***/
+    })
+</script>
+<script>
+    $(function () {
+        $("input.writeOrderAddress").each(function () {
+            va = $(this).attr("checked");
+            if (va == "checked")
+                $("input[name=addressId]").val($(this).attr("id"));
+
+        });
+        $("input.writeOrderAddress").click(function () {
+            va = $(this).attr("id");
+            $("input[name=addressId]").val(va);
+        })
+        $("dl.addressBase dd").eq(0).addClass("defaultAddress");
+        $("dl.addressBase dd").eq(0).prepend("<em>寄送至</em>");
+        $("dl.addressBase dd").eq(0).children("input").attr("checked", "checked");
+
+        /**** start 前端 为ie7 单写(14-1-21 13:58) 使用新地址 的显示隐藏 ***/
+        $('#isChecked').click(function () {
+            va = $(this).attr("checked");
+            if (va == "checked") {
+                $('#add').show();
+            }
+        });
+        /**** end 前端 为ie7 单写(14-1-21 13:58) 使用新地址 的显示隐藏***/
+    })
+
+</script>
+<script>
+    $(window).load(function () {
+        var barkStr = $("#barkStr").val();
+        var strArr = barkStr.split("=");
+
+        if (barkStr != "" && barkStr != null) {
+            for (var i = 0; i < strArr.length; i++) {
+                var arr = strArr[i].split(",");
+                var flag = 0;
+                if (flag == 0) {
+                    if (i == 0) {
+                        obj = flyOrder.getEmptyPassengerDivOne();
+                        $(obj).find('input[name="passengerName"]').val("");// 乘机人姓名
+                        $(obj).find('input[name="certificationNumber"]')
+                            .val("");// 乘机人证件号码
+                    }
+                    var obj = flyOrder.getEmptyPassengerDiv();
+                    // 没有空的div 触发添加乘客DIV
+                    if (obj == -1) {
+                        flyOrder.addPasengerDiv();
+                        obj = flyOrder.getEmptyPassengerDiv();
+                    }
+                    //依次和选中的乘客比较 (只要乘客证件号码改变,则取消乘客选定,新加DIV重新赋值)
+                    $('input[name="passengerCheck"]:checked').each(function () {
+                        var idx = $(this).attr("dIndex");
+                        var vls = $(this).parent().find('input[sel="' + idx + '"]').val().split(",");
+                        if (arr[5] != undefined) {
+
+                            if (arr[5].substring(13, arr[5].length) == idx) {
+                                if (arr[1] == vls[2]) {
+                                    $(obj).attr("divIndex", "myPasengerDiv" + idx);// 把当前div和联系人复选框绑定
+                                } else {
+                                    $(this).removeAttr("checked");
+                                }
+                            }
+                        }
+                    });
+                    //end
+                    $(obj).find('input[name="passengerName"]').val(arr[0]);// 乘机人姓名
+                    $(obj).find('input[name="certificationNumber"]')
+                        .val(arr[1]);// 乘机人证件号码
+
+                    $(obj).find('input[name="passengerType"]').val(arr[2]);
+                    $(obj).find('input[name="certificationType"]').val(arr[3]);
+                    $(obj).find('input[name="insurance"]').val(arr[4]);
+                    if ("儿童" == arr[2]) {
+                        $(obj).attr("name", "childrenPassenger")
+                        var tip = "<span class='box_red margLeft' style='float:right;'><font class='prompt_s prompt_s1' style='font-size: 12px;color:#000;font-weight: normal;'>请您确认儿童有成人陪伴，无成人陪伴的儿童只能直接向航空公司预订!</font></span>";
+                        $(tip).appendTo($(obj).find("dl.passTypeDl").find("span").eq(0));
+                    }
+                    if (arr[4] == '1份' || arr[4] == '2份') {
+                        if ("儿童" == arr[2]) {
+                            $(obj).find("input[name='insurance']").attr("min", "childrenInsurance");
+                        } else {
+                            $(obj).find("input[name='insurance']").attr("min", "personInsurance");
+                        }
+                    } else {
+                        $(obj).find("input[name='insurance']").attr("min", "insurance");
+                    }
+                }
+                flyOrder.passengerTypeSelectChange();
+            }
+        } else {
+            flyOrder.passengerTypeSelectChange();
+        }
+    });
+    function checkaddress(obj) {
+        if ($(obj).attr("iv") == "1" || $(obj).attr("iv") == "4" || $(obj).attr("iv") == "5") {
+            $("#jichang").attr("style", "display:none");
+            $("#postCode").attr("style", "display: inline;width:100px; height:25px;");
+            $("#add").attr("style", "display:block");
+            if ($(obj).attr("iv") == "1") {
+                $("[name=dispatchType]").val("挂号信免费邮寄行程单");
+                $("#kuaidi").css('display', 'none');
+                $("#youji").css('display', 'inline');
+                $("#xy input")[0].checked = false;
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#tripLines").css('display', 'none');
+            }
+            if ($(obj).attr("iv") == "4") {
+                $("#xy input")[0].checked = false;
+                $("[name=dispatchType]").val("免费快递邮寄行程单");
+                $("#youji").css('display', 'none');
+                $("#kuaidi").css('display', 'block');
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'block');
+                $("#tripLines").css('display', 'none');
+            }
+            if ($(obj).attr("iv") == "5") {
+                $("#xy input")[0].checked = true;
+                $("[name=dispatchType]").val("付费快递邮寄行程单");
+                $("#youji").css('display', 'none');
+                $("#kuaidi").css('display', 'block');
+                $("#xy").css('display', 'block');
+                $("#xyk").css('display', 'block');
+                $("#shoufeiTrip").css('display', 'block');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#tripLines").css('display', 'block');
+            }
+        } else {
+            $("#add").attr("style", "display:none");
+            if ($(obj).attr("iv") == "2") {//机场自取行程单
+                $("#xy input")[0].checked = false;
+                $("[name=dispatchType]").val("机场自取行程单");
+                $("#jichang").attr("style", "display: inline");
+                $("#youji").attr("style", "display:none");
+                $("#kuaidi").attr("style", "display:none");
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#tripLines").css('display', 'none');
+            } else {
+                $("[name=dispatchType]").val("我不需要行程单");
+                $("#xy input")[0].checked = false;
+                $("#youji").attr("style", "display:none");
+                $("#jichang").attr("style", "display:none");
+                $("#kuaidi").attr("style", "display:none");
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#tripLines").css('display', 'none');
+            }
+        }
+        flyOrder.changeSumPrice();
+    }
+    function checkOrder() {
+        flyOrder.getPassengerDivText();
+
+        var linkerPhone = $("[name=linkerPhone]").val();
+        var myReg = /^1(\d){10}$/;
+        if (myReg.test(linkerPhone) == false) {
+            alert("电话号码必须是以1开头的11位的数字!");
+            return false;
+        }
+        if ($("[name=dispatchType]").val() == "挂号信免费邮寄行程单" || $("[name=dispatchType]").val() == "免费快递邮寄行程单" || $("[name=dispatchType]").val() == "付费快递邮寄行程单") {
+            var ischeck = $('input#isChecked').attr("checked");
+            var provinceName = $("#provinceName").val();
+            var cityName = $("#cityName" || provinceName == "").val();
+            var postCode = $("#postCode").val();
+            var address = $("#address").val();
+            var myReg = /^(\d){6}$/;
+            if (ischeck) {
+                if ($("#provinceCode").val() == "") {
+                    alert("省不能为空");
+                    return false;
+                }
+                if (cityName == "请选择城市") {
+                    alert("市不能为空");
+                    return false;
+                }
+                if ($("#postCode").val() == "") {
+                    alert("邮编不能为空");
+                    return false;
+                } else if (myReg.test(postCode) == false) {
+                    alert("邮编必须为6位数字");
+                    return false;
+                }
+                if (address == "") {
+                    alert("地址不能为空");
+                    return false;
+                }
+
+            }
+            else {
+                return true;
+            }
+            return true;
+        } else {
+            return true;
+        }
+    }
+    function queryCity(provinceId) {
+        if (provinceId == 1 || provinceId == 2 || provinceId == 9 || provinceId == 27 || provinceId == 33 || provinceId == 34) {
+            $("#city").attr("style", "display: none");
+            if (provinceId == 1) {
+                $("#cityCode").val(1);
+                $("#cityName").val("");
+            }
+            if (provinceId == 2) {
+                $("#cityCode").val(2);
+                $("#cityName").val("");
+            }
+            if (provinceId == 9) {
+                $("#cityCode").val(3);
+                $("#cityName").val("");
+            }
+            if (provinceId == 27) {
+                $("#cityCode").val(4);
+                $("#cityName").val("");
+            }
+            if (provinceId == 33) {
+                $("#cityCode").val(370);
+                $("#cityName").val("");
+            }
+            if (provinceId == 34) {
+                $("#cityCode").val(371);
+                $("#cityName").val("");
+            }
+        } else {
+            var params = {"provinceCode": provinceId};
+            $("#city").attr("style", "display: ''");
+            $("#city").load("/trip/mailaddressinfo/cityList.jhtml", params);
+        }
+        $("#provinceCode").val(provinceId);
+    }
+    function queryDistricts(cityId) {
+        $("#cityCode").val(cityId);
+    }
+
+    function changerCneter(obj){
+        if($(obj).attr("rel")){
+            $($(obj).parent().find('input')[0]).val($(obj).attr("value"));
+        }
+    }
+
+    function changepassengerType(obj) {
+        if ($(obj).html() == "成人") {
+            $(obj).parent().parent().parent().parent().parent().parent().attr("name", "personPassenger");
+            if ($(obj).parent().parent().parent().parent().parent().parent().find("input[name='insurance']").val() == "1份" ||
+                $(obj).parent().parent().parent().parent().parent().parent().find("input[name='insurance']").val() == "2份") {
+                $(obj).parent().parent().parent().parent().parent().parent().find("input[name='insurance']").attr("min", "personInsurance");
+                $(obj).parent().parent().parent().parent().find("span [class='box_red margLeft']").remove();
+            }
+        }
+        else {
+            $(obj).parent().parent().parent().parent().parent().parent().attr("name", "childrenPassenger");
+            if ($(obj).parent().parent().parent().parent().parent().parent().find("input[name='insurance']").val() == "1份" ||
+                $(obj).parent().parent().parent().parent().parent().parent().find("input[name='insurance']").val() == "2份")
+                $(obj).parent().parent().parent().parent().parent().parent().find("input[name='insurance']").attr("min", "childrenInsurance");
+            var tip = "<span class='box_red margLeft' style='float:right;'><font class='prompt_s prompt_s1' style='font-size: 12px;color:#000;font-weight: normal;'>请您确认儿童有成人陪伴，无成人陪伴的儿童只能直接向航空公司预订!</font></span>";
+            if ($(obj).parent().parent().parent().parent().find("font").html() == null) {
+                $(tip).appendTo($(obj).parent().parent().parent().next());
+            }
+        }
+        flyOrder.passengerTypeSelectChange();
+    }
+
+</script>
+<script>
+    $(function () {
+
+        var obj = $("div[mflight='flightName']");
+        jQuery.each(obj, function (i, item) {
+
+            var imgFlag = $(this).prev().children("span");
+            if ($(this).html() == '东方航空') {
+                imgFlag.attr("style", "background-position: 10px 28px");
+            } else if ($(this).html() == '国际航空') {
+                imgFlag.attr("style", "background-position:10px -42px");
+            } else if ($(this).html() == '南方航空') {
+                imgFlag.attr("style", "background-position:10px -112px");
+            } else if ($(this).html() == '上海航空') {
+                imgFlag.attr("style", "background-position:10px -182px");
+            } else if ($(this).html() == '深圳航空') {
+                imgFlag.attr("style", "background-position:10px -252px");
+            } else if ($(this).html() == '厦门航空') {
+                imgFlag.attr("style", "background-position:10px -322px");
+            } else if ($(this).html() == '大新华航空' || $(this).html() == '海南航空') {
+                imgFlag.attr("style", "background-position:10px -392px");
+            } else if ($(this).html() == '祥鹏航空') {
+                imgFlag.attr("style", "background-position:10px -462px");
+            } else if ($(this).html() == '四川航空') {
+                imgFlag.attr("style", "background-position:10px -532px");
+            } else if ($(this).html() == '山东航空') {
+                imgFlag.attr("style", "background-position:10px -602px");
+            } else if ($(this).html() == '东星航空') {
+                imgFlag.attr("style", "background-position:10px -672px");
+            } else if ($(this).html() == '吉祥航空') {
+                imgFlag.attr("style", "background-position:10px -742px");
+            } else if ($(this).html() == '奥凯航空') {
+                imgFlag.attr("style", "background-position:10px -812px");
+            } else if ($(this).html() == '澳门航空') {
+                imgFlag.attr("style", "background-position:10px -882px");
+            } else if ($(this).html() == '华夏航空') {
+                imgFlag.attr("style", "background-position:10px -952px");
+            } else if ($(this).html() == '西部航空') {
+                imgFlag.attr("style", "background-position:10px -1022px");
+            } else if ($(this).html() == '天津航空') {
+                imgFlag.attr("style", "background-position:10px -1092px");
+            } else if ($(this).html() == '河北航空') {
+                imgFlag.attr("style", "background-position:10px -1162px");
+            } else if ($(this).html() == '首都航空') {
+                imgFlag.attr("style", "background-position:10px -1232px");
+            } else if ($(this).html() == '昆明航空') {
+                imgFlag.attr("style", "background-position:10px -1302px");
+            } else if ($(this).html() == '西藏航空') {
+                imgFlag.attr("style", "background-position:10px -1372px");
+            } else if ($(this).html() == '香港航空') {
+                imgFlag.attr("style", "background-position:10px -1442px");
+            } else if ($(this).html() == '重庆航空') {
+                imgFlag.attr("style", "background-position:10px -1512px");
+            } else if ($(this).html() == '幸福航空') {
+                imgFlag.removeClass("lfy_icon");
+                imgFlag.addClass("lfy_iconjr");
+                imgFlag.attr("style", "background-position:10px 25px");
+            } else if ($(this).html() == '成都航空') {
+                imgFlag.removeClass("lfy_icon");
+                imgFlag.addClass("lfy_iconly");
+                imgFlag.attr("style", "background-position:10px 25px");
+            }
+        });
+
+        $("span[name='returnTi']").hover(function () {
+            airlines = $(this).parent().find("span").eq(1).html();
+            shippingSpace = $(this).parent().find("span").eq(2).html();
+            departureTime = $(this).parent().find("span").eq(3).html();
+            specialCangwei =0;
+            activityPrice = $(this).parent().find("span").eq(5).html();
+            var showstr = "";
+            jQuery.ajax({
+                type: "POST",
+                url: "/trip/fly/showflyinfoactivity/getPlaneInfo.jhtml",
+                async: false,
+                data: {
+                    "airlines": airlines,
+                    "shippingSpace": shippingSpace,
+                    "departureTime": departureTime,
+                    "specialCangwei": specialCangwei,
+                    "param": "ticket",
+                    "activityPrice": activityPrice
+                },
+                success: function (data) {
+                    if (data.ruleContent == 'undefined') {
+                        data = eval("(" + data + ")");
+                    }
+                    showstr = "退改签<ul style='width:325px;'>"
+                        + "<li class='showtitle'>退改签说明</li>"
+                        + "<li >" + data.ruleContent + "</li>"
+                        + "</ul>";
+                }
+            });
+            $(this).html(showstr);
+            $(this).children("ul").stop().show();
+            $(this).css('zIndex', '10');
+        }, function () {
+            $(this).html("退改签");
+            $(this).children("ul").stop().hide();
+            $(this).css('zIndex', '1');
+        });
+        var type = "";
+        $(".show-1").hover(function () {
+            var planeType = $(this).html();
+
+            type = planeType;
+            var showstr1 = "";
+            jQuery.ajax({
+                type: "POST",
+                url: "/trip/fly/showflyinfoactivity/getPlaneInfo.jhtml",
+                async: false,
+                data: {"planeType": planeType, "param": "plane"},
+                success: function (data) {
+                    if (data.length > 2) {
+                        data = eval("(" + data + ")");
+                    }
+                    showstr1 = planeType + "<table class='tab' border='0' cellpadding='0' cellspacing='0' style='color:rgb(14,91,148);'>"
+                        + "<tr><th>计划机型</th><th>机型名称</th><th>类型</th><th>最少座位数</th><th>最多座位数</th></tr>"
+                        + "<tr><td>" + data.planeType + "</td><td>" + data.planeName + "</td><td>" + data.characteristic + "</td><td>" + data.minSeatnum + "</td><td>" + data.maxSeatnum + "</td></tr>"
+                        + "</table>";
+                }
+            });
+            $(this).html(showstr1);
+        }, function () {
+            $(this).html(type);
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $(".moreLess").toggle(function () {
+            $(this).siblings("div").css({display: "block"});
+            $(this).html("收起");
+            $(this).siblings("div").slideDown(300);
+            $(this).parents(".yOverflow").css({height: "110px"});
+        }, function () {
+            $(this).siblings("div").css({display: "none"});
+            $(this).html("更多");
+            $(this).siblings("div").slideUp(300);
+            $(this).parents(".yOverflow").css({height: "30px"})
+        });
+    });
+
+    function deletePrompt(obj) {
+        $(obj).parent().find("font").remove();
+    }
+
+    //行程单配送和地址显示-->仅用于点击"重新填写订单"按钮进入此页面使用
+    $(function () {
+        var barkStr = $("#barkStr").val();//如果不为空代表点击"重新填写订单页面"按钮进来的此页面
+        if (barkStr != "" && barkStr != null) {
+            var disValue = $("input[name=dispatchType]").val();
+            if (disValue == "付费快递邮寄行程单") {
+                $("#jichang").attr("style", "display:none");
+                $("#postCode").attr("style", "display: inline;width:100px; height:25px;");
+                $("#add").attr("style", "display:block");
+                $("#xy input")[0].checked = true;
+                $("#youji").css('display', 'none');
+                $("#kuaidi").css('display', 'block');
+                $("#xy").css('display', 'block');
+                $("#xyk").css('display', 'block');
+                $("#shoufeiTrip").css('display', 'block');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#kuaidiAddress").click();
+            } else if (disValue == "挂号信免费邮寄行程单") {
+                $("#jichang").attr("style", "display:none");
+                $("#postCode").attr("style", "display: inline;width:100px; height:25px;");
+                $("#add").attr("style", "display:block");
+                $("#kuaidi").css('display', 'none');
+                $("#youji").css('display', 'inline');
+                $("#xy input")[0].checked = false;
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#commonAddress").click();
+            } else if (disValue == "机场自取行程单") {
+                $("#xy input")[0].checked = false;
+                $("#jichang").attr("style", "display: inline");
+                $("#youji").attr("style", "display:none");
+                $("#kuaidi").attr("style", "display:none");
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'none');
+                $("#selfTravelSheet").click();
+            } else if (disValue == "我不需要行程单") {
+                $("#xy input")[0].checked = false;
+                $("#youji").attr("style", "display:none");
+                $("#jichang").attr("style", "display:none");
+                $("#kuaidi").attr("style", "display:none");
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'none');
+            } else if (disValue == "免费快递邮寄行程单") {
+                $("#jichang").attr("style", "display:none");
+                $("#postCode").attr("style", "display: inline;width:100px; height:25px;");
+                $("#add").attr("style", "display:block");
+                $("#xy input")[0].checked = false;
+                $("#youji").css('display', 'none');
+                $("#kuaidi").css('display', 'block');
+                $("#xy").css('display', 'none');
+                $("#xyk").css('display', 'none');
+                $("#shoufeiTrip").css('display', 'none');
+                $("div[trip=tripMoney]").css('display', 'block');
+                $("#kdAddress").click();
+            }
+        }
+    });
+    $(function () {
+        //回复省/市/地址/邮编为空
+        $("#provinceName").val("请选择省");
+        $("#provinceCode").val("");
+        $("#postCode").val("");
+        $("#address").val("");
+    });
+</script>
+
+<script>
+    function submitorder() {
+        var passFlag = true;
+        $("dl.passTypeDl").each(function (i) {
+            var passType = $(this).find("input.passType").val();
+            var certType = $(this).siblings("dl").find("input.idCard").val();
+            var certNum = $(this).siblings("dl").find("input.idNum").val();
+            if (passType == "成人") {
+                if (certType == "身份证") {
+                    if (certNum.length != 18) {
+                        alert("乘机人类型和证件号码不匹配！");
+                        //$(this).siblings("dl").children("input.idNum").val("");
+                        passFlag = false;
+                        return false;
+                    }
+                }
+            } else {
+                if (certType == "身份证") {
+                    if (certNum.length != 8) {
+                        alert("乘机人类型和证件号码不匹配！");
+                        //$(this).siblings("dl").children("input.idNum").val("");
+                        passFlag = false;
+                        return false;
+                    }
+                }
+            }
+        });
+        if (!passFlag) {
+            return false;
+        }
+        var pasFlag = 0;
+        var certiFlag = 0;
+        var persion = 0;// 成人数量
+        var children = 0;// 儿童数量
+        var linkerName = $("#linkerName");
+        var linkerPhone = $("#linkerPhone");
+        // 证件号码
+        $("input[name=certificationNumber]")
+            .each(
+                function () {
+                    if (.trim($(this).val()) == ''
+                    || .trim($(this).val()) == null) {
+                        certiFlag = 0;
+                        $(this).focus();
+                        if ($(this).parent().find(
+                                "font").html() == null) {
+                            $(this)
+                                .parent()
+                                .append(
+                                    "<font color='red'>请填写证件号码</font>");
+                        }
+                        return false;
+                    } else {
+                        certiFlag = 1;
+                        $(this).parent().find("font")
+                            .remove();
+                    }
+                });
+        var orginValue = $(this);
+
+        var cnArray = $("input[name=certificationNumber]");
+        for (i = 0; i < cnArray.length; i++) {
+            for (k = i + 1; k < cnArray.length; k++) {
+                if (cnArray[k].value == cnArray[i].value) {
+                    alert("证件号码不能重复填写");
+                    return false;
+                }
+            }
+        }
+        $("input[name=certificationNumber]").not(orginValue).each(function () {
+            if (orginValue.val() == $(this).val()) {
+                alert("证件号码不能重复填写");
+                return false;
+            }
+        });
+        // 乘客姓名
+        $("input[name=passengerName]")
+            .each(
+                function () {
+                    var strLength = $(this).val().replace(/[^\x00-\xff]/g, 'xx');
+                    if (strLength.length > 30) {
+                        alert("乘机人姓名长度不能超过30个字符！");
+                        return false;
+                    }
+                    if (.trim($(this).val()) == ''
+                    || .trim($(this).val()) == null) {
+                        pasFlag = 0;
+                        $(this).focus();
+                        if ($(this).parent().find(
+                                "font").html() == null) {
+                            $(this)
+                                .parent()
+                                .append(
+                                    "<font color='red'>请填写乘机人姓名</font>");
+                        }
+                        return false;
+                    } else {
+                        pasFlag = 1;
+                        $(this).parent().find("font")
+                            .remove();
+                    }
+                });
+        // 乘客类型
+        $("input[name=passengerType]").each(function () {
+            if (.trim($(this).val()) == "成人") {
+                persion += 1;
+            } else {
+                children += 1;
+            }
+        });
+        if (null == linkerName || linkerName.val() == "") {
+            if (linkerName.parent().find("font").html() == null) {
+                linkerName.parent().append(
+                    "<font color='red'>请填联系人姓名</font>");
+            }
+            return false;
+        } else {
+            var strLength = linkerName.val().replace(/[^\x00-\xff]/g, 'xx');
+            if (strLength.length > 30) {
+                alert("联系人姓名不能超过30个字符！");
+                return false;
+            }
+            linkerName.parent().find("font").remove();
+        }
+        if (null == linkerPhone || linkerPhone.val() == "") {
+            if (linkerPhone.parent().find("font").html() == null) {
+                linkerPhone.parent().append(
+                    "<font color='red'>请填联系人电话</font>");
+            }
+            return false;
+        } else {
+            linkerPhone.parent().find("font").remove();
+        }
+        if (pasFlag == 0 || certiFlag == 0) {
+            return false;
+        }
+        if (children > persion) {
+            alert("儿童数量不能超过成人数量");
+            return false;
+        }
+        //return flyOrder.checkchildren();
+        return true;
+    }
+    )
+    ;
+    }
+
+</script>
+</html>
+
+

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票退票</title>
+
+<link href="css/group.css" rel="stylesheet">
+<link href="css/drawer.css" rel="stylesheet">
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+
+<script type="text/javascript" src="js/int.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="js/jquery.hoverdelay.js"></script>
+<style>
+i{
+	margin:0 10px;
+}
+.centerdate{
+	width:180px !important;
+	height:26px !important;
+	background: url(img/input.png) no-repeat 0 -135px;
+}
+.ygcx{
+	background: url(img/2017pic3.jpg) repeat-x;
+	height:25px !important;
+	background-color:none;
+	line-height:25px !important;
+}
+.bor a:hover{
+	color:#3333FF;
+}
+.top_tr td{
+	background: #F4F4FD;
+}
+#test{
+	border:0;
+	background:none;
+	color:#444;
+	font-size:14px;
+}
+.right_yg_ssxy p span e{
+	width:110px;
+	display:block;
+	float:left;
+	text-align:right;
+}
+
+
+.right_tDIV{
+	width:calc(100% - 2px);
+	margin-left:0;
+	margin-top:0;
+	border:1px solid #dfdfff;
+}
+.column_font {
+    color: #1f5a95;
+}
+.right_column {
+    background: #f4f4fd;
+    height: 31px;
+    line-height: 31px;
+    border-bottom: #dfdfff 1px solid;
+    padding-left: 10px;
+}
+</style>
+</head>
+
+<body>
+<!--右侧添加开始-->
+<div id="main_right">
+
+	<div class="main_right_cent">
+		<div class="right_tDIV">
+			<div class="right_column column_font"><strong>退票订单管理</strong></div>
+			<div class="right_listB" style="position:relative;">
+			<div class="right_ygcs" style="height:auto;min-height:30px;">
+				<div class="right_yg_ss right_yg_ssxy">
+					<p><span><e>申请退票时间：</e>
+						<input type="text" name="texmc" class="dates2 date1 date centerdate" onClick="WdatePicker()" readonly="readonly" style="width:180px !important;"/><i>至</i>
+						<input type="text" name="texmc" class="dates2 date1 date centerdate" onClick="WdatePicker()" readonly="readonly" style="width:180px !important;"/>
+					</span>
+					<span><e>原订单号：</e><input type="text" name="ygzj" class="ygbd"/></span>
+					<span><e>退改订单号：</e><input type="text" name="ygzj" class="ygbd"/></span></p>
+					<p>
+					<span><e>发车日期：</e>
+						<input type="text" name="texmc" class="dates2 date1 date centerdate" onClick="WdatePicker()" readonly="readonly" style="width:180px !important;"/><i>至</i>
+						<input type="text" name="texmc" class="dates2 date1 date centerdate" onClick="WdatePicker()" readonly="readonly" style="width:180px !important;"/>
+					</span>
+					<span><e>公司简称：</e><input type="text" name="ygzj" class="ygbd"/></span>
+					<span><e>订单状态：</e>
+					<select name="select" class="input_borA input_borH" style="width:110px;height:25px;">
+       	                <option>退票中 </option>
+       	                <option>退票失败</option>
+       	                <option>已退票，待退款</option>
+       	                <option>退票成功</option>
+                    </select>
+					</span></p>
+					<p><span><e>出行人：</e><input type="text" name="ygzj" class="ygbd"/></span>
+					<span><e>预定人手机号：</e><input type="text" name="ygzj" class="ygbd"/></span>
+					<span><input type="button" class="ygcx" value="查询"><input type="button" class="ygcx" value="清除"><input type="button" class="ygcx" value="导出"></span></p>
+				</div>
+			</div>
+			<div class="cent_h2">
+				<h2>
+					<a href="javascript:;" class="tabs current" rel="list1">供应商退票失败</a>
+					<a href="javascript:;" class="tabs" rel="list2">已退票，待退款</a>
+					<a href="javascript:;" class="tabs" rel="list3">全部订单</a>
+				</h2>
+			</div>
+            <div class="right_tabDIV" id="list1">
+            	<table width="100%" border="0" align="left" cellspacing="0" class="right_f14 right_tabB">
+					  <tr class="top_tr">
+						<td height="34" align="center" class="right_bold">退票单号</td>
+						<td height="34" align="center" class="right_bold">提交时间</td>
+						<td height="34" align="center" class="right_bold">公司简称</td>
+						<td align="center" class="right_bold">原订单号</td>
+						<td align="center" class="right_bold">出行人</td>
+						<td align="center" class="right_bold">车次</td>
+						<td align="center" class="right_bold">发车时间</td>
+						<td align="center" class="right_bold">订单金额</td>
+						<td align="center" class="right_bold">退票订单状态</td>
+						<td align="center" class="right_bold">锁定</td>
+						<td align="center" class="right_bold">操作</td>
+						<td align="center" class="right_bold">供应商退票失败原因</td>
+						<td align="center" class="right_bold">查看</td>
+					  </tr>
+					  <tr class="cet_tr">
+						<td height="50" align="center" class="bor borcolor"><span>TA201808028</span></td>
+						<td align="center" class="bor">2018-8-11 13:22:12</td>
+						<td align="center" class="bor">公司简称</td>
+						<td align="center" class="bor borcolor"><span>TA201808028</span></td>
+						<td align="center" class="bor">薛之谦</td>
+						<td align="center" class="bor">G101</td>
+						<td align="center" class="bor">2018-8-11 13:22:12</td>
+						<td align="center" class="bor">1198</td>
+						<td align="center" class="bor">退票中</td>
+						
+						<td align="center" class="bor"><input type="button" id="test" value="锁定"  onclick="changeValue(this)"/></td>
+						<td align="center" class="bor">
+							<a href="train_cg.html"><button type="button" class="cpbutton" >退票成功</button></a>
+							<a href=""><button type="button" class="cpbutton" >退票失败</button></a>
+						</td>
+						<td align="center" class="bor">非正常原因</td>
+						<td height="34" align="center" class="bor"><a href="">查看日志</a></td>
+					  </tr>
+					 
+					  
+			  </table>
+			  </div>
+			  
+			  <div class="right_tabDIV" id="list2">
+            	<table width="100%" border="0" align="left" cellspacing="0" class="right_f14 right_tabB">
+					  <tr class="top_tr">
+						<td height="34" align="center" class="right_bold">退票单号</td>
+						<td height="34" align="center" class="right_bold">提交时间</td>
+						<td height="34" align="center" class="right_bold">公司简称</td>
+						<td align="center" class="right_bold">原订单号</td>
+						<td align="center" class="right_bold">出行人</td>
+						<td align="center" class="right_bold">车次</td>
+						<td align="center" class="right_bold">发车时间</td>
+						<td align="center" class="right_bold">订单金额</td>
+						<td align="center" class="right_bold">退票订单状态</td>
+						<td align="center" class="right_bold">锁定</td>
+						<td align="center" class="right_bold">操作</td>
+						<td align="center" class="right_bold">供应商退票失败原因</td>
+						<td align="center" class="right_bold">退款失败原因</td>
+						<td align="center" class="right_bold">查看</td>
+					  </tr>
+					  <tr class="cet_tr">
+						<td height="50" align="center" class="bor borcolor"><span>TA201808028</span></td>
+						<td align="center" class="bor">2018-8-11 13:22:12</td>
+						<td align="center" class="bor">公司简称</td>
+						<td align="center" class="bor borcolor"><span>TA201808028</span></td>
+						<td align="center" class="bor">薛之谦</td>
+						<td align="center" class="bor">G101</td>
+						<td align="center" class="bor">2018-8-11 13:22:12</td>
+						<td align="center" class="bor">1198</td>
+						<td align="center" class="bor">已退票，待退款</td>
+						
+						<td align="center" class="bor"><input type="button" id="test" value="锁定"  onclick="changeValue(this)"/></td>
+						<td align="center" class="bor">
+							<a href="train_cg.html"><button type="button" class="cpbutton" >退款成功</button></a>
+						</td>
+						<td align="center" class="bor">非正常原因</td>
+						<td align="center" class="bor"></td>
+						<td height="34" align="center" class="bor"><a href="">查看日志</a></td>
+					  </tr>
+					  
+			  </table>
+			  </div>
+			  
+			  <div class="right_tabDIV" id="list3">
+            	<table width="100%" border="0" align="left" cellspacing="0" class="right_f14 right_tabB">
+					  <tr class="top_tr">
+						<td height="34" align="center" class="right_bold">退票单号</td>
+						<td height="34" align="center" class="right_bold">提交时间</td>
+						<td height="34" align="center" class="right_bold">公司简称</td>
+						<td align="center" class="right_bold">原订单号</td>
+						<td align="center" class="right_bold">出行人</td>
+						<td align="center" class="right_bold">车次</td>
+						<td align="center" class="right_bold">发车时间</td>
+						<td align="center" class="right_bold">订单金额</td>
+						<td align="center" class="right_bold">退票订单状态</td>
+						<td align="center" class="right_bold">锁定</td>
+						<td align="center" class="right_bold">操作</td>
+						<td align="center" class="right_bold">供应商退票失败原因</td>
+						<td align="center" class="right_bold">退用户金额</td>
+						<td align="center" class="right_bold">供应商退款金额</td>
+						<td align="center" class="right_bold">操作人</td>
+						<td align="center" class="right_bold">查看</td>
+					  </tr>
+					  <tr class="cet_tr">
+						<td height="50" align="center" class="bor borcolor"><span>TA201808028</span></td>
+						<td align="center" class="bor">2018-8-11 13:22:12</td>
+						<td align="center" class="bor">公司简称</td>
+						<td align="center" class="bor borcolor"><span>TA201808028</span></td>
+						<td align="center" class="bor">薛之谦</td>
+						<td align="center" class="bor">G101</td>
+						<td align="center" class="bor">2018-8-11 13:22:12</td>
+						<td align="center" class="bor">1198</td>
+						<td align="center" class="bor">退票中</td>
+						
+						<td align="center" class="bor"><input type="button" id="test" value="锁定"  onclick="changeValue(this)"/></td>
+						<td align="center" class="bor">
+							<a href="train_cg.html"><button type="button" class="cpbutton" >退票成功</button></a>
+							<a href=""><button type="button" class="cpbutton" >退票失败</button></a>
+						</td>
+						<td align="center" class="bor"></td>
+						<td align="center" class="bor"></td>
+						<td align="center" class="bor"></td>
+						<td align="center" class="bor">系统</td>
+						<td height="34" align="center" class="bor"><a href="">查看日志</a></td>
+					  </tr>
+					  
+					  
+			  </table>
+			  </div>
+
+          </div>
+		</div>
+	</div>
+</div><!--右侧添加结束-->
+<script type="text/javascript">
+function changeValue(obj)
+{
+    if(obj.value=="锁定")
+    {
+		if(confirm("确认更改？")){
+       		obj.value="解锁";
+			$(obj).css("color","red");
+  		}
+    }
+   else
+   {
+        if(confirm("确认更改？")){
+       		obj.value="锁定";
+  		}
+   }
+}
+</script>
+</body>
+</html>

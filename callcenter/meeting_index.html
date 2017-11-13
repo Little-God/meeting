@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>出票列表</title>
+
+    <link href="css/group.css"
+          rel="stylesheet">
+    <link href="css/drawer.css"
+          rel="stylesheet">
+    <script
+            src="js/jquery-1.9.1.min.js"
+            type="text/javascript"></script>
+    <script type="text/javascript"
+            src="My97DatePicker/WdatePicker.js"></script>
+
+    <script src="js/int.js"
+            type="text/javascript"></script>
+    <script
+            src="js/jquery.SuperSlide.2.1.1.js"
+            type="text/javascript"></script>
+    <script
+            src="js/jquery.hoverdelay.js"
+            type="text/javascript"></script>
+    <script type="text/javascript"
+            src="layer/layer.js"></script>
+    <style>
+        i {
+            margin: 0 10px;
+        }
+
+        .centerdate {
+            width: 92px !important;
+            height: 26px !important;
+            background: url(img/input.png)
+            no-repeat 0 -324px;
+        }
+
+        .ygcx {
+            background:
+                    url(img/2017pic3.jpg)
+                    repeat-x;
+            height: 25px !important;
+            background-color: none;
+            line-height: 25px !important;
+        }
+
+        .bor a:hover {
+            color: #3333FF;
+        }
+
+        .top_tr td {
+            background: #F4F4FD;
+        }
+
+        /*.main_right_cent {*/
+        /*height: 1300px;*/
+        /*}*/
+        #test {
+            border: 0;
+            background: none;
+            color: #444;
+            font-size: 14px;
+        }
+        .pay{
+            padding-top:20px;
+        }
+        .pay span{
+            width: 210px;
+        }
+    </style>
+</head>
+
+<body>
+<!--右侧添加开始-->
+<div id="main_right">
+    <input type="hidden" id="loginIdnow" value="OP00200109" />
+    <div class="main_right_cent">
+        <div class="right_tDIV">
+            <div class="right_listB" style="position: relative;">
+
+                <form action="drawerView.do" method="post" id="formid">
+                    <div class="right_ygcs" style="height: auto; min-height: 30px;">
+                        <input type="hidden" name="page" id="pageId" value="1" />
+                        <input type="hidden" name="typeOrder" id="typeOrder"
+                               value="1" /> <input type="hidden" name="pageSize"
+                                                   id="pageSizeId" value="10" />
+                        <div class="right_yg_ss right_yg_ssxy">
+                            <p>
+									<span>提交订单时间： <input type="text" name="orderstarttime"
+                                                         id="orderstarttime" class="dates2 date1 date centerdate"
+                                                         onClick="WdatePicker()" value=""
+                                                         readonly="readonly" style="width: 92px !important;" /><i>至</i>
+										<input type="text" name="orderendtime" id="orderendtime"
+                                               class="dates2 date1 date centerdate" onClick="WdatePicker()"
+                                               readonly="readonly" style="width: 92px !important;"
+                                               value="" />
+									</span> <span>联系人姓名：<input type="text" name="PNR" id="PNR"
+                                                             class="ygbd" value="" /></span> <span>预订人电话：<input
+                                    type="text" name="passgername" id="passgername" class="ygbd"
+                                    value="" /></span>
+                            </p>
+                            <p>
+									<span>预订人集团：<input type="text" name="" id="" class="ygbd" value="" /></span>
+									<span>预订人公司：<input type="text" name="" id="" class="ygbd" value="" /></span>
+                                <span>订单状态：
+										<select class="centinputr" style="height: 30px;" name="type">
+											<option value="BP">全部</option>
+											<option value="BPET">待沟通</option>
+											<option value="BSP">待支付</option>
+									</select>
+                                </span>
+                                    <span><button
+                                    type="button" class="ygcx" onclick="chaxun()">查询</button>
+										<button type="button" class="ygcx" onclick="clearall()">清除</button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="cent_h2">
+                    <h2>
+                        <a href="javascript:;" class="tabs current" rel="list1"
+                           onclick="showtables()">待沟通订单列表</a>
+                        <a href="javascript:;" class="tabs" rel="list2"
+                           onclick="showtablef()">出支付订单列表</a>
+                        <a href="javascript:;" class="tabs" rel="list2"
+                           onclick="showtablef()">全部订单</a>
+                    </h2>
+                </div>
+
+
+                <div class="right_tabDIV" id="list1">
+                    <table width="100%" border="0" align="left" cellspacing="0"
+                           class="right_f14 right_tabB">
+                        <tr class="top_tr">
+                            <td height="34" align="center" class="right_bold">订单编号</td>
+                            <td height="34" align="center" class="right_bold">提交时间</td>
+                            <td height="34" align="center" class="right_bold">活动城市</td>
+                            <td align="center" class="right_bold">人数</td>
+                            <td align="center" class="right_bold">活动开始日期</td>
+                            <td align="center" class="right_bold">活动时长</td>
+                            <td align="center" class="right_bold">预算</td>
+                            <td align="center" class="right_bold">订单金额</td>
+                            <td align="center" class="right_bold">订单状态</td>
+                            <td align="center" class="right_bold">锁定</td>
+                            <td align="center" class="right_bold">操作</td>
+                            <td align="center" class="right_bold">操作日志</td>
+                        </tr>
+                        <tbody id="bodyContent">
+
+                        <tr class="cet_tr">
+                            <td height="50" align="center" class="bor borcolor"><span><a
+                                    href="/callCenter/drawer/orderInfo.do?orderId=A12017110606096">A12017110606096</a></span>
+                            </td>
+                            <td align="center" class="bor">2017-11-06 11:52:48</td>
+                            <td align="center" class="bor">北京</td>
+                            <td align="center" class="bor">10-15</td>
+                            <td align="center" class="bor">2017/11/16
+                            </td>
+                            <td align="center" class="bor">半天</td>
+
+
+
+                            <td align="center" class="bor">3000 </td>
+
+
+                            <td align="center" class="bor">- </td>
+
+                            <td align="center" class="bor">待沟通</td>
+                            <td align="center" class="bor">
+                                <button type="button" class="cpbutton">锁定</button>
+                            </td>
+
+                            <td height="34" align="center" class="bor">
+                                <button type="button" class="cpbutton" onclick="confirmqx()">取消</button>
+                                <button type="button" class="cpbutton">出方案</button>
+                            </td>
+                            <td align="center" class="bor">查看日志</td>
+                        </tr>
+                        <tr class="cet_tr">
+                            <td height="50" align="center" class="bor borcolor"><span><a
+                                    href="/callCenter/drawer/orderInfo.do?orderId=A12017110606096">A12017110606096</a></span>
+                            </td>
+                            <td align="center" class="bor">2017-11-06 11:52:48</td>
+                            <td align="center" class="bor">北京</td>
+                            <td align="center" class="bor">10-15</td>
+                            <td align="center" class="bor">2017/11/16
+                            </td>
+                            <td align="center" class="bor">半天</td>
+
+
+
+                            <td align="center" class="bor">3000 </td>
+
+
+                            <td align="center" class="bor">- </td>
+
+                            <td align="center" class="bor">待沟通</td>
+                            <td align="center" class="bor">
+                                <button type="button" class="cpbutton">锁定</button>
+                            </td>
+
+                            <td height="34" align="center" class="bor">
+                                <button type="button" class="cpbutton" onclick="pay()">支付</button>
+                                <button type="button" class="cpbutton">修改</button>
+                            </td>
+                            <td align="center" class="bor">查看日志</td>
+                        </tr>
+                        <tr class="cet_tr">
+                            <td height="50" align="center" class="bor borcolor"><span><a
+                                    href="/callCenter/drawer/orderInfo.do?orderId=A12017110606096">A12017110606096</a></span>
+                            </td>
+                            <td align="center" class="bor">2017-11-06 11:52:48</td>
+                            <td align="center" class="bor">北京</td>
+                            <td align="center" class="bor">10-15</td>
+                            <td align="center" class="bor">2017/11/16
+                            </td>
+                            <td align="center" class="bor">半天</td>
+
+
+
+                            <td align="center" class="bor">3000 </td>
+
+
+                            <td align="center" class="bor">- </td>
+
+                            <td align="center" class="bor">待沟通</td>
+                            <td align="center" class="bor">
+                                <button type="button" class="cpbutton">锁定</button>
+                            </td>
+
+                            <td height="34" align="center" class="bor">
+                                <button type="button" class="cpbutton onclick="pay()">支付</button>
+                            </td>
+                            <td align="center" class="bor">查看日志</td>
+                        </tr>
+                        <tr class="cet_tr">
+                            <td height="50" align="center" class="bor borcolor"><span><a
+                                    href="/callCenter/drawer/orderInfo.do?orderId=A12017110606096">A12017110606096</a></span>
+                            </td>
+                            <td align="center" class="bor">2017-11-06 11:52:48</td>
+                            <td align="center" class="bor">北京</td>
+                            <td align="center" class="bor">10-15</td>
+                            <td align="center" class="bor">2017/11/16
+                            </td>
+                            <td align="center" class="bor">半天</td>
+
+
+
+                            <td align="center" class="bor">3000 </td>
+
+
+                            <td align="center" class="bor">- </td>
+
+                            <td align="center" class="bor">待沟通</td>
+                            <td align="center" class="bor">
+                                <button type="button" class="cpbutton">锁定</button>
+                            </td>
+
+                            <td height="34" align="center" class="bor">
+                                <button type="button" class="cpbutton" onclick="pay()">支付</button>
+                            </td>
+                            <td align="center" class="bor">查看日志</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <table width="98%" border="0" align="center" cellpadding="0"
+                           cellspacing="0">
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                    </table>
+                    <table width="98%" border="0" align="center" cellpadding="0"
+                           cellspacing="10">
+                        <tr>
+                            <td align="right">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td width="120">总记录数：6&nbsp;&nbsp;</td>
+                                        <td width="110">&nbsp;总页数：1 &nbsp;&nbsp;</td>
+                                        <td width="110" align="right">当前页<input
+                                                name="textfield4" type="text" class="input_borA"
+                                                style="width: 50px; height: 20px;" id="currentPageId"
+                                                value="1"></td>
+                                        <td width="80" align="left"><a
+                                                href="javascript:void(0);" onclick="tzPage()"><img
+                                                src="img/pic0812_1.jpg"
+                                                width="20" height="20"></a></td>
+                                        <td width="28" align="left"><a onclick="page(1)"
+                                                                       href="javascript:void(0);"><img
+                                                src="img/pic0812_2.jpg"
+                                                width="15" height="16"></a></td>
+                                        <td width="17">
+
+
+                                            <a onclick="page(1)" href="javascript:void(0);"><img
+                                                    src="img/pic0812_3.jpg"
+                                                    width="17" height="16"></a>
+
+                                        </td>
+                                        <td width="17">
+
+
+                                            <a onclick="page(1)"
+                                               href="javascript:void(0);"><img
+                                                    src="img/pic0812_4.jpg"
+                                                    width="17" height="16"></a>
+
+                                        </td>
+                                        <td width="28" align="right"><a
+                                                onclick="page(1)" href="javascript:void(0);"><img
+                                                src="img/pic0812_5.jpg"
+                                                width="15" height="16"></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--右侧添加结束-->
+
+<form action="/callCenter/drawer/drawerInfo.do"
+      method="post" id="formOredrinfo">
+    <input type="hidden" name="orderId" id="orderIdnew" /> <input
+        type="hidden" name="passId" id="passId" />
+</form>
+
+<form
+        action="/callCenter/drawer/drawerInfoFail.do"
+        method="post" id="formOredrinfofail">
+    <input type="hidden" name="orderId" id="orderIdfail" /> <input
+        type="hidden" name="passId" id="passIdfail" />
+</form>
+<script type="text/javascript">
+//    点击取消确定
+    function confirmqx() {
+        layer.confirm('是否取消订单？', {
+            btn: ['确认','取消'] //按钮
+        });
+    }
+//    线下客人支付弹出框
+    function pay() {
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-rim', //加上边框
+            area: ['500px', '240px'], //宽高
+            title: '客人线下支付信息',
+            btn: ['保存'],
+            content: `<div class="right_yg_ss right_yg_ssxy pay"><span>订单状态：
+							<select class="centinputr" style="height: 30px;" name="type">
+									<option value="BP">全部</option>
+									<option value="BPET">待沟通</option>
+									<option value="BSP">待支付</option>
+							</select>
+                      </span>
+                      <span>预订人集团：<input type="text" name="" id="" class="ygbd" value="" /></span>
+                      <span>预订人集团：<input type="text" name="" id="" class="ygbd" value="" /></span>
+                      <span>预订人集团：<input type="text" name="" id="" class="ygbd" value="" /></span>
+                      <span>提交订单时间： <input type="text" name="orderstarttime"
+                                                         id="orderstarttime" class="dates2 date1 date centerdate"
+                                                         onClick="WdatePicker()" value=""
+                                                         readonly="readonly" style="width: 92px !important;" />
+									</span></div>`
+        });
+    }
+    /**锁定当前订单**/
+    function lockOrderId(orderId) {
+        $.post('/callCenter/drawer/lockOrUnlockOrderId.do', {
+            'orderId': orderId,
+            'type': 1
+        }, function (data) {
+            if (data.returnMap.state == 1) {
+                layer.msg('锁定成功', {icon: 1});
+                chaxun();
+            } else {
+                layer.msg('锁定失败');
+            }
+        });
+    }
+
+    /**锁定当前json订单**/
+    function locksonOrderId(orderId, type) {
+        $.post('/callCenter/drawer/lockOrUnlockOrderId.do', {
+            'orderId': orderId,
+            'type': 1
+        }, function (data) {
+            if (data.returnMap.state == 1) {
+                layer.msg('锁定成功', {icon: 1});
+                if (type == 1) {
+                    showtables();
+                } else {
+                    showtablef();
+                }
+            } else {
+                layer.msg('锁定失败');
+            }
+        });
+    }
+    /**解锁**/
+    function unLockOrderId(orderId) {
+        $.post('/callCenter/drawer/lockOrUnlockOrderId.do', {
+            'orderId': orderId,
+            'type': 2
+        }, function (data) {
+            if (data.returnMap.state == 1) {
+                layer.msg('解锁成功', {icon: 1});
+                chaxun();
+            } else {
+                layer.msg('解锁失败');
+            }
+        });
+    }
+
+    function unLockJsonOrderId(orderId, type) {
+        $.post('/callCenter/drawer/lockOrUnlockOrderId.do', {
+            'orderId': orderId,
+            'type': 2
+        }, function (data) {
+            if (data.returnMap.state == 1) {
+                layer.msg('解锁成功', {icon: 1});
+                if (type == 1) {
+                    showtables();
+                } else {
+                    showtablef();
+                }
+            } else {
+                layer.msg('解锁失败');
+            }
+        });
+    }
+    //查询
+    function chaxun() {
+        $("#formid").submit();
+    }
+
+    //清楚所有查询条件
+    function clearall() {
+        $("#orderstarttime").val('');
+        $("#orderendtime").val('');
+        $("#PNR").val('');
+        $("#passgername").val('');
+        $("#startcity").val('');
+        $("#endcity").val('');
+        $("#flightnum").val('');
+        $("#orderId").val('');
+        var daa = new Date();
+    }
+
+    /**
+     * 查看订单详情
+     */
+    function orderInfo(orderId, loginId, state) {
+        var optlockid = $("#loginIdnow").val();
+        if (state == 0 || state == 2) {
+            layer.msg('请先锁定订单,再进行操作');
+            return;
+        } else {
+            if (optlockid == loginId) {
+                //判断锁定人是否和当前操作人一致
+                $("#orderIdnew").val(orderId);
+                //$("#passId").val(passId);
+                $("#formOredrinfo").submit();
+            } else {
+                layer.msg('对不起,该订单已锁定,你不能操作!');
+                return;
+            }
+        }
+    }
+
+
+    function formatDate(time) {
+        var datetime = new Date();
+        datetime.setTime(time);
+        var year = datetime.getFullYear();
+        var month = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+        var date = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+        var hour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+        var minute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+        var second = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+        return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+    }
+
+    var formatDateTime = function (time) {
+        var date = new Date();
+        date.setTime(time);
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? ('0' + m) : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        var h = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds()
+        minute = minute < 10 ? ('0' + minute) : minute;
+        second = second < 10 ? ('0' + second) : second;
+        return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+    };
+
+
+</script>
+<script type="text/javascript">
+    function tzPage() {
+        if ($('#currentPageId').val()) {
+            $('#pageId').val($('#currentPageId').val());
+            $('#formid').submit();
+        }
+    }
+    function page(currentPage) {
+        $('#pageId').val(currentPage);
+        $('#formid').submit();
+    }
+</script>
+</body>
+</html>
