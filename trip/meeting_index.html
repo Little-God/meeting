@@ -1,191 +1,685 @@
-<!DOCTYPE HTML>
-<html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="x-ua-compatible" content="IE=edge" >
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>会讲首页</title>
-<link href="css/hotel_wj.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" >
+    <title>会讲首页</title>
+    <link href="css/style_currency.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ticket_dd.css"/>
+    <link href="css/select.css" rel="stylesheet" type="text/css">
+    <link href="css/process.css" rel="stylesheet" type="text/css">
+    <link href="css/process_fly.css" rel="stylesheet" type="text/css">
 
-<link href="css/drawer.css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
-
-<style>
-	.right_columnzk li {
-		float: none;
-		height: 40px;
-		line-height: 40px;
-	}
-	.meettingneed input{
-		width: 13px!important;
-		height: 13px!important;
-		margin-right: 3px;
-	}
-	.right_columnzk textarea {
-		width: 400px;
-		height: auto;
-		float: none!important;
-		min-height: 80px;
-		border: 1px solid #333!important;
-		margin-left: 10px;
-		vertical-align: top
-	}
-	.company{
-		padding-left: 40px;
-	}
-	.company div{
-		display: inline-block;
-		margin:0 15px 0 0;
-	}
-	.public{
-		margin:0 60px 0 110px;
-	}
-	.sub{
-		width: 100px !important;
-		margin-left: 160px !important;
-	}
-	.right_borA{
-		width:600px;
-	}
-	.advert{
-		width:500px;
-		height:500px;
-		float: left;
-		margin-top:-32px;
-		margin-left:30px;
-	}
-	.right_add{
-		width:1200px;
-		margin:0 auto;
-	}
-</style>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/select.js"></script>
+    <script type="text/javascript" src="js/hotels_search.js"></script>
+    <script type="text/javascript" src="js/flyindexActivity.js"></script>
+    <script type="text/javascript" src="js/process.js"></script>
 </head>
+<style type="text/css">
+    input.styled {
+        display: none;
+    }
 
-<body>	
-<div class="right_add">
-  <div class="right_borA">
-		<div class="right_columnLi" style="width:98%;margin-left:1%;">&nbsp;&nbsp;&nbsp;&nbsp;会议场地需求</div>
-		<form class="right_columnzk right_ul" style="width:98%;margin-left:1%;border:1px solid #efefef;">
-			<ul>
-				<li>活动城市<input name="hdcs" type="text" value="北京" required="required" style="margin-left: 14px"/></li>
-				<li>
-					会议时常
-					<select style="width:120px;margin-left:10px;" id="select1">
-						<option value ="无" selected>请选择</option>
-						<option value ="一晚">一晚</option>
-						<option value ="现金">半天</option>
-						<option value ="半天">一天</option>
-						<option value ="两天">两天</option>
-						<option value ="3-4天">3-4天</option>
-						<option value ="5-7天">5-7天</option>
-						<option value ="7-14天">7-14天</option>
-						<option value ="14天以上">14天以上</option>
-					</select>
-					<input type="text" name="rateplanStarttime" class="dates2" placeholder="开始时间" onClick="WdatePicker()" readonly="readonly" required="required"/>
-				</li>
-				<li>
-					会议类型
-					<select style="width:120px;margin-left:10px;" id="select2" required="required">
-						<option value ="无">请选择</option>
-						<option value ="培训/讲座">培训/讲座</option>
-						<option value ="工作会/总结会">工作会/总结会</option>
-						<option value ="发布会/颁奖/典礼">发布会/颁奖/典礼</option>
-						<option value ="公司年会">公司年会</option>
-						<option value ="团建/拓展">团建/拓展</option>
-						<option value ="同学会/好友聚会">同学会/好友聚会</option>
-						<option value ="其他">其他</option>
-					</select>
-				</li>
-				<li>
-					参加人数
-					<select style="width:120px;margin-left:10px;" id="select1">
-						<option value ="无" selected>请选择</option>
-						<option value ="10-30">10-30</option>
-						<option value ="30-60">30-60</option>
-						<option value ="60-100">60-100</option>
-						<option value ="100-200">100-200</option>
-						<option value ="200-300">200-300</option>
-						<option value ="300-500">300-500</option>
-						<option value ="500-1000">500-1000</option>
-						<option value ="1000+">1000+</option>
-					</select>
-				</li>
-				<li style="padding-left: 28px;">
-					预算
-					<select style="width:120px;margin-left:10px;" id="select1">
-						<option value ="无" selected>请选择</option>
-						<option value ="3千以下">3千以下</option>
-						<option value ="3千-5千">3千-5千</option>
-						<option value ="6千-1万">6千-1万</option>
-						<option value ="1万-2万">1万-2万</option>
-						<option value ="2万-5万">2万-5万</option>
-						<option value ="5万-10万">5万-10万</option>
-					</select>
-				</li>
-				<li class="meettingneed">
-					会议需求
-					<label>
-			          <input type="checkbox">开会
-			        </label>
-			        <label>
-			          <input type="checkbox">用餐
-			        </label>
-			        <label>
-			          <input type="checkbox">住宿
-			        </label>
-			        <label>
-			          <input type="checkbox">娱乐
-			        </label>
-			        <label>
-			          <input type="checkbox">茶歌
-			        </label>
-			        <label>
-			          <input type="checkbox">搭建
-			        </label>
-				</li>
-				<li style="height: auto;margin-bottom: 10px;">
-					其他需求
-					<textarea name="textarea" cols="60" rows="5" maxLength="500" required="required"></textarea>
-				</li>
-				<li>
-					联系人姓名<input name="user" type="text" value="张三" style="margin-right: 30px;" required="required"/>
-					联系人手机<input name="phone" type="text" value="13888888888" required="required"/>
-				</li>
-				<li class="company">
-					<div>公司</div><div style="margin-right: 30px">A公司</div>
-					项目
-					<select style="width:100px;margin-right: 20px" id="select1">
-						<option value ="无" selected>请选择</option>
-						<option value ="项目1">项目1</option>
-						<option value ="项目2">项目2</option>
-					</select>
-					成本中心
-					<select style="width:100px;" id="select1">
-						<option value ="无" selected>请选择</option>
-						<option value ="成本1">成本1</option>
-						<option value ="成本2">成本2</option>
-					</select>
-				</li>
-				<li class="meettingneed">
-					<label class="public">
-						<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1"> 因私
-					</label>
-					<label>
-						<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2" checked> 因公
-					</label>
-				</li>
-				<li>
-					<input type="submit" class="sub" value="确 认">
-				</li>
-			</ul>
-		</form>
-	</div>
-	<div class="advert"><img src="img/advter.png" alt=""></div>
+    select.styled {
+        position: relative;
+        width: 190px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        z-index: 5;
+    }
+
+    .disabled {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }</style>
+
+<style type="text/css">
+    input.styled {
+        display: none;
+    }
+
+    select.styled {
+        position: relative;
+        width: 190px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        z-index: 5;
+    }
+
+    .disabled {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    dl.selects.lit2 dt {
+        width: 182px;
+        background-position: 0 -27px;
+    }
+    dl.selects.lit2 dd {
+        width: 185px;
+    }
+    .buttonss input.next, .buttonss a.next {
+        background-position: -212px 0;
+        color: #FFFFFF;
+        float: right;
+        font-size: 16px;
+        padding:0;
+        text-align: center;
+        width: 120px;
+        height: 35px;
+    }
+</style>
+<body>
+<!--导航开始-->
+<style type="text/css">
+    *{margin:0px; padding:0px;}
+    body{ background:#f4f4f4; font:14px/20px 微软雅黑, \5FAE\8F6F\96C5\9ED1;}
+    ul, li { list-style:none; }
+    a img{border:0;}
+    a{color:#333333}
+    a, a:hover { text-decoration:none; }
+    img { display:block; border:0; }
+
+</style>
+
+
+<form id="form-validation" action="" method="post"
+      onsubmit="return checkOrder();">
+
+
+    <!-- 主体页面 start-->
+    <div class="book2-wrap" style="width: 1200px; margin:auto;">
+        <div class="book2-content">
+            <div class="book2-box">
+                <div class="box1">
+                    <div class="big_titles png_bg"><strong>会议场地需求</strong> <span style="width:630px"></span>
+                    </div>
+                    <div class="box clearfix">
+                        <div class="order1 clearfix" style="position: static;">
+                            <dl></dl>
+                            <div id="myPasengerDiv" class="myPassengerDiv" name="personPassenger">
+                                <div class="lines"></div>
+                                <dl>
+                                    <dt>活动城市：</dt>
+                                    <dd>
+                                        <dl class="selects lit1 place selects10">
+                                            <dt>
+                                                <input id="inCity" name="cityName" required="true" onkeydown="document.getElementById(&#39;placesin&#39;).style.display=&#39;none&#39;;" type="text" class="showinput input_d fl" onfocus="clearInfo(this);" onkeyup="queryCitys(&#39;hotel&#39;)" value="北京">
+                                                </dt>
+                                            <dd id="placesin" style="display: none;"><span><em class="shows" onclick="showsfoun(&#39;placesin&#39;,0)">热门</em><em onclick="showsfoun(&#39;placesin&#39;,1)">ABCDE</em><em onclick="showsfoun(&#39;placesin&#39;,2)">FGHIJ</em><em onclick="showsfoun(&#39;placesin&#39;,3)">KLMNO</em><em onclick="showsfoun(&#39;placesin&#39;,4)">PQRST</em><em onclick="showsfoun(&#39;placesin&#39;,5)">UVWXYZ</em></span>
+                                                <ul class="clearfix showuls">
+                                                    <li style="color: rgb(0, 0, 0);">北京</li>
+                                                    <li>上海</li>
+                                                    <li>杭州</li>
+                                                    <li>广州</li>
+                                                    <li style="color: rgb(0, 0, 0);">深圳</li>
+                                                    <li>厦门</li>
+                                                    <li>南京</li>
+                                                    <li>成都</li>
+                                                    <li style="color: rgb(0, 0, 0);">武汉</li>
+                                                    <li>青岛</li>
+                                                    <li>西安</li>
+                                                    <li>天津</li>
+                                                    <li style="color: rgb(0, 0, 0);">重庆</li>
+                                                    <li>苏州</li>
+                                                    <li>济南</li>
+                                                    <li>长沙</li>
+                                                    <li>香港</li>
+                                                    <li>大连</li>
+                                                    <li>三亚</li>
+                                                    <li>哈尔滨</li>
+                                                </ul>
+                                                <ul class="clearfix">
+                                                    <li>澳门</li>
+                                                    <li>安顺市</li>
+                                                    <li>鞍山</li>
+                                                    <li>安庆</li>
+                                                    <li>安吉（湖州）</li>
+                                                    <li>北京</li>
+                                                    <li>北戴河</li>
+                                                    <li>北海</li>
+                                                    <li>保定</li>
+                                                    <li>蚌埠</li>
+                                                    <li>宝鸡</li>
+                                                    <li>包头</li>
+                                                    <li>滨州</li>
+                                                    <li>本溪</li>
+                                                    <li>百色</li>
+                                                    <li>成都</li>
+                                                    <li>重庆</li>
+                                                    <li>长沙</li>
+                                                    <li>长春</li>
+                                                    <li>常州</li>
+                                                    <li>承德</li>
+                                                    <li>常熟（苏州）</li>
+                                                    <li>潮州</li>
+                                                    <li>沧州</li>
+                                                    <li>慈溪（宁波）</li>
+                                                    <li>郴州</li>
+                                                    <li>赤峰</li>
+                                                    <li>长白山池</li>
+                                                    <li>昌黎（秦皇岛）</li>
+                                                    <li>长治</li>
+                                                    <li>大连</li>
+                                                    <li>东莞</li>
+                                                    <li>大理</li>
+                                                    <li>大同</li>
+                                                    <li>丹东</li>
+                                                    <li>都江堰青</li>
+                                                    <li>敦煌</li>
+                                                    <li>德州</li>
+                                                    <li>东营</li>
+                                                    <li>登封（郑州）</li>
+                                                    <li>德阳</li>
+                                                    <li>大庆</li>
+                                                    <li>大邑（成都）</li>
+                                                    <li>德清</li>
+                                                    <li>达州</li>
+                                                    <li>峨眉山</li>
+                                                    <li>恩施</li>
+                                                    <li>鄂尔多斯</li>
+                                                    <li>恩平</li>
+                                                    <li>额尔古纳</li>
+                                                </ul>
+                                                <ul class="clearfix">
+                                                    <li>福州</li>
+                                                    <li>佛山</li>
+                                                    <li>凤凰（湘西）</li>
+                                                    <li>阜阳</li>
+                                                    <li>抚顺</li>
+                                                    <li>广州</li>
+                                                    <li>桂林</li>
+                                                    <li>贵阳</li>
+                                                    <li>赣州</li>
+                                                    <li>广元</li>
+                                                    <li>杭州</li>
+                                                    <li>哈尔滨</li>
+                                                    <li>合肥</li>
+                                                    <li>海口</li>
+                                                    <li>黄山</li>
+                                                    <li>惠州</li>
+                                                    <li>呼和浩特</li>
+                                                    <li>衡阳</li>
+                                                    <li>横店</li>
+                                                    <li>淮安</li>
+                                                    <li>邯郸</li>
+                                                    <li>湖州</li>
+                                                    <li>河源</li>
+                                                    <li>海宁</li>
+                                                    <li>汉中</li>
+                                                    <li>宏村（黄山）</li>
+                                                    <li>葫芦岛</li>
+                                                    <li>呼伦贝尔（海拉尔）</li>
+                                                    <li>衡水</li>
+                                                    <li>淮南</li>
+                                                    <li>济南</li>
+                                                    <li>九寨沟</li>
+                                                    <li>九江</li>
+                                                    <li>嘉兴</li>
+                                                    <li>金华</li>
+                                                    <li>锦州</li>
+                                                    <li>吉林</li>
+                                                    <li>焦作</li>
+                                                    <li>济宁</li>
+                                                    <li>景德镇</li>
+                                                    <li>江门</li>
+                                                    <li>九华山（池州）</li>
+                                                    <li>揭阳</li>
+                                                    <li>荆州</li>
+                                                    <li>江阴（无锡）</li>
+                                                    <li>嘉峪关</li>
+                                                    <li>晋中</li>
+                                                    <li>晋城</li>
+                                                    <li>即墨（青岛）</li>
+                                                    <li>晋江</li>
+                                                </ul>
+                                                <ul class="clearfix">
+                                                    <li>昆明</li>
+                                                    <li>开封</li>
+                                                    <li>昆山（苏州）</li>
+                                                    <li>凯里（黔东南）</li>
+                                                    <li>开平</li>
+                                                    <li>丽江（含束河）</li>
+                                                    <li>兰州</li>
+                                                    <li>洛阳</li>
+                                                    <li>拉萨</li>
+                                                    <li>柳州</li>
+                                                    <li>临沂</li>
+                                                    <li>连云港</li>
+                                                    <li>廊坊</li>
+                                                    <li>溧阳天目湖（常州）</li>
+                                                    <li>庐山（九江）</li>
+                                                    <li>乐山</li>
+                                                    <li>泸沽湖</li>
+                                                    <li>聊城</li>
+                                                    <li>泸州</li>
+                                                    <li>丽水</li>
+                                                    <li>龙岩</li>
+                                                    <li>六安</li>
+                                                    <li>临汾</li>
+                                                    <li>阆中（南充）</li>
+                                                    <li>临安（杭州）</li>
+                                                    <li>绵阳</li>
+                                                    <li>梅州</li>
+                                                    <li>马鞍山</li>
+                                                    <li>茂名</li>
+                                                    <li>牡丹江</li>
+                                                    <li>南京</li>
+                                                    <li>宁波</li>
+                                                    <li>南昌</li>
+                                                    <li>南宁</li>
+                                                    <li>南通</li>
+                                                    <li>南戴河（秦皇岛）</li>
+                                                    <li>南充</li>
+                                                    <li>南阳</li>
+                                                    <li>宁海（宁波）</li>
+                                                    <li>南浔（湖州）</li>
+                                                </ul>
+                                                <ul class="clearfix">
+                                                    <li>平遥（晋中）</li>
+                                                    <li>蓬莱（烟台）</li>
+                                                    <li>莆田</li>
+                                                    <li>盘锦</li>
+                                                    <li>攀枝花</li>
+                                                    <li>青岛</li>
+                                                    <li>秦皇岛</li>
+                                                    <li>千岛湖（杭州）</li>
+                                                    <li>泉州</li>
+                                                    <li>清远</li>
+                                                    <li>曲阜（济宁）</li>
+                                                    <li>琼海（博鳌）</li>
+                                                    <li>齐齐哈尔</li>
+                                                    <li>衢州</li>
+                                                    <li>钦州</li>
+                                                    <li>日照</li>
+                                                    <li>荣成（威海）</li>
+                                                    <li>瑞安（温州）</li>
+                                                    <li>乳山（威海）</li>
+                                                    <li>瑞丽（德宏州）</li>
+                                                    <li>上海</li>
+                                                    <li>深圳</li>
+                                                    <li>苏州</li>
+                                                    <li>三亚</li>
+                                                    <li>沈阳</li>
+                                                    <li>石家庄</li>
+                                                    <li>绍兴</li>
+                                                    <li>汕头</li>
+                                                    <li>韶关</li>
+                                                    <li>十堰</li>
+                                                    <li>上饶市</li>
+                                                    <li>宿迁</li>
+                                                    <li>商丘</li>
+                                                    <li>汕尾</li>
+                                                    <li>三清山</li>
+                                                    <li>天津</li>
+                                                    <li>太原</li>
+                                                    <li>泰安</li>
+                                                    <li>唐山</li>
+                                                    <li>台州</li>
+                                                    <li>台山</li>
+                                                    <li>泰州</li>
+                                                    <li>腾冲</li>
+                                                    <li>天水</li>
+                                                    <li>同里（吴江）</li>
+                                                    <li>铜陵</li>
+                                                    <li>太仓（苏州）</li>
+                                                    <li>桐乡</li>
+                                                    <li>桐庐（杭州）</li>
+                                                    <li>通辽</li>
+                                                </ul>
+                                                <ul class="clearfix">
+                                                    <li>武汉</li>
+                                                    <li>无锡</li>
+                                                    <li>乌鲁木齐</li>
+                                                    <li>乌镇（桐乡）</li>
+                                                    <li>潍坊</li>
+                                                    <li>威海</li>
+                                                    <li>温州</li>
+                                                    <li>芜湖</li>
+                                                    <li>婺源</li>
+                                                    <li>武夷山</li>
+                                                    <li>华山（渭南华阴市）</li>
+                                                    <li>五台山</li>
+                                                    <li>武当山（十堰）</li>
+                                                    <li>吴江（苏州）</li>
+                                                    <li>梧州</li>
+                                                    <li>厦门</li>
+                                                    <li>西安</li>
+                                                    <li>香港</li>
+                                                    <li>西塘（嘉善）</li>
+                                                    <li>徐州</li>
+                                                    <li>西宁</li>
+                                                    <li>西双版纳</li>
+                                                    <li>西昌（凉山州）</li>
+                                                    <li>襄阳</li>
+                                                    <li>香格里拉（迪庆州）</li>
+                                                    <li>新乡</li>
+                                                    <li>咸宁</li>
+                                                    <li>象山（宁波）</li>
+                                                    <li>信阳</li>
+                                                    <li>咸阳</li>
+                                                    <li>邢台</li>
+                                                    <li>湘潭</li>
+                                                    <li>兴城</li>
+                                                    <li>许昌</li>
+                                                    <li>西江（千户苗寨）</li>
+                                                    <li>扬州</li>
+                                                    <li>烟台</li>
+                                                    <li>阳朔（桂林）</li>
+                                                    <li>银川</li>
+                                                    <li>宜昌</li>
+                                                    <li>阳江</li>
+                                                    <li>营口</li>
+                                                    <li>宜宾</li>
+                                                    <li>岳阳</li>
+                                                    <li>宜兴（无锡）</li>
+                                                    <li>盐城</li>
+                                                    <li>雅安</li>
+                                                    <li>余姚（宁波）</li>
+                                                    <li>延安</li>
+                                                    <li>延吉</li>
+                                                    <li>宜春</li>
+                                                    <li>玉林</li>
+                                                    <li>榆林</li>
+                                                    <li>雁荡山（温州）</li>
+                                                    <li>运城</li>
+                                                    <li>郑州</li>
+                                                    <li>珠海</li>
+                                                    <li>舟山</li>
+                                                    <li>张家界</li>
+                                                    <li>中山</li>
+                                                    <li>肇庆</li>
+                                                    <li>淄博</li>
+                                                    <li>镇江</li>
+                                                    <li>湛江</li>
+                                                    <li>周庄（昆山）</li>
+                                                    <li>枣庄</li>
+                                                    <li>张家口</li>
+                                                    <li>株洲</li>
+                                                    <li>张家港（苏州）</li>
+                                                    <li>遵义</li>
+                                                    <li>漳州</li>
+                                                    <li>镇远（黔东南州）</li>
+                                                    <li>中卫</li>
+                                                    <li>自贡</li>
+                                                    <li>张掖</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="passTypeDl">
+                                    <dt>会议时长：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects0" id="meeting_time">
+                                            <dt class="dt_value" style="display: none;"></dt>
+                                            <dt><input id="time" type="text" name="time"
+                                                       style="width:150px" class="showinput1 passType" value="请选择"
+                                                       readonly=""></dt>
+                                            <dd id="select_time" style="display: none;">
+                                                <ul class="clearfix showuls">
+                                                    <li>请选择</li>
+                                                    <li>一晚</li>
+                                                    <li>半天</li>
+                                                    <li>一天</li>
+                                                    <li>两天</li>
+                                                    <li>3-4天</li>
+                                                    <li>5-7天</li>
+                                                    <li>7-14天</li>
+                                                    <li>14天以上</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="passTypeDl">
+                                    <dt>会议类型：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects1" id="placego_ch">
+                                            <dt class="dt_value" style="display: none;"></dt>
+                                            <dt><input id="meeting_type" type="text" name="passengerType"
+                                                       style="width:150px" class="showinput1" value="请选择"
+                                                       readonly=""></dt>
+                                            <dd id="placego" style="display: none;">
+                                                <ul>
+                                                    <li>请选择</li>
+                                                    <li>培训/讲座</li>
+                                                    <li>工作会/总结会</li>
+                                                    <li>发布会/颁奖/典礼</li>
+                                                    <li>公司年会</li>
+                                                    <li>团建/拓展</li>
+                                                    <li>同学会/好友聚会</li>
+                                                    <li>其他</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>参加人数：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects2">
+                                            <dt style="display: none;"></dt>
+                                            <dt><input type="text" name="certificationType" id="join_num"
+                                                       class="showinput1 idCard"
+                                                       value="请选择" style="width:150px"></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li>10-30</li>
+                                                    <li>30-60</li>
+                                                    <li>60-100</li>
+                                                    <li>100-200</li>
+                                                    <li>200-300</li>
+                                                    <li>300-500</li>
+                                                    <li>500-1000</li>
+                                                    <li>1000+</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+
+                                </dl>
+                                <dl>
+                                    <dt>预算：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects3">
+                                            <dt><input type="text" name="insurance" id="yu_money"
+                                                       class="showinput"
+                                                       value="请选择" style="width:150px" readonly=""></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li>请选择</li>
+                                                    <li>3千以下</li>
+                                                    <li>3千-5千</li>
+                                                    <li>6千-1万</li>
+                                                    <li>1万-2万</li>
+                                                    <li>2万-5万</li>
+                                                    <li>5万-10万</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>会议需求：</dt>
+                                    <dd class="yOverflow">
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">开会</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">用餐</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">住宿</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">娱乐</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">茶歌</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="checkbox"/><em
+                                            style="width:50px;">搭建</em>
+                                        <div class="clearfix" style="display: none;"></div>
+                                    </dd>
+                                </dl>
+                                <dl style="height: 88px">
+                                    <dt id="">其他需求：</dt>
+                                    <dd>
+                                        <textarea
+                                               name="passengerName"
+                                               style="width:400px;height:80px;margin: 0 8px 0 0;float:left;border: 1px solid #ccc;" maxLength="500"></textarea>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt id="">联系人姓名：</dt>
+                                    <dd>
+                                        <input type="text"
+                                               name="name" id="name"
+                                               style="width:95px;margin: 0 8px 0 0;float:left"
+                                               class="theinput theinput2"
+                                               value="">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt id="">联系人手机：</dt>
+                                    <dd>
+                                        <input type="text"
+                                               name="phone" id="phone"
+                                               style="width:95px;margin: 0 8px 0 0;float:left"
+                                               class="theinput theinput2"
+                                               value="">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>公司：</dt>
+                                    <dd>
+                                        A公司
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>项目：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects4">
+                                            <dt><input type="text" name="" id="project"
+                                                       class="showinput"
+                                                       value="请选择" style="width:150px" readonly=""></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li>请选择</li>
+                                                    <li>3千以下</li>
+                                                    <li>3千-5千</li>
+                                                    <li>6千-1万</li>
+                                                    <li>1万-2万</li>
+                                                    <li>2万-5万</li>
+                                                    <li>5万-10万</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>成本中心：</dt>
+                                    <dd>
+                                        <dl class="selects lit2 selects5">
+                                            <dt><input type="text" name="insurance" id="cost"
+                                                       class="showinput"
+                                                       value="请选择" style="width:150px" readonly=""></dt>
+                                            <dd style="display: none;">
+                                                <ul>
+                                                    <li>请选择</li>
+                                                    <li>3千以下</li>
+                                                    <li>3千-5千</li>
+                                                    <li>6千-1万</li>
+                                                    <li>1万-2万</li>
+                                                    <li>2万-5万</li>
+                                                    <li>5万-10万</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>是否因公：</dt>
+                                    <dd class="yOverflow">
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="radio" checked/><em
+                                            style="width:50px;">因公</em>
+                                        <input name="linker" style="margin-top:7px;_margin-top:3px;"
+                                               selLinkIndex="L1" type="radio"/><em
+                                            style="width:50px;">因私</em>
+                                        <div class="clearfix" style="display: none;"></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonss">
+                    <input id="writeOrderSubmit" name="" type="submit" class="next" value="提交订单"
+                           onclick="">
+                </div>
+            </div>
+
+
+</form>
+
+<!-- start 金额显示区域 -->
+    <div class="book2-sider">
+        <img src="img/advter.png" alt="" style="width: 100%">
+    </div>
+    <!-- end 金额显示区域 -->
 </div>
-<script>
-$(function(){
-    
-});
-</script>
+</div>
+</div>
 </body>
+<script>
+    function checkOrder() {
+        if ($("input[name=city]").val()=='') {
+            $("input[name=city]").parent().append("<span style='color: red;'>请填写活动城市</span>");
+        }
+        if ($("input[name=name]").val()=='') {
+            $("input[name=name]").parent().append("<span style='color: red;'>请填写联系人姓名</span>");
+        }
+        if ($("input[name=phone]").val()=='') {
+            $("input[name=phone]").parent().append("<span style='color: red;'>请填写联系人手机</span>");
+        }
+        var linkerPhone = $("[name=phone]").val();
+        var myReg = /^1(\d){10}$/;
+        if (myReg.test(linkerPhone) == false) {
+            alert("电话号码必须是以1开头的11位的数字!");
+            return false;
+        }
+        if ($("#time").val() == "请选择") {
+            alert("会议时长不能为空");
+            return false;
+        }
+        if ($("#meeting_type").val() == "请选择") {
+            alert("会议类型不能为空");
+            return false;
+        }
+        if ($("#join_num").val() == "请选择") {
+            alert("参加人数不能为空");
+            return false;
+        }
+        if ($("#yu_money").val() == "请选择") {
+            alert("预算不能为空");
+            return false;
+        }
+
+
+
+
+
+    }
+
+</script>
+
 </html>
+
+

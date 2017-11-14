@@ -1,5 +1,0 @@
-item.html  --   项目管理
-item_aba.html   --  废弃 弹出窗口
-item_alter.html  --  修改 弹出窗口
-item_add.html  --  添加 弹出窗口
-czrz.html    --   操作日志

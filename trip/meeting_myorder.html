@@ -6,6 +6,7 @@
     <link href="css/public.css" rel="stylesheet" type="text/css" />
     <link href="css/members.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script src="layer/layer.js"></script>
 
     <style type="text/css">
         body{ background:#f4f4f4; font:14px/20px 微软雅黑, \5FAE\8F6F\96C5\9ED1;}
@@ -110,6 +111,94 @@
         }
         .content button:hover{
             background: #f9f9f9;
+        }
+        .pagination{
+            overflow:hidden;
+            margin:0;
+            padding:10px 10px 6px 10px;
+            _zoom:1;
+            margin-top: 50px;
+        }
+        .pagination *{
+            display:inline;
+            float:left;
+            margin:0;
+            padding:0;
+            font-size:12px;
+        }
+        .pagination i{
+            float:none;
+            padding-right:1px;
+        }
+        .currentPage b{
+            float:none;
+            color:#f00;
+        }
+        .pagination li{
+            list-style:none;
+            margin:0 5px;
+        }
+        .pagination li li{
+            position:relative;
+            margin:-2px 0 0;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        .firstPage a,.previousPage a,.nextPage a,.lastPage a{
+            overflow:hidden;
+            height:0;
+            text-indent:-9999em;
+            border-top:8px solid #fff;
+            border-bottom:8px solid #fff;
+            width:0px;
+        }
+        .pagination li li a{
+            margin:0 1px;
+            padding:0 4px;
+            border:3px double #fff;
+        +border-color:#eee;
+            background:#eee;
+            color:#06f;
+            text-decoration:none;
+        }
+        .pagination li li a:hover{
+            background:#f60;
+            border-color:#fff;
+        +border-color:#f60;
+            color:#fff;
+        }
+        li.firstPage{
+            margin-left:40px;
+            border-left:3px solid #fe9695;
+            padding-left: 0;
+        }
+        .firstPage a,.previousPage a{
+            border-right:12px solid #fe9695;
+        }
+        .firstPage a:hover,.previousPage a:hover{
+            border-right-color: #f60;
+        }
+        .nextPage a,.lastPage a{
+            border-left:12px solid #fe9695;
+        }
+        .nextPage a:hover,.lastPage a:hover{
+            border-left-color:#f60;
+        }
+        li.lastPage{
+            border-right:3px solid #fe9695;
+            padding-right: 0;
+        }
+        li li.currentState a{
+            position:relative;
+            margin:-1px 3px;
+            padding:1px 4px;
+            border:3px double #fff;
+        +border-color:#f60;
+            background:#f60;
+            color:#fff;
+        }
+        li.currentState,.currentState a,.currentState a:hover{
+            border-color:#fff #ccc;
+            cursor:default;
         }
     </style>
 </head>
@@ -280,14 +369,35 @@
                 <td align="center" bgcolor="#FFFFFF"><input type="button" class="btn_c cancel" value="取消"></td>
             </tr>
         </table>
-    </div>
-</div>
-<div class="confirm">
-    <div class="con_top"><img src="img/close.png" alt=""></div>
-    <div class="content">
-        <p>您确定要取消订单吗</p>
-        <button style="margin-left: 55px" class="no">否</button>
-        <button class="yes">是</button>
+        <div id="pageParams" style="display: none;"></div>
+        <form action="/trip/myflyorderlist/list.jhtml" method="post" id="pageForm">
+            <ul class="pagination" title="">
+                <li class="totalAnnal">总记录数：<i>37</i></li>
+                <li class="totalPage">总页数：<i>4</i></li>
+                <li class="currentPage"><label>当前页：</label>
+                    <input type="text" id="currentJumpPageNo" name="pageno" style="width: 30px;border:1px solid #ccc" value="1"/>
+                    <a href="javascript: void(0);" onClick="javascript: submitPageForm($('#currentJumpPageNo').val()); return false;">
+                        <img alt="" src="img/jump2.gif" title="转到">
+                    </a>
+                </li>
+                <li class="firstPage currentState">
+                    <a title="首页" style="margin-left: 0; padding: 0;"href="#"> 首页	</a>
+                </li>
+                <li class="previousPage currentState">
+                    <a title="前一页"href="#">前一页</a>
+                </li>
+                <li>
+                    <ol>
+                    </ol>
+                </li>
+                <li class="nextPage ">
+                    <a title="后一页   " href="javascript: void(0);" onClick="javascript: submitPageForm('2')">后一页</a>
+                </li>
+                <li class="lastPage ">
+                    <a title="尾页" href="javascript: void(0);" onClick="javascript: submitPageForm('4')">尾页</a>
+                </li>
+            </ul>
+        </form>
     </div>
 </div>
 </div>
@@ -315,13 +425,10 @@
             $(this).find("span.outSpan").find("span").css({border:"none",margin:"0px",backgroundPosition:"70px 8px"});
             $(this).removeClass("here");
         });
-//        关闭取消订单弹出框
-        $(".no,.con_top img").click(function(){
-            $(".confirm").hide();
-        })
-//        点击取消弹出确认取消弹出框
         $(".cancel").click(function(){
-            $(".confirm").show();
+            layer.confirm('确定要删除订单？', {
+                btn: ['确定','取消'] //按钮
+            })
         })
     });
 </script>
