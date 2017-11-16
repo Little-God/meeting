@@ -1,12 +1,8 @@
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>订单详情</title>
+    <title>订单详情-会讲补单</title>
 
     <link href="css/drawer.css"
           rel="stylesheet">
@@ -27,7 +23,7 @@
             padding-bottom:10px;
             line-height: 20px!important;
         }
-        .in_ch input[type=checkbox]{
+        .in_ch input[type=checkbox],.in_ch input[type=radio]{
             width: auto!important;
             height:auto!important;
             float: none!important;
@@ -82,29 +78,45 @@
                                    value="M2017110500006"
                                    readonly="readonly" style="border: 0" /></td>
                         <td class="tab_td">提交时间：</td>
-                        <td><input name="orderId" type="text"
-                                   value="2017年11月5日 13:10" readonly="readonly" style="border: 0" /></td>
+                        <td><input type="text" name="orderstarttime"
+                                   id="" class="dates2 date1 date centerdate"
+                                   onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})" value=""
+                                   readonly="readonly" style="float:none;padding: 0 2px!important;" /></td>
                         <td class="tab_td">是否因公：</td>
-                        <td><input name="ddje" type="text"
-                                   value="因公" readonly="readonly"
-                                   style="border: 0" /></td>
+                        <td class="in_ch">
+                            <label>
+                                <input type="radio" value="" name="yin"> 因公
+                            </label>
+                            <label>
+                                <input type="radio" value="" name="yin"> 因私
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td class="tab_td">预约方式：</td>
-                        <td><input name="ddje" type="text"
-                                   value="网站" readonly="readonly"
-                                   style="border: 0" /></td>
+                        <td>
+                            <select name="" id="" style="width: 120px;">
+                                <option selected>网站</option>
+                                <option>电话</option>
+                            </select>
+                        </td>
                         <td class="tab_td">订单状态：</td>
-                        <td><input name="ddje" type="text" value="待沟通"
-                                   readonly="readonly" style="border: 0" /></td>
+                        <td>
+                            <select name="" id="" style="width: 120px;">
+                                <option selected>所有订单状态</option>
+                                <option>待沟通</option>
+                                <option>待付预付款</option>
+                                <option>待付中期款</option>
+                                <option>待付尾款</option>
+                                <option>已取消</option>
+                            </select>
+                        </td>
                         <td class="tab_td">操作：</td>
-                        <td><input name="ddje" type="button"
-                                   value="取消"
-                                   style="width: 70px;border-width: 2px;border-style: outset;border-color: buttonface;border-image: initial;" /></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="tab_td">订单金额：</td>
-                        <td>￥<input name="lxjt" type="text" id="order_money"
+                        <td>￥ <input name="lxjt" type="text" id="order_money"
                                    value="" style="width: 70px;float: none"/></td>
                         <td></td>
                         <td></td>
@@ -118,23 +130,52 @@
                        style="margin-top: 20px;">
                     <thead>
                     <tr height="30">
-                        <th colspan="6" class="dx_t_xx">会议信息</th>
+                        <th colspan="6" class="dx_t_xx">会讲补单</th>
                     </tr>
                     </thead>
                     <tbody>
 
                     <tr>
+                        <td class="tab_td">预定人：</td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
+                        <td class="tab_td">预订人电话：</td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
+                        <td class="tab_td">公司：</td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td">项目：</td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
+                        <td class="tab_td">成本中心：</td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
+                        <td class="tab_td">会议时长：</td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
+                    </tr>
+                    <tr>
                         <td class="tab_td">活动城市：</td>
                         <td><input name="ydrq" type="text"
-                                   value="北京"
-                                   readonly="readonly" style="border: 0" /></td>
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
                         <td class="tab_td">会议类型：</td>
-                        <td><input name="ddbh" type="text"
-                                   value="年会"
-                                   readonly="readonly" style="border: 0" /></td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
                         <td class="tab_td">会议时长：</td>
-                        <td><input name="ddje" type="text"
-                                   value="半天" readonly="readonly" style="border: 0" /></td>
+                        <td><input name="ydrq" type="text"
+                                   value="" id=""
+                                   style="width: 150px;" required="required"/></td>
                     </tr>
                     <tr>
                         <td class="tab_td">日期：</td>
