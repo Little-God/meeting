@@ -1,12 +1,8 @@
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>订单详情</title>
+    <title>订单详情—已取消（违约）</title>
 
     <link href="css/drawer.css"
           rel="stylesheet">
@@ -27,6 +23,9 @@
             padding-bottom:10px;
             line-height: 20px!important;
         }
+        .rule{
+            max-width: 200px;
+        }
         .in_ch input[type=checkbox]{
             width: auto!important;
             height:auto!important;
@@ -38,10 +37,47 @@
         .right_columnzk span {
             width:auto;
         }
+        .f_time{
+            margin-left:30px;
+            margin-right:50px;
+        }
+        .pay{
+            padding-top:20px;
+            padding-left:20px;
+        }
+        .pay span{
+            width: 210px;
+            display: inline-block;
+            margin-bottom:10px;
+            margin-right:0!important;
+        }
+        .pay input{
+            width: 120px;
+            height: 25px;
+            padding: 0 2px;
+            color: #333;
+        }
         .centerdate {
-            width: 180px !important;
+            width: 92px !important;
             height: 26px !important;
-            background: url(img/input.png) no-repeat 0 -135px;
+            background: url(img/input.png)
+            no-repeat 0 -324px;
+        }
+        .pay_ltitle{
+            width: 70px !important;
+            display: inline-block;
+            text-align: right;
+        }
+        .pay_info span{
+            margin:0 10px;
+        }
+        .y_icon{
+            background: url(img/train-icon.png) no-repeat -135px -88px;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            vertical-align: middle;
+            margin-right:5px;
         }
     </style>
     <script type="text/javascript">
@@ -52,14 +88,6 @@
             imgObj.style.transform = 'rotate(' + current + 'deg)';
         }
     </script>
-    <script type="text/javascript">
-        var currents = 0;
-        function tranImgs(trun) {
-            var imgObjs = document.getElementById('imgt');
-            currents = (currents + trun) % 360;
-            imgObjs.style.transform = 'rotate(' + currents + 'deg)';
-        }
-    </script>
 </head>
 
 <body>
@@ -67,7 +95,7 @@
 <div id="main_right">
     <div class="main_right_cent">
 
-        <form class="right_tDIV" style="border: 0;">
+        <div class="right_tDIV" style="border: 0;">
             <div class="right_listB" style="position: relative;">
                 <table cellpadding="0" cellspacing="0" class="dx_table">
                     <thead>
@@ -95,17 +123,14 @@
                                    value="网站" readonly="readonly"
                                    style="border: 0" /></td>
                         <td class="tab_td">订单状态：</td>
-                        <td><input name="ddje" type="text" value="待沟通"
+                        <td><input name="ddje" type="text" value="已取消-违约"
                                    readonly="readonly" style="border: 0" /></td>
                         <td class="tab_td">操作：</td>
-                        <td><input name="ddje" type="button"
-                                   value="取消"
-                                   style="width: 70px;border-width: 2px;border-style: outset;border-color: buttonface;border-image: initial;" /></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="tab_td">订单金额：</td>
-                        <td>￥<input name="lxjt" type="text" id="order_money"
-                                   value="" style="width: 70px;float: none"/></td>
+                        <td>￥ 4000</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -118,7 +143,7 @@
                        style="margin-top: 20px;">
                     <thead>
                     <tr height="30">
-                        <th colspan="6" class="dx_t_xx">会议信息</th>
+                        <th colspan="6" class="dx_t_xx">需求详情</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -209,75 +234,62 @@
                     <tr>
                         <td class="tab_td">场地名称：</td>
                         <td><input name="ydrq" type="text"
-                                   value="" id="placename"
-                                   style="width: 150px;" required="required"/></td>
+                                   value="北京888酒店" id="placename"
+                                   style="border:0"/></td>
                         <td class="tab_td">场地电话：</td>
-                        <td><input name="ydrq" type="number"
-                                   value=""
-                                   style="width: 150px;" required="required"/></td>
+                        <td><input name="ydrq" type="text"
+                                   value="132456" id="placename"
+                                   style="border:0"/></td>
                         <td class="tab_td">场地地址：</td>
                         <td><input name="ydrq" type="text"
-                                   value=""
-                                   style="width: 150px;" required="required"/></td>
+                                   value="成都市青羊区莲花街12-3" id="placename"
+                                   style="border:0"/></td>
                     </tr>
                     <tr>
                         <td class="tab_td">会议室面积：</td>
-                        <td><input name="ydrq" type="number"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> m²</td>
+                        <td><input name="ydrq" type="text"
+                                   value="50 m²"
+                                   style="width: 50px;float: none;border: 0;"/></td>
                         <td class="tab_td">价格：</td>
-                        <td>￥ <input name="ydrq" type="number"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> /半天&nbsp;&nbsp;&nbsp;
-                            ￥ <input name="ydrq" type="number"
-                                     value=""
-                                     style="width: 50px;float: none;" required="required"/> /天
+                        <td>￥ <input name="ydrq" type="text"
+                                     value="4000 /半天"
+                                     style="width: 50px;float: none;border: 0;"/>&nbsp;&nbsp;&nbsp;
+                            ￥ <input name="ydrq" type="text"
+                                     value="6000 /天"
+                                     style="width: 50px;float: none;border: 0;"/>
                         </td>
                         <td class="tab_td">劳务费：</td>
-                        <td>￥ <input name="ydrq" type="number"
-                                   value="30"
-                                   style="width: 50px;float: none;"/> /单</td>
+                        <td>￥ <input name="ydrq" type="text"
+                                   value="30 /单"
+                                   style="width: 50px;float: none;border: 0;"/></td>
                     </tr>
                     <tr>
-                        <td class="tab_td">退规则：</td>
-                        <td><input name="ydrq" type="text"
-                                   value=""
-                                   style="width: 150px;"/></td>
                         <td class="tab_td">会议需求：</td>
-                        <td class="in_ch" colspan="3">
-                            <label>
-                                <input type="checkbox" value=""> 开会
-                            </label>
-                            <label>
-                                <input type="checkbox" value=""> 用餐
-                            </label>
-                            ￥ <input name="ydrq" type="text"
-                                     value="30"
-                                     style="width: 50px;float: none;"/> /人
-                            <label style="margin-left: 10px;">
-                                <input type="checkbox" value=""> 住宿
-                            </label>
-                            <label>
-                                <input type="checkbox" value=""> 娱乐
-                            </label>
-                            <label>
-                                <input type="checkbox" value=""> 茶歇
-                            </label>
-                            <label>
-                                <input type="checkbox" value=""> 搭建
-                            </label>
+                        <td>
+                            用餐&nbsp;&nbsp;&nbsp;价格：￥120/人
+                        </td>
+                        <td class="tab_td"></td>
+                        <td>
+                        </td>
+                        <td class="tab_td"></td>
+                        <td>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="tab_td">超时规则：</td>
-                        <td><input name="ydrq" type="text"
-                                   value=""
-                                   style="width: 150px;"/></td>
-                        <td class="tab_td">备注：</td>
-                        <td colspan="3"><input name="ydrq" type="text"
-                                   value=""
-                                   style="width: 500px;"/>
+                    <tr  class="spec">
+                        <td class="tab_td">其他需求：</td>
+                        <td  class="rule">
+                            巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
                         </td>
+                        <td class="tab_td">退规则：</td>
+                        <td class="rule">
+                            巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+                        </td>
+                        <td class="tab_td">超时规则：</td>
+                        <td  class="rule">
+                            巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+                        </td>
+
+
                     </tr>
                     </tbody>
                 </table>
@@ -292,45 +304,41 @@
                     <tbody>
 
                     <tr>
-                        <td class="tab_td">预付款：</td>
-                        <td class="money_z"><input name="ydrq" type="number"
-                                     value=""
-                                     style="width: 50px;float: none;" required="required"/> %&nbsp;&nbsp;&nbsp;
-                            <input name="ydrq" type="munber"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> ￥&nbsp;&nbsp;&nbsp;
-                            付款日期：<input type="text" name="orderstarttime"
-                                        id="" class="dates2 date1 date centerdate"
-                                        onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})" value=""
-                                        readonly="readonly" style="float:none;padding: 0 2px!important;" />
+                        <td class="tab_td"><i class="y_icon"></i>预付款（30%）：</td>
+                        <td class="money_z">
+                            ￥ 1200<span class="f_time">付款日期 2017-11-13</span><span style="color: red;margin-right: 15px;">违约费：￥200</span>应退金额：<span style="font-size: 16px;color: red;">￥1000</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="tab_td">中期款：</td>
-                        <td class="money_z"><input name="ydrq" type="number"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> %&nbsp;&nbsp;&nbsp;
-                            <input name="ydrq" type="number"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> ￥&nbsp;&nbsp;&nbsp;
-                            付款日期：<input type="text" name="orderstarttime"
-                                        id="" class="dates2 date1 date centerdate"
-                                        onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})" value=""
-                                        readonly="readonly" style="float:none;padding: 0 2px!important;" />
+                        <td class="tab_td">预付款信息：</td>
+                        <td class="pay_info">
+                            <span>付款方式：银行卡</span>
+                            <span>收款账号：123456</span>
+                            <span>付款账号：123456</span>
+                            <span>流水号：123456</span>
+                            <span>世纪付款时间：2017-11-12</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="tab_td">尾款：</td>
-                        <td class="money_z"><input name="ydrq" type="number"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> %&nbsp;&nbsp;&nbsp;
-                            <input name="ydrq" type="munber"
-                                   value=""
-                                   style="width: 50px;float: none;" required="required"/> ￥&nbsp;&nbsp;&nbsp;
-                            付款日期：<input type="text" name="orderstarttime"
-                                        id="orderstarttime" class="dates2 date1 date centerdate"
-                                        onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})" value=""
-                                        readonly="readonly" style="float:none;padding: 0 2px!important;" />
+                        <td class="tab_td">退款信息：</td>
+                        <td class="pay_info">
+                            <span>付款方式：银行卡</span>
+                            <span>收款账号：123456</span>
+                            <span>付款账号：123456</span>
+                            <span>流水号：123456</span>
+                            <span>世纪付款时间：2017-11-12</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td">中期款（50%）：</td>
+                        <td class="money_z">
+                            ￥ 2000<span class="f_time">付款日期 2017-11-13</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td">尾款（20%）：</td>
+                        <td class="money_z">
+                            ￥ 800<span class="f_time">付款日期 2017-11-13</span>
                         </td>
                     </tr>
                     <tr>
@@ -357,44 +365,9 @@
 
 
 
-                <div class="right_columnzk" style="border: 0; margin-top: 20px;padding-left: 40%;">
-						<span style="border: 0;"> <input type="button" class="button_bg r_c_l" value="取消" onclick="history.go(-1)"></span>
-						<span style="border: 0;" onclick="test()"> <input type="submit" class="button_bg r_c_l" value="保 存" onclick="history.go(-1)"></span>
-                </div>
-
             </div>
-        </form>
+        </div>
     </div>
 </div>
 </body>
-<script>
-    function isChinese(temp)
-    {
-        var re = /[^\u4e00-\u9fa5]/;
-        if(re.test(temp)) return false;
-        return true;
-    }
-    function test(){
-        if(!isChinese($("#placename").val())){
-            alert("场地名称请输入中文！")
-        }
-    }
-//    根据比率出现金额等
-    $(".money_z input").change(function(){
-        var o_money = $("#order_money").val();
-        if(o_money==''){
-            return false;
-        }else{
-            var _this = $(this);
-            if(_this.index()==0){
-                _this.next().val(o_money*_this.val()/100)
-            }else{
-                _this.prev().val(_this.val()/o_money*100)
-            }
-        }
-
-    })
-
-
-</script>
 </html>
